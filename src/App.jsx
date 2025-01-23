@@ -1,6 +1,6 @@
+import Appreciation from './Appreciations';
 import Footer from './Footer';
 import IndustriesPage from './IndustriesPage';
-import NatureImageComponent from './NatureImageComponent';
 import Navbar from './Navbar';
 import ServicesShowcase from './ServicesShowcase';
 function App() {
@@ -13,7 +13,7 @@ function App() {
       </ServicesShowcase>
       <IndustriesPage></IndustriesPage>
 
-      <NatureImageComponent></NatureImageComponent>
+      <Appreciation></Appreciation>
       <Footer/>
     </div>
         

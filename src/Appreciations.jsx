@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const natureImages = [
     {
@@ -38,7 +38,7 @@ const natureImages = [
     },
 ];
 
-const NatureImageSlider = () => {
+const Appreciation = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const isLaptop = window.innerWidth >= 1024; // Laptop screen size or larger
@@ -61,14 +61,14 @@ const NatureImageSlider = () => {
 
     return (
         <div className="container mx-auto px-4 py-16">
-            {/* Professionalized Header */}
             <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-100 tracking-wide">
-            Appreciation from Clients
+                Appreciation from Clients
             </h1>
             <div className="relative overflow-hidden">
                 <div
-                    className={`flex gap-8 justify-center ${isLaptop ? "md:flex-row" : "flex-col"
-                        }`}
+                    className={`flex gap-8 justify-center ${
+                        isLaptop ? "md:flex-row" : "flex-col"
+                    }`}
                 >
                     <AnimatePresence>
                         {visibleImages.map((image, index) => (
@@ -78,13 +78,22 @@ const NatureImageSlider = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: 50 }}
                                 transition={{ duration: 0.5 }}
-                                className="w-full md:w-1/3 bg-card rounded-lg shadow-lg overflow-hidden"
+                                className="relative w-full md:w-1/3 bg-card rounded-lg shadow-lg overflow-hidden group"
                             >
-                                <img
-                                    src={image.imageUrl}
-                                    alt={image.title}
-                                    className="w-full h-64 md:h-80 object-cover"
-                                />
+                                {/* Hover effect */}
+                                <div className="relative">
+                                    <img
+                                        src={image.imageUrl}
+                                        alt={image.title}
+                                        className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                        <div className="text-center text-white px-4">
+                                            <h3 className="text-2xl font-bold">{image.title}</h3>
+                                            <p className="text-sm mt-2">{image.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="p-6 space-y-4">
                                     <h3 className="text-xl font-bold tracking-tight">{image.title}</h3>
                                     <p className="text-muted-foreground">{image.description}</p>
@@ -140,4 +149,4 @@ const NatureImageSlider = () => {
     );
 };
 
-export default NatureImageSlider;
+export default Appreciation;
