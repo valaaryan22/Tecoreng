@@ -15,9 +15,10 @@ const Navbar = () => {
         <div
             className="App min-h-screen flex flex-col bg-[#112542] text-white overflow-x-hidden"
             style={{
-                backgroundImage: `url(${logo2})`, 
-                backgroundSize: 'cover', 
-                backgroundPosition: 'center center',                backgroundRepeat: 'no-repeat',
+                backgroundImage: `url(${logo2})`, // Default background for larger screens
+                backgroundSize: 'cover', // Ensures the background image covers the entire screen
+                backgroundPosition: 'center center', // Centers the background image both horizontally and vertically
+                backgroundRepeat: 'no-repeat',
             }}
         >
             <header className="fixed top-0 left-0 right-0 z-50 bg-[#112542] text-wxhite shadow-md">

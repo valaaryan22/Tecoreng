@@ -1,4 +1,5 @@
 import Footer from './Footer';
+import NatureImageComponent from './NatureImageComponent';
 import Navbar from './Navbar';
 import ServicesShowcase from './ServicesShowcase';
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <ServicesShowcase>
 
       </ServicesShowcase>
+      <NatureImageComponent></NatureImageComponent>
       <Footer/>
     </div>
         
