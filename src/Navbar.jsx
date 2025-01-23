@@ -45,7 +45,7 @@ const Navbar = () => {
                     </ul>
 
                     <div className="nav-buttons hidden md:flex gap-4">
-                        <button className="hire-developers px-4 py-2 bg-[#162b4b] text-white rounded-xl hover:bg-orange-500">
+                        <button className="hire-developers px-4 py-2 bg-[#112542] text-white rounded-xl hover:bg-orange-500">
                             Hire Developers
                         </button>
                         <button className="get-quote px-4 py-2 bg-orange-500 text-white rounded-xl hover:bg-orange-700">
@@ -55,7 +55,7 @@ const Navbar = () => {
                 </nav>
 
                 <ul
-                    className={`nav-links md:hidden flex flex-col items-center gap-3 px-6 py-4 bg-[#1f1f4d] shadow-lg ${menuOpen ? 'block' : 'hidden'
+                    className={`nav-links md:hidden flex flex-col items-center gap-3 px-6 py-4 bg-[#112542] shadow-lg ${menuOpen ? 'block' : 'hidden'
                         }`}
                 >
                     <li><a href="#services" className="hover:text-orange-500 no-underline">Services</a></li>
