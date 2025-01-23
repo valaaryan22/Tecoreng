@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import "video-react/dist/video-react.css";
 import { Player } from "video-react";
+import "video-react/dist/video-react.css";
 
 function Card({ children, className }) {
     return <div className={`rounded-lg shadow-lg ${className}`}>{children}</div>;
@@ -13,6 +13,9 @@ function CardContent({ children, className }) {
 export default function ServicesShowcase() {
     return (
         <div className="container bg-[#112542] mx-auto px-4 py-16">
+            <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-100 tracking-wide">
+                Our Success Stories
+            </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <motion.div
                     whileHover={{
@@ -21,6 +24,7 @@ export default function ServicesShowcase() {
                     }}
                     className="h-full"
                 >
+
                     <Card className="overflow-hidden rounded-3xl h-full bg-card hover:bg-accent transition-colors duration-300">
                         <CardContent className="p-0">
                             <div className="relative h-64 w-full">
