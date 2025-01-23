@@ -4,11 +4,13 @@ html, body {
     padding: 0;
     overflow-x: hidden;
     box-sizing: border-box;
+    background-color: #112542;
+
 }
 
 .App {
     text-align: center;
-    background-color: #0a0a23;
+    background-color: #112542;
     color: white;
     font-family: Arial, sans-serif;
     min-height: 100vh;

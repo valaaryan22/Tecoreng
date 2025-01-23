@@ -10,7 +10,7 @@ function CardContent({ children, className }) {
 
 export default function ServicesShowcase() {
     return (
-        <div className="container  mx-auto  px-4 py-16  ">
+        <div className="container  bg-[#112542] mx-auto  px-4 py-16  ">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Card 1 */}
                 <motion.div

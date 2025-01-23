@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import logo from "./logo.svg";
 import logo2 from './logo2.png';
+import logo3 from './logo3.png';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -14,13 +15,13 @@ const Navbar = () => {
         <div
             className="App min-h-screen flex flex-col bg-[#112542] text-white overflow-x-hidden"
             style={{
-                backgroundImage: `url(${logo2})`,
-                backgroundSize: 'contain',
+                backgroundImage: `url(${logo2})`, // Default background for larger screens
+                backgroundSize: 'cover', // Ensures the background image covers the entire screen
+                backgroundPosition: 'center center', // Centers the background image both horizontally and vertically
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'right center',
             }}
         >
-            <header className="fixed top-0 left-0 right-0 z-50 bg-[#112542] text-white shadow-md">
+            <header className="fixed top-0 left-0 right-0 z-50 bg-[#112542] text-wxhite shadow-md">
                 <nav className="navbar flex items-center justify-between px-6 py-4">
                     <div className="logo flex items-center">
                         <img src={logo} alt="Technical Core Engineers" className="h-10 pl-6" />
@@ -74,17 +75,25 @@ const Navbar = () => {
             </header>
 
             <main className="flex-grow flex items-center justify-start">
-                <section className="hero flex flex-col justify-center items-start ml-10 h-full text-center" >
+                <section className="hero flex flex-col justify-center items-start ml-10 h-full text-center">
                     <h1 className="data font-extrabold text-3xl md:text-5xl mb-4">
                         Web & Mobile App
-
                     </h1>
                     <h1 className="data font-extrabold text-3xl md:text-5xl mb-4">
                         Development Company
-
                     </h1>
                 </section>
             </main>
+
+            {/* Media Queries for Mobile */}
+            <style jsx>{`
+                @media (max-width: 768px) {
+                    .App {
+                        background-image: url(${logo3});
+                        background-size: 100% 100%;
+                    }
+                }
+            `}</style>
         </div>
     );
 };

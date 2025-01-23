@@ -4,11 +4,14 @@ import ServicesShowcase from './ServicesShowcase';
 function App() {
   return (
     <>
-      <Navbar></Navbar>
+    <div className='bg-[#112542]'>
+    <Navbar></Navbar>
       <ServicesShowcase>
-        
+
       </ServicesShowcase>
-      <Footer/>  
+      <Footer/>
+    </div>
+        
     </>
   );
 }
