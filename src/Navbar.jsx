@@ -85,7 +85,6 @@ const Navbar = () => {
                 </section>
             </main>
 
-            {/* Media Queries for Mobile */}
             <style jsx>{`
                 @media (max-width: 768px) {
                     .App {

@@ -5,7 +5,6 @@ const Footer = () => {
         <footer style={{ backgroundColor: "#112542", color: "#fff", marginTop: "2rem", padding: "2rem 0" }}>
             <div className="container">
                 <div className="row justify-content-between">
-                    {/* Features Section */}
                     <div className="col-lg-3 col-md-6 mb-4">
                         <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
                             Features
@@ -39,7 +38,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Services Section */}
                     <div className="col-lg-5 col-md-6 mb-4">
                         <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
                             Services
@@ -101,7 +99,6 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Contact Us Section */}
                     <div className="col-lg-4 col-md-12">
                         <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
                             Contact Us
@@ -148,7 +145,6 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Footer Bottom */}
                 <div
                     className="d-flex flex-column flex-md-row justify-content-between align-items-center mt-5"
                     style={{ borderTop: "1px solid #fff", paddingTop: "1rem" }}

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import "video-react/dist/video-react.css";
 import { Player } from "video-react";

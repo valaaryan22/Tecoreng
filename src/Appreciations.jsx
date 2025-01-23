@@ -4,35 +4,36 @@ import { useState } from "react";
 const natureImages = [
     {
         imageUrl: "https://www.thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg",
-        title: "Tranquil Oasis",
-        description:
-            "Discover the peaceful embrace of nature's quiet corners, where every element works in harmony to inspire a sense of calm and balance.",
+        title: "Denis Cartin",
+        description:'They have good timing and quality in task solving. Their project management was outstanding. Always delivered on time and quickly replied to our needs and demands. The Communication was effective and running smoothly, with constant updates on the project\'s progress. They also shared significant insights and suggestions for developing the project.Discover the peaceful embrace of natures quiet corners, where every element works in harmony to inspire a sense of calm and balance'
     },
     {
         imageUrl:
             "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: "Grand Peaks of Glory",
+        title: "Kean Graham",
         description:
-            "Behold the magnificence of towering mountain ranges, a testament to the grandeur and timeless beauty of our natural world.",
+        'What most impressed us about Technical Core Engineers was their wide range of knowledge and commitment to the completion of our project. They exceeded our expectations rather than meeting them. Their ability to quickly understand the difficulties of our business and personalize their solutions to our specific need was absolutely impressive.'
+
     },
     {
         imageUrl:
             "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: "Nature's Symphony",
+        title: "Chetan Patwardhan",
         description:
-            "Lose yourself in the rhythmic flow of cascading waterfalls, where every drop sings a melody of purity and life.",
+        'What most impressed us about Technical Core Engineers was their commitment to delivering a service that exceeded our expectations. Their commitment to the project, dedication to excellence, and willingness to go the extra mile truly distinguish them. They demonstrated a thorough understanding of the business and adjusted their solutions to meet our specific needs.'
+
     },
     {
         imageUrl:
             "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: "Radiant Evening Glow",
+        title: "Chetan Patwardhan",
         description:
             "Witness the sky's dramatic transformation as the setting sun paints a masterpiece of color, reminding us of nature's fleeting moments of brilliance.",
     },
     {
         imageUrl:
             "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: "Mirror of Serenity",
+        title: "Chetan Patwardhan",
         description:
             "Experience the soothing stillness of a pristine lakeside, where reflections of the surrounding beauty invite moments of quiet reflection.",
     },
@@ -41,8 +42,8 @@ const natureImages = [
 const Appreciation = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const isLaptop = window.innerWidth >= 1024; // Laptop screen size or larger
-    const itemsPerPage = isLaptop ? 3 : 1; // 3 images for laptop; 1 image for mobile
+    const isLaptop = window.innerWidth >= 1024; 
+    const itemsPerPage = isLaptop ? 3 : 1; 
     const totalItems = natureImages.length;
 
     const handlePrevSlide = () => {
@@ -80,7 +81,6 @@ const Appreciation = () => {
                                 transition={{ duration: 0.5 }}
                                 className="relative w-full md:w-1/3 bg-card rounded-lg shadow-lg overflow-hidden group"
                             >
-                                {/* Hover effect */}
                                 <div className="relative">
                                     <img
                                         src={image.imageUrl}
@@ -103,7 +103,6 @@ const Appreciation = () => {
                     </AnimatePresence>
                 </div>
 
-                {/* Previous Button */}
                 <button
                     onClick={handlePrevSlide}
                     className="absolute top-1/2 left-4 -translate-y-1/2 bg-white rounded-full p-3 shadow-md hover:bg-gray-200"
@@ -124,7 +123,6 @@ const Appreciation = () => {
                     </svg>
                 </button>
 
-                {/* Next Button */}
                 <button
                     onClick={handleNextSlide}
                     className="absolute top-1/2 right-4 -translate-y-1/2 bg-white rounded-full p-3 shadow-md hover:bg-gray-200"
