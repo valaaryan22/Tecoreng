@@ -1,4 +1,3 @@
-
 const IndustriesPage = () => {
     return (
         <div className="bg-[#112542] text-white p-8 sm:p-12 md:p-16">
@@ -15,12 +14,17 @@ const IndustriesPage = () => {
                     { title: "E-commerce", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600" },
                     { title: "Travel", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600" },
                 ].map((industry, index) => (
-                    <div key={index} className="relative group rounded-lg overflow-hidden">
-                        <img
-                            src={industry.image}
-                            alt={industry.title}
-                            className="w-full h-48 object-cover transition-opacity duration-300 group-hover:opacity-60 opacity-70"
-                        />
+                    <div
+                        key={index}
+                        className="relative group rounded-lg overflow-hidden"
+                    >
+                        <div className="overflow-hidden">
+                            <img
+                                src={industry.image}
+                                alt={industry.title}
+                                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110 opacity-70"
+                            />
+                        </div>
                         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-70">
                             <h2 className="text-lg md:text-xl font-bold text-white text-center">
                                 {industry.title}
