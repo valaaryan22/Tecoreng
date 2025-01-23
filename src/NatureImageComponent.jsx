@@ -4,37 +4,37 @@ import React, { useState } from "react";
 const natureImages = [
     {
         imageUrl: "https://www.thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg",
-        title: "Serene Nature",
+        title: "Tranquil Oasis",
         description:
-            "This breathtaking image captures the beauty and tranquility of nature. The lush greenery, calming lake, and vibrant sky create a serene atmosphere that invites you to pause and appreciate the wonders of the natural world.",
+            "Discover the peaceful embrace of nature's quiet corners, where every element works in harmony to inspire a sense of calm and balance.",
     },
     {
         imageUrl:
             "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: "Majestic Mountain Range",
+        title: "Grand Peaks of Glory",
         description:
-            "Towering peaks reach towards the sky, their snow-capped summits reflecting the warm glow of the sun. This image evokes a sense of awe and wonder at the sheer scale and power of nature.",
+            "Behold the magnificence of towering mountain ranges, a testament to the grandeur and timeless beauty of our natural world.",
     },
     {
         imageUrl:
             "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: "Enchanting Waterfall",
+        title: "Nature's Symphony",
         description:
-            "A cascade of water tumbles over the rocky cliff, creating a mesmerizing display of motion and sound. The surrounding forest adds to the enchanting atmosphere, inviting you to immerse yourself in the tranquility of this natural wonder.",
+            "Lose yourself in the rhythmic flow of cascading waterfalls, where every drop sings a melody of purity and life.",
     },
     {
         imageUrl:
             "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: "Vibrant Sunset",
+        title: "Radiant Evening Glow",
         description:
-            "The sky explodes in a breathtaking display of colors as the sun dips below the horizon. This image captures the magic of the golden hour, when the world seems to pause and reflect the beauty of nature.",
+            "Witness the sky's dramatic transformation as the setting sun paints a masterpiece of color, reminding us of nature's fleeting moments of brilliance.",
     },
     {
         imageUrl:
             "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        title: "Peaceful Lakeside",
+        title: "Mirror of Serenity",
         description:
-            "The still waters of the lake mirror the surrounding forest, creating a serene and calming atmosphere. This image invites you to slow down, take a deep breath, and appreciate the tranquility of the natural world.",
+            "Experience the soothing stillness of a pristine lakeside, where reflections of the surrounding beauty invite moments of quiet reflection.",
     },
 ];
 
@@ -62,8 +62,8 @@ const NatureImageSlider = () => {
     return (
         <div className="container mx-auto px-4 py-16">
             {/* Professionalized Header */}
-            <h1 className="text-4xl font-extrabold text-center mb-8 text-blue-700 tracking-wide">
-                Appreciation from Our Clients
+            <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-100 tracking-wide">
+            Appreciation from Clients
             </h1>
             <div className="relative overflow-hidden">
                 <div

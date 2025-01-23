@@ -11,8 +11,9 @@ function App() {
       <ServicesShowcase>
 
       </ServicesShowcase>
-      <NatureImageComponent></NatureImageComponent>
       <IndustriesPage></IndustriesPage>
+
+      <NatureImageComponent></NatureImageComponent>
       <Footer/>
     </div>
         
