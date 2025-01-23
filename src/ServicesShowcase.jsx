@@ -10,7 +10,7 @@ function CardContent({ children, className }) {
 
 export default function ServicesShowcase() {
     return (
-        <div className="container  bg-[#112542] mx-auto  px-4 py-16  ">
+        <div className="container bg-[#112542] mx-auto px-4 py-16">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Card 1 */}
                 <motion.div
@@ -20,11 +20,11 @@ export default function ServicesShowcase() {
                     }}
                     className="h-full"
                 >
-                    <Card className="overflow-hidden h-full bg-card hover:bg-accent transition-colors duration-300">
+                    <Card className="overflow-hidden rounded-3xl h-full bg-card hover:bg-accent transition-colors duration-300">
                         <CardContent className="p-0">
                             <div className="relative h-64 w-full">
                                 <img
-                                    src="src/assets/OIP2.jpeg"
+                                    src="https://www.thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg" // Updated image URL
                                     alt="Betting Platform"
                                     className="object-cover w-full h-full rounded-3xl"
                                 />
@@ -40,7 +40,7 @@ export default function ServicesShowcase() {
                                 </p>
                                 <a
                                     href="/portfolio/betting-platform"
-                                    className="inline-block text-primary  hover:text-primary/80 transition-colors"
+                                    className="inline-block text-primary hover:text-primary/80 transition-colors"
                                 >
                                     Learn more →
                                 </a>
@@ -61,7 +61,7 @@ export default function ServicesShowcase() {
                         <CardContent className="p-0">
                             <div className="relative h-64 w-full">
                                 <img
-                                    src="src/assets/OIP.jpeg"
+                                    src="https://www.thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg" // Updated image URL
                                     alt="Health and Wellness"
                                     className="object-cover rounded-3xl w-full h-full"
                                 />
@@ -94,11 +94,11 @@ export default function ServicesShowcase() {
                     }}
                     className="h-full"
                 >
-                    <Card className="overflow-hidden h-full bg-card hover:bg-accent transition-colors duration-300">
+                    <Card className="overflow-hidden  h-full bg-card hover:bg-accent transition-colors duration-300">
                         <CardContent className="p-0">
                             <div className="relative h-64 w-full">
                                 <img
-                                    src="src/assets/OIP.jpeg"
+                                    src="https://www.thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg" // Updated image URL
                                     alt="E-Commerce"
                                     className="object-cover rounded-3xl w-full h-full"
                                 />
