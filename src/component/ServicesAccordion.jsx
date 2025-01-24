@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 
 const ServicesAccordion = () => {
   const services = [
@@ -32,16 +32,25 @@ const ServicesAccordion = () => {
 
   return (
     <div className="w-full max-w-[90%] mx-auto p-4">
-      <h2 className="text-3xl font-bold text-center text-white mb-6">Services We Offer</h2>
+      <h2 className="text-5xl font-bold text-left text-white mb-3 
+        text-shadow-xl">Services We Offer</h2>
 
-      <div className="space-y-4">
+      <div className="mb-20 text-white text-left text-sm">
+        <p>
+          We offer a full range of web app development services that make things better for enterprises and companies we work with. Our team of dedicated mobile app developers fulfills your diverse business requirements through a number of services. We specialise in the following services:
+        </p>
+      </div>
+
+      {/* Adding a gap between the paragraph and the accordion */}
+      <div className="space-y-10 mt-6">
         {services.map((service, index) => (
           <div
             key={index}
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(null)}
             className={`w-full border rounded-3xl shadow-md overflow-hidden transition-all duration-300 ease-out transform
-              ${activeIndex === index ? 'bg-gradient-to-r from-[#6ec1e4] to-[#0b1b33] border-[#6ec1e4] translate-y-[-5px]' : 'bg-[#0b1b33] border-white hover:border-[#6ec1e4]'}`}
+              ${activeIndex === index ? 'bg-gradient-to-r from-[#6ec1e4] to-[#0b1b33] border-[#6ec1e4] translate-y-[-5px] scale-105' : 'bg-[#0b1b33] border-white hover:border-[#6ec1e4] scale-105'}
+            `}
             style={{ borderWidth: '0.5px' }}
           >
             {/* Accordion Header */}
