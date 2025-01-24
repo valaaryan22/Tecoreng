@@ -1,9 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import logo from "./logo.svg";
-import logo2 from './logo2.png';
-import logo3 from './logo3.png';
 
+import laptop from './laptop.svg';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -15,9 +14,9 @@ const Navbar = () => {
         <div
             className="App min-h-screen flex flex-col bg-[#112542] text-white overflow-x-hidden"
             style={{
-                backgroundImage: `url(${logo2})`,
+                backgroundImage: `url(${laptop})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center center',
+                backgroundPosition: 'left left',
                 backgroundRepeat: 'no-repeat',
             }}
         >
@@ -88,7 +87,7 @@ const Navbar = () => {
             <style jsx>{`
                 @media (max-width: 768px) {
                     .App {
-                        background-image: url(${logo3});
+                        background-image: url(${laptop});
                         background-size: 100% 100%;
                     }
                 }
