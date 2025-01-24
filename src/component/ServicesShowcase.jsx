@@ -1,9 +1,8 @@
-import { motion } from "framer-motion";
 import { Player } from "video-react";
 import "video-react/dist/video-react.css";
 
 function Card({ children, className }) {
-    return <div className={`rounded-lg shadow-lg ${className}`}>{children}</div>;
+    return <div className={`rounded-lg shadow-lg ${className} bg-[#0e1c31]`}>{children}</div>;
 }
 
 function CardContent({ children, className }) {
@@ -12,20 +11,13 @@ function CardContent({ children, className }) {
 
 export default function ServicesShowcase() {
     return (
-        <div className="container bg-[#01132E] mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-16">
             <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-100 tracking-wide">
                 Our Success Stories
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <motion.div
-                    whileHover={{
-                        scale: 1.05,
-                        transition: { duration: 0.2 },
-                    }}
-                    className="h-full"
-                >
-
-                    <Card className="overflow-hidden rounded-3xl h-full bg-card hover:bg-accent transition-colors duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> {/* Decreased gap */}
+                <div className="h-full">
+                    <Card className="overflow-hidden rounded-3xl h-full hover:bg-accent transition-colors duration-300">
                         <CardContent className="p-0">
                             <div className="relative h-64 w-full">
                                 <img
@@ -45,7 +37,7 @@ export default function ServicesShowcase() {
                                 </div>
                             </div>
                             <div className="p-6 space-y-4">
-                                <h3 className="text-2xl font-bold tracking-tight">
+                                <h3 className="text-2xl font-bold tracking-tight text-white">
                                     Betting Platform
                                 </h3>
                                 <p className="text-muted-foreground">
@@ -55,21 +47,15 @@ export default function ServicesShowcase() {
                                     href="/portfolio/betting-platform"
                                     className="inline-block text-primary hover:text-primary/80 transition-colors"
                                 >
-                                    Learn more →
+                                    Learn more → 
                                 </a>
                             </div>
                         </CardContent>
                     </Card>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    whileHover={{
-                        scale: 1.05,
-                        transition: { duration: 0.2 },
-                    }}
-                    className="h-full"
-                >
-                    <Card className="overflow-hidden rounded-3xl h-full bg-card hover:bg-accent transition-colors duration-300">
+                <div className="h-full">
+                    <Card className="overflow-hidden rounded-3xl h-full hover:bg-accent transition-colors duration-300">
                         <CardContent className="p-0">
                             <div className="relative h-64 w-full">
                                 <img
@@ -89,7 +75,7 @@ export default function ServicesShowcase() {
                                 </div>
                             </div>
                             <div className="p-6 space-y-4">
-                                <h3 className="text-2xl font-bold tracking-tight">
+                                <h3 className="text-2xl font-bold tracking-tight text-white">
                                     Health and Wellness
                                 </h3>
                                 <p className="text-muted-foreground">
@@ -99,21 +85,15 @@ export default function ServicesShowcase() {
                                     href="/portfolio/health-wellness"
                                     className="inline-block text-primary hover:text-primary/80 transition-colors"
                                 >
-                                    Learn more →
+                                    Learn more → 
                                 </a>
                             </div>
                         </CardContent>
                     </Card>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    whileHover={{
-                        scale: 1.05,
-                        transition: { duration: 0.2 },
-                    }}
-                    className="h-full"
-                >
-                    <Card className="overflow-hidden rounded-3xl h-full bg-card hover:bg-accent transition-colors duration-300">
+                <div className="h-full">
+                    <Card className="overflow-hidden rounded-3xl h-full hover:bg-accent transition-colors duration-300">
                         <CardContent className="p-0">
                             <div className="relative h-64 w-full">
                                 <img
@@ -133,7 +113,7 @@ export default function ServicesShowcase() {
                                 </div>
                             </div>
                             <div className="p-6 space-y-4">
-                                <h3 className="text-2xl font-bold tracking-tight">
+                                <h3 className="text-2xl font-bold tracking-tight text-white">
                                     E-Commerce
                                 </h3>
                                 <p className="text-muted-foreground">
@@ -143,12 +123,12 @@ export default function ServicesShowcase() {
                                     href="/portfolio/ecommerce"
                                     className="inline-block text-primary hover:text-primary/80 transition-colors"
                                 >
-                                    Learn more →
+                                    Learn more → 
                                 </a>
                             </div>
                         </CardContent>
                     </Card>
-                </motion.div>
+                </div>
             </div>
         </div>
     );
