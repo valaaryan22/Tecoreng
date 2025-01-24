@@ -12,7 +12,7 @@ function CardContent({ children, className }) {
 
 export default function ServicesShowcase() {
     return (
-        <div className="container bg-[#112542] mx-auto px-4 py-16">
+        <div className="container bg-[#0b1b33] mx-auto px-4 py-16">
             <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-100 tracking-wide">
                 Our Success Stories
             </h1>

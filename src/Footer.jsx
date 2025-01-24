@@ -2,7 +2,7 @@ import logo from './logo.svg';
 
 const Footer = () => {
     return (
-        <footer style={{ backgroundColor: "#112542", color: "#fff", marginTop: "2rem", padding: "2rem 0" }}>
+        <footer style={{ backgroundColor: "#0b1b33", color: "#fff", marginTop: "2rem", padding: "2rem 0" }}>
             <div className="container">
                 <div className="row justify-content-between">
                     <div className="col-lg-3 col-md-6 mb-4">

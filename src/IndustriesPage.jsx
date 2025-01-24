@@ -1,6 +1,6 @@
 const IndustriesPage = () => {
     return (
-        <div className="bg-[#112542] text-white p-8 sm:p-12 md:p-16">
+        <div className="bg-[#0b1b33] text-white p-8 sm:p-12 md:p-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">
                 Industries We are Experts In
             </h1>
