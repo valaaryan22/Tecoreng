@@ -99,7 +99,6 @@ const Navbar = () => {
                     </div>
                 </ul>
             </header>
-
             <main className="flex-grow flex items-center justify-start">
                 <section className="hero flex flex-col justify-start items-start h-full text-left">
                     <h1 className="data font-extrabold text-5xl md:text-6xl leading-tight transform translate-x-10 translate-y-10">
@@ -109,13 +108,7 @@ const Navbar = () => {
                 </section>
             </main>
 
-            <hr className="my-0 border-t-2 border-white opacity-50" />
-
             <style jsx>{`
-                header {
-                    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* White shadow at the bottom */
-                }
-
                 .hero h1 {
                     text-align: left;
                     color: white;
