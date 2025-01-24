@@ -6,7 +6,7 @@ import ServicesShowcase from './component/ServicesShowcase';
 function App() {
   return (
     <>
-    <div className='bg-[#0b1b33]'>
+    <div className='bg-[#01132E]'>
     <Navbar></Navbar>
       <ServicesShowcase>
 

@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const navItems = [
         { name: 'Services', link: '/services' },
-        { name: 'About Us', link: '/about' },
+        { name: 'About Us', link: '/about', hasArrow: true },
         { name: 'Career', link: '/careers' },
         { name: 'Portfolio', link: '/portfolio' },
         { name: 'Blog', link: '/blog' },
@@ -20,16 +20,16 @@ const Navbar = () => {
 
     return (
         <div
-            className="App min-h-screen flex flex-col bg-[#0b1b33] text-white overflow-x-hidden"
+            className="App min-h-screen flex flex-col bg-[#01132E] text-white overflow-x-hidden"
             style={{
                 backgroundImage: `url(${laptop})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'left left',
+                backgroundPosition: 'left top',
                 backgroundRepeat: 'no-repeat',
             }}
         >
-            <header className="fixed top-0 left-0 right-0 z-50 bg-[#0b1b33] shadow-md">
-                <nav className="navbar flex items-center justify-between px-4 py-3">
+            <header className="fixed top-0 left-0 right-0 z-50 bg-[#01132E] shadow-md">
+                <nav className="navbar flex items-center gap-4 justify-between px-4 py-3">
                     <div className="logo">
                         <img src={logo} alt="Tecoreng Logo" className="h-10" />
                     </div>
@@ -49,18 +49,23 @@ const Navbar = () => {
                         )}
                     </button>
 
-                    <ul className={`nav-links md:flex gap-6 hidden text-sm`}>
+                    <ul className={`nav-links md:flex gap-8 hidden text-sm`}>
                         {navItems.map((item) => (
-                            <li key={item.name}>
-                                <a href={item.link} className="text-white hover:text-orange-500 no-underline">
+                            <li key={item.name} className="text-lg">
+                                <a href={item.link} className="text-white hover:text-orange-500 no-underline flex items-center gap-1">
                                     {item.name}
+                                    {item.hasArrow && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    )}
                                 </a>
                             </li>
                         ))}
                     </ul>
 
                     <div className="nav-buttons hidden md:flex gap-4">
-                        <button className="px-4 py-2 bg-transparent border-2 border-white text-white rounded-full hover:bg-orange-500 hover:border-transparent">
+                        <button className="px-4 py-2 bg-transparent border-2 border-white text-white rounded-full hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-300 hover:border-transparent">
                             Hire Developers
                         </button>
                         <button className="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-300 text-white rounded-full hover:from-orange-700 hover:to-orange-500">
@@ -74,13 +79,18 @@ const Navbar = () => {
                 >
                     {navItems.map((item) => (
                         <li key={item.name}>
-                            <a href={item.link} className="text-white hover:text-orange-500 no-underline">
+                            <a href={item.link} className="text-white hover:text-orange-500 no-underline flex items-center gap-1">
                                 {item.name}
+                                {item.hasArrow && (
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                )}
                             </a>
                         </li>
                     ))}
                     <div className="flex flex-col gap-4 w-full mt-4">
-                        <button className="w-full px-4 py-2 bg-transparent border-2 border-white text-white rounded-full hover:bg-orange-500 hover:border-transparent">
+                        <button className="w-full px-4 py-2 bg-transparent border-2 border-white text-white rounded-full hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-300 hover:border-transparent">
                             Hire Developers
                         </button>
                         <button className="w-full px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-300 text-white rounded-full hover:from-orange-700 hover:to-orange-500">
@@ -89,23 +99,61 @@ const Navbar = () => {
                     </div>
                 </ul>
             </header>
-
             <main className="flex-grow flex items-center justify-start">
-                <section className="hero flex flex-col justify-center items-start ml-10 h-full text-center">
-                    <h1 className="data font-extrabold text-3xl md:text-5xl mb-4">
-                        Web & Mobile App
-                    </h1>
-                    <h1 className="data font-extrabold text-3xl md:text-5xl mb-4">
+                <section className="hero flex flex-col justify-start items-start h-full text-left">
+                    <h1 className="data font-extrabold text-5xl md:text-6xl leading-tight transform translate-x-10 translate-y-10">
+                        Web & Mobile App<br />
                         Development Company
                     </h1>
                 </section>
             </main>
 
             <style jsx>{`
+                .hero h1 {
+                    text-align: left;
+                    color: white;
+                    margin-left: 10%; /* Shift 10% to the right */
+                    margin-top: 10%;  /* Shift 10% to the bottom */
+                }
+
+                @media (max-width: 1024px) {
+                    .App {
+                        background-size: contain;
+                        background-position: center;
+                    }
+
+                    .hero h1 {
+                        font-size: 4rem; /* Adjusted for medium screens */
+                        margin-left: 5%; /* Slightly reduced on medium screens */
+                        margin-top: 5%;
+                        line-height: 1.4;
+                    }
+                }
+
                 @media (max-width: 768px) {
                     .App {
-                        background-image: url(${laptop});
-                        background-size: 100% 100%;
+                        background-size: 150% 150%;
+                        background-position: top center;
+                    }
+
+                    .hero h1 {
+                        font-size: 3rem; /* Adjusted for smaller screens */
+                        margin-left: 5%; /* Maintain alignment for smaller screens */
+                        margin-top: 5%;
+                        line-height: 1.4;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .App {
+                        background-size: 200% 200%;
+                        background-position: center;
+                    }
+
+                    .hero h1 {
+                        font-size: 2rem; /* Adjusted for mobile screens */
+                        margin-left: 2%;
+                        margin-top: 2%;
                     }
                 }
             `}</style>
