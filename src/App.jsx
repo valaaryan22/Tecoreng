@@ -13,7 +13,7 @@ function App() {
 
       </ServicesShowcase>
       <IndustriesPage></IndustriesPage>
-
+      <ServicesAccordion></ServicesAccordion>
       <Appreciation></Appreciation>
       
       <Footer/>
