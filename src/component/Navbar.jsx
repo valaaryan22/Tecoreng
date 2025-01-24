@@ -1,7 +1,7 @@
 import  { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from "./logo.svg";
-import laptop from './laptop.svg';
+import logo from "../logo.svg";
+import laptop from '../laptop.svg';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);

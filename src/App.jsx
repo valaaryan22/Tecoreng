@@ -1,8 +1,8 @@
-import Appreciation from './Appreciations';
-import Footer from './Footer';
-import IndustriesPage from './IndustriesPage';
-import Navbar from './Navbar';
-import ServicesShowcase from './ServicesShowcase';
+import Appreciation from './component/Appreciations';
+import Footer from './component/Footer';
+import IndustriesPage from './component/IndustriesPage';
+import Navbar from './component/Navbar';
+import ServicesShowcase from './component/ServicesShowcase';
 function App() {
   return (
     <>
