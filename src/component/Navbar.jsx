@@ -1,7 +1,7 @@
-import  { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from "../logo.svg";
+import { useState } from 'react';
 import laptop from '../laptop.svg';
+import logo from "../logo.svg";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ const Navbar = () => {
                 backgroundRepeat: 'no-repeat',
             }}
         >
-            <header className="fixed top-0 left-0 right-0 z-50 bg-[#001f3d] shadow-md">
+            <header className="fixed top-3 left-0 right-0 z-50 bg-[#0b1b33] shadow-md">
                 <nav className="navbar flex items-center justify-between px-4 py-3">
                     <div className="logo">
                         <img src={logo} alt="Tecoreng Logo" className="h-10" />
