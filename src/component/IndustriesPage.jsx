@@ -5,33 +5,87 @@ const IndustriesPage = () => {
                 Industries We are Experts In
             </h1>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {[
-                    { title: "Supply Chain & Logistics", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600" },
-                    { title: "Healthcare", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600" },
-                    { title: "Education", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600" },
-                    { title: "Banking", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600" },
-                    { title: "E-commerce", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600" },
-                    { title: "Travel", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600" },
-                ].map((industry, index) => (
-                    <div
-                        key={index}
-                        className="relative group rounded-lg overflow-hidden"
-                    >
-                        <div className="overflow-hidden">
-                            <img
-                                src={industry.image}
-                                alt={industry.title}
-                                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110 opacity-70"
-                            />
-                        </div>
-                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-70">
-                            <h2 className="text-lg md:text-xl font-bold text-white text-center">
-                                {industry.title}
-                            </h2>
-                        </div>
+            {/* Full container width with responsive grid layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* First Row */}
+                <div className="relative lg:col-span-2 sm:col-span-1">
+                    <div className="overflow-hidden">
+                        <img
+                            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                            alt="Supply Chain & Logistics"
+                            className="w-full h-48 object-cover transition-transform duration-300 opacity-80"
+                        />
                     </div>
-                ))}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <h2 className="text-lg md:text-xl font-bold text-white text-center px-4">Supply Chain & Logistics</h2>
+                    </div>
+                </div>
+
+                <div className="relative lg:col-span-1 sm:col-span-1">
+                    <div className="overflow-hidden">
+                        <img
+                            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                            alt="Healthcare"
+                            className="w-full h-48 object-cover transition-transform duration-300 opacity-80"
+                        />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <h2 className="text-lg md:text-xl font-bold text-white text-center px-4">Healthcare</h2>
+                    </div>
+                </div>
+
+                {/* Second Row */}
+                <div className="relative lg:col-span-1 sm:col-span-1">
+                    <div className="overflow-hidden">
+                        <img
+                            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                            alt="Education"
+                            className="w-full h-48 object-cover transition-transform duration-300 opacity-80"
+                        />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <h2 className="text-lg md:text-xl font-bold text-white text-center px-4">Education</h2>
+                    </div>
+                </div>
+
+                <div className="relative lg:col-span-2 sm:col-span-1">
+                    <div className="overflow-hidden">
+                        <img
+                            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                            alt="Banking"
+                            className="w-full h-48 object-cover transition-transform duration-300 opacity-80"
+                        />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <h2 className="text-lg md:text-xl font-bold text-white text-center px-4">Banking</h2>
+                    </div>
+                </div>
+
+                <div className="relative lg:col-span-1 sm:col-span-1">
+                    <div className="overflow-hidden">
+                        <img
+                            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                            alt="E-commerce"
+                            className="w-full h-48 object-cover transition-transform duration-300 opacity-80"
+                        />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <h2 className="text-lg md:text-xl font-bold text-white text-center px-4">E-commerce</h2>
+                    </div>
+                </div>
+
+                <div className="relative lg:col-span-2 sm:col-span-1">
+                    <div className="overflow-hidden">
+                        <img
+                            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                            alt="Travel"
+                            className="w-full h-48 object-cover transition-transform duration-300 opacity-80"
+                        />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <h2 className="text-lg md:text-xl font-bold text-white text-center px-4">Travel</h2>
+                    </div>
+                </div>
             </div>
         </div>
     );
