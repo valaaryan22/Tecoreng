@@ -84,16 +84,13 @@ const WhyChooseUs = () => {
         {reasons.map((reason, index) => (
           <div
             key={index}
-            className="bg-[#0b1b33] text-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
+            className="bg-[#0b1b33] text-white p-6 rounded-lg flex flex-col items-center text-center"
             style={{
-              boxShadow: "rgb(1, 19, 46) 0px 12px 17px",
+              boxShadow: "rgb(1, 19, 46) 0px 12px 17px", // Shadow effect
               borderTopLeftRadius: "17px",
               borderTopRightRadius: "17px",
               borderBottomRightRadius: "17px",
               borderBottomLeftRadius: "17px",
-              borderTopWidth: "1px",
-              borderTopStyle: "solid",
-              borderTopColor: "transparent",
               backgroundImage: "linear-gradient(rgb(17, 37, 66), rgb(17, 37, 66)), linear-gradient(rgba(255, 255, 255, 0.58) 0px, rgba(1, 19, 46, 0) 100%)",
             }}
           >

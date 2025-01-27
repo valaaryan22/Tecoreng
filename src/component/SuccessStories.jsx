@@ -64,7 +64,7 @@ const SuccessStories = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="relative h-64">
+            <div className="relative" style={{ height: '300px' }}> {/* Fixed height for both image and video */}
               {hoveredIndex === index ? (
                 <div className="absolute inset-0 z-0">
                   <Player
@@ -83,8 +83,8 @@ const SuccessStories = () => {
                 />
               )}
             </div>
-            <div className="p-8 z-10"> {/* Ensures text stays on top */}
-              <h3 className="text-2xl font-semibold mb-4 text-white">
+            <div className="p-4 z-10"> {/* Decreased padding to reduce space */}
+              <h3 className="text-2xl font-semibold mb-2 text-white"> {/* Reduced margin between heading and description */}
                 {story.title}
               </h3>
               <p className="text-gray-300 text-base leading-relaxed">

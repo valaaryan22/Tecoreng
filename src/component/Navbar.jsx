@@ -29,27 +29,12 @@ const Navbar = () => {
             }}
         >
             <header className="fixed top-0 left-0 right-0 z-50 bg-[#01132E] shadow-md">
-                <nav className="navbar flex items-center gap-4 justify-between px-4 py-3">
+                <nav className="navbar flex items-center justify-between px-4 py-3">
                     <div className="logo">
                         <img src={logo} alt="Tecoreng Logo" className="h-10" />
                     </div>
 
-                    <button
-                        className="block md:hidden text-white focus:outline-none"
-                        onClick={toggleMenu}
-                    >
-                        {menuOpen ? (
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        ) : (
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-                            </svg>
-                        )}
-                    </button>
-
-                    <ul className={`nav-links md:flex gap-8 hidden text-sm`}>
+                    <ul className={`nav-links md:flex gap-8 ml-auto hidden text-sm`} style={{ marginLeft: '3px' }}>
                         {navItems.map((item) => (
                             <li key={item.name} className="text-lg">
                                 <a href={item.link} className="text-white hover:text-orange-500 no-underline flex items-center gap-1">
@@ -65,7 +50,7 @@ const Navbar = () => {
                     </ul>
 
                     <div className="nav-buttons hidden md:flex gap-4">
-                        <button className="px-4 py-2 bg-transparent border-1 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
+                        <button className="px-4 py-2 bg-transparent border-2 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
                             Hire Developers
                         </button>
                         <button className="px-4 py-2 bg-gradient-to-r from-[#FFA07A] to-[#FF6347] text-white rounded-full hover:from-[#E25F3C] hover:to-[#C84F33]">

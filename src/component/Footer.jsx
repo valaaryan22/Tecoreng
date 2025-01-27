@@ -2,7 +2,7 @@ import logo from '../logo.svg';
 
 const Footer = () => {
     return (
-        <footer style={{ backgroundColor: "#0b1b33", color: "#fff", marginTop: "2rem", padding: "2rem 0" }}>
+        <footer style={{ backgroundColor: "#01132E", color: "#fff", marginTop: "2rem", padding: "2rem 0" }}>
             <div className="container">
                 <div className="row justify-content-between">
                     <div className="col-lg-3 col-md-6 mb-4">
@@ -165,13 +165,13 @@ const Footer = () => {
                                 style={{ width: "24px", filter: "invert(1)" }}
                             />
                         </a>
-                            <a href="https://goo.gl/maps/xyz" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
-                                <img
-                                    src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/geo-alt.svg"
-                                    alt="Location"
-                                    style={{ width: "24px", filter: "invert(1)" }}
-                                />
-                            </a>
+                        <a href="https://goo.gl/maps/xyz" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/geo-alt.svg"
+                                alt="Location"
+                                style={{ width: "24px", filter: "invert(1)" }}
+                            />
+                        </a>
                         <a href="https://twitter.com/tecoreng" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
                             <img
                                 src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/twitter.svg"

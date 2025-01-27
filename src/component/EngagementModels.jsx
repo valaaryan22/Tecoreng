@@ -34,18 +34,19 @@ const EngagementModels = () => {
             {/* Pseudo-element for background fill effect */}
             <div className="absolute inset-0 bg-[#81B3FF] transition-all duration-700 ease-in-out h-0 group-hover:h-full group-hover:transition-all group-hover:duration-700 group-hover:ease-in-out"></div>
 
-            {/* Title with the new gradient background */}
+            {/* Title with sky blue gradient background */}
             <h3
-              className="text-xl font-semibold mb-2 pt-4 p-2 text-center rounded-xl min-h-[100px] text-white rounded-t-2xl relative z-10 group-hover:bg-[linear-gradient(rgba(255, 255, 255, 0.58) 0%, rgba(1, 19, 46, 0) 100%), linear-gradient(91.17deg, rgb(255, 255, 255) -93.64%, rgb(129, 179, 255) 98.85%)]"
+              className="text-xl font-semibold mb-2 pt-4 p-2 text-center rounded-xl min-h-[100px] text-white rounded-t-2xl relative z-10 group-hover:bg-[linear-gradient(rgba(135, 206, 235, 0.58) 0%, rgba(135, 206, 235, 0) 100%), linear-gradient(91.17deg, rgb(135, 206, 235) -93.64%, rgb(176, 224, 230) 98.85%)] group-hover:text-white transition-all duration-500"
               style={{
-                background: 'linear-gradient(rgba(255, 255, 255, 0.58) 0%, rgba(1, 19, 46, 0) 100%), linear-gradient(91.17deg, rgb(255, 255, 255) -93.64%, rgb(129, 179, 255) 98.85%)',
+                background:
+                  'linear-gradient(rgba(135, 206, 235, 0.58) 0%, rgba(135, 206, 235, 0) 100%), linear-gradient(91.17deg, rgb(135, 206, 235) -93.64%, rgb(176, 224, 230) 98.85%)', // Sky blue gradient
               }}
             >
               {card.title}
             </h3>
 
             {/* Content */}
-            <p className="p-4 relative z-10 group-hover:text-white transition-colors duration-500">
+            <p className="p-4 relative z-10 group-hover:bg-[linear-gradient(rgba(135, 206, 235, 0.58) 0%, rgba(135, 206, 235, 0) 100%), linear-gradient(91.17deg, rgb(135, 206, 235) -93.64%, rgb(176, 224, 230) 98.85%)] group-hover:text-white transition-all duration-500">
               {card.description}
             </p>
           </div>
