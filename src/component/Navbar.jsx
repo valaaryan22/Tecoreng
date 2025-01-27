@@ -108,7 +108,7 @@ const Navbar = () => {
                 </section>
             </main>
 
-            <style jsx>{`
+            <style >{`
                 .hero h1 {
                     text-align: left;
                     color: white;
@@ -157,7 +157,7 @@ const Navbar = () => {
                     }
                 }
             `}</style>
-        </div>  
+        </div>
     );
 };
 
