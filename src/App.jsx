@@ -1,4 +1,5 @@
 import Appreciation from './component/Appreciations';
+import EngagementModels from './component/EngagementModels';
 import Footer from './component/Footer';
 import IndustriesPage from './component/IndustriesPage';
 import Navbar from './component/Navbar';
@@ -17,7 +18,7 @@ function App() {
       <ServicesAccordion></ServicesAccordion>
       <WhyChooseUs/>
       <Appreciation></Appreciation>
-      
+      <EngagementModels/>
       <Footer/>
     </div>
         

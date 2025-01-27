@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
       <h2
         className="text-5xl font-bold text-left text-white mb-6 text-shadow-xl pl-6 uppercase"
         style={{
-          fontFamily: '"Londrina Sketch", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+          fontFamily: "Arial",
         }}
       >
         Why Tecoreng for Your Next Project?
