@@ -160,8 +160,23 @@ const Navbar = () => {
                             <br />
                             Company
                         </h1>
-                        <button className="px-8 py-3 bg-[#FF6347] rounded-full text-lg font-semibold hover:bg-[#FF4500] transition-colors">
-                            GET STARTED
+                        <button
+                            className="flex items-center justify-center px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300"
+                            style={{
+                                willChange: 'transform',
+                                transition: 'transform 250ms',
+                                background: 'linear-gradient(94.76deg, rgb(244, 123, 85) 1.49%, rgb(255, 61, 0) 95.34%)',
+                                transform: 'translateY(-4px)',
+                                height: '58px',
+                                fontWeight: '700',
+                                fontSize: '29px',
+                                lineHeight: '30px',
+                                textTransform: 'uppercase'
+                            }}
+                            onMouseEnter={(e) => e.target.style.transform = 'translateY(0)'} // Smooth on hover
+                            onMouseLeave={(e) => e.target.style.transform = 'translateY(-4px)'} // Reset on leave
+                        >
+                            Get Started
                         </button>
                     </div>
 
@@ -170,8 +185,6 @@ const Navbar = () => {
                         {/* You would need to import and add your laptop SVG here */}
                     </div>
                 </div>
-
-
 
                 {/* Counter Section */}
 
@@ -306,7 +319,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-
         </>
     );
 };
