@@ -27,17 +27,17 @@ const EngagementModels = () => {
           Our team is your partner for the next big digital leap. Our customized and highly flexible engagement models are designed to meet business objectives. All of our service engagements are focused on customer satisfaction, and we ensure that clear communication is maintained throughout.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-6">
         {cardData.map((card, index) => (
           <div
             key={index}
-            className="relative bg-[#01132E] text-white shadow-md rounded-2xl border-4 border-white overflow-hidden group"
+            className="relative bg-[#01132E] text-white shadow-md rounded-2xl border-1 border-white overflow-hidden group min-h-[396px]" // Decreased height by 10%
           >
-            {/* Gradient overlay with hover effect */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
+            {/* Pseudo-element for background fill effect */}
+            <div className="absolute inset-0 bg-[#81B3FF]  transition-all duration-700 ease-in-out h-0 group-hover:h-full group-hover:transition-all group-hover:duration-700 group-hover:ease-in-out"></div>
 
-            {/* Title with consistent sky-500 background */}
-            <h3 className="text-xl font-semibold mb-2 p-2 bg-sky-500 text-white rounded-t-2xl relative z-10">
+            {/* Title with consistent red-500 background */}
+            <h3 className="text-xl font-semibold mb-2 pt-4 p-2 mt- bg-[#81B3FF] text-center rounded-xl min-h-[100px] text-white rounded-t-2xl relative z-10">
               {card.title}
             </h3>
 

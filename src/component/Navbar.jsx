@@ -65,7 +65,7 @@ const Navbar = () => {
                     </ul>
 
                     <div className="nav-buttons hidden md:flex gap-4">
-                        <button className="px-4 py-2 bg-transparent border-2 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
+                        <button className="px-4 py-2 bg-transparent border-1 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
                             Hire Developers
                         </button>
                         <button className="px-4 py-2 bg-gradient-to-r from-[#FFA07A] to-[#FF6347] text-white rounded-full hover:from-[#E25F3C] hover:to-[#C84F33]">
