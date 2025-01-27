@@ -3,9 +3,9 @@ import logo from '../logo.svg';
 const Footer = () => {
     return (
         <footer style={{ backgroundColor: "#0b1b33", color: "#fff", marginTop: "2rem", padding: "2rem 0" }}>
-            <div className="container">
+            <div className="container" style={{ backgroundColor: "#0b1b33" }}>
                 <div className="row justify-content-between">
-                    <div className="col-lg-3 col-md-6 mb-4">
+                    <div className="col-lg-3 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33" }}>
                         <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
                             Features
                         </h5>
@@ -38,7 +38,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="col-lg-5 col-md-6 mb-4">
+                    <div className="col-lg-5 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33" }}>
                         <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
                             Services
                         </h5>
@@ -99,7 +99,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="col-lg-4 col-md-12">
+                    <div className="col-lg-4 col-md-12" style={{ backgroundColor: "#0b1b33" }}>
                         <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
                             Contact Us
                         </h5>
@@ -147,7 +147,7 @@ const Footer = () => {
 
                 <div
                     className="d-flex flex-column flex-md-row justify-content-between align-items-center mt-5"
-                    style={{ borderTop: "1px solid #fff", paddingTop: "1rem" }}
+                    style={{ borderTop: "1px solid #fff", paddingTop: "1rem", backgroundColor: "#0b1b33" }}
                 >
                     <div className="d-flex align-items-center mb-3 mb-md-0">
                         <a href="/" aria-label="home">
@@ -165,13 +165,13 @@ const Footer = () => {
                                 style={{ width: "24px", filter: "invert(1)" }}
                             />
                         </a>
-                            <a href="https://goo.gl/maps/xyz" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
-                                <img
-                                    src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/geo-alt.svg"
-                                    alt="Location"
-                                    style={{ width: "24px", filter: "invert(1)" }}
-                                />
-                            </a>
+                        <a href="https://goo.gl/maps/xyz" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/geo-alt.svg"
+                                alt="Location"
+                                style={{ width: "24px", filter: "invert(1)" }}
+                            />
+                        </a>
                         <a href="https://twitter.com/tecoreng" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
                             <img
                                 src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/twitter.svg"

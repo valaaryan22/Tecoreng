@@ -4,6 +4,7 @@ import Footer from './component/Footer';
 import IndustriesPage from './component/IndustriesPage';
 import Navbar from './component/Navbar';
 import ServicesAccordion from './component/ServicesAccordion';
+import SuccessStories from './component/SuccessStories';
 // import ServicesShowcase from './component/ServicesShowcase';
 import WhyChooseUs from './component/WhyChooseUs';
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
       {/* </ServicesShowcase> */}
       <IndustriesPage></IndustriesPage>
+      <SuccessStories/>
       <ServicesAccordion></ServicesAccordion>
       <WhyChooseUs/>
       <Appreciation></Appreciation>
