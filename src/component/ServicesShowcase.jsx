@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { motion } from "framer-motion";
 import { Player } from "video-react";
 import "video-react/dist/video-react.css";
@@ -153,3 +154,5 @@ export default function ServicesShowcase() {
         </div>
     );
 }
+=======
+>>>>>>> Stashed changes
