@@ -1,4 +1,4 @@
-import { FaRegThumbsUp, FaTachometerAlt, FaUsers, FaTools } from "react-icons/fa"; // Importing icons
+import { FaRegThumbsUp, FaTachometerAlt, FaTools, FaUsers } from "react-icons/fa"; // Importing icons
 
 const WhyChooseUs = () => {
   const reasons = [
@@ -38,43 +38,33 @@ const WhyChooseUs = () => {
 
   return (
     <div
-      className="w-full min-h-screen p-4"
-      style={{
-        backgroundImage:
-          "linear-gradient(rgb(17, 37, 66), rgb(17, 37, 66)), linear-gradient(rgba(255, 255, 255, 0.58) 0px, rgba(1, 19, 46, 0) 100%)",
-        backgroundSize: "100% 100%", // Ensures the background covers the entire viewport
-        paddingBottom: "0", // Remove extra space below the component
-      }}
+      className="w-full min-h-screen p-4 bg-gradient-to-b from-[#112542] to-[#112542]"
     >
       {/* Heading */}
       <h2
-        className="text-5xl font-bold text-left text-white mb-6 text-shadow-xl pl-6 uppercase"
+        className="mb-6 pl-6 text-5xl font-bold tracking-widest uppercase text-transparent stroke-white title-font"
         style={{
-          fontFamily: "Arial",
+          WebkitTextStroke: "1px white",
         }}
       >
-        Why Tecoreng for Your Next Project?
+        Why Tecoreng for Your Next Project
       </h2>
 
       {/* Description */}
-      <div className="mb-6 text-white text-left text-sm pl-6">
-        <p>
-          Introducing Technical Core Engineers (TCE), the intersection of technology and innovation. At TCE, we excel in delivering exceptional IT services customized to fulfill your development requirements. Harnessing our expertise and enthusiasm, we breathe life into your ideas. Backed by a team of seasoned developers with extensive knowledge in various programming technologies, our dedication is unwavering, ensuring the delivery of outstanding results. Our mission is straightforward: decode the language of binary and transform it into extraordinary digital solutions that empower your business.
+      <div className="text-left pl-6 pr-20">
+        <p className="text-white text-lg leading-8 mt-9 mb-6 w-4/5 paragraph-font">
+          Introducing Technical Core Engineers (TCE), the intersection of technology and innovation. At TCE, we excel
+          in delivering exceptional IT services customized to fulfill your development requirements. Harnessing our
+          expertise and enthusiasm, we breathe life into your ideas. Backed by a team of seasoned developers with
+          extensive knowledge in various programming technologies, our dedication is unwavering, ensuring the delivery
+          of outstanding results. Our mission is straightforward: decode the language of binary and transform it into
+          extraordinary digital solutions that empower your business.
         </p>
       </div>
 
       {/* Button */}
       <button
-        className="mt-4 px-6 py-2 text-white rounded-full transition duration-300 transform ml-6"
-        style={{
-          backgroundImage: "linear-gradient(to right, #FFA07A, #FF6347)", // light orange to dark orange gradient
-        }}
-        onMouseEnter={(e) => {
-          e.target.style.transform = "translateY(-5px)"; // Moves the button up on hover
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.transform = "translateY(0)"; // Resets the translation when the hover ends
-        }}
+        className="flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-r from-orange-400 to-red-600 text-white font-bold text-lg uppercase transform transition-transform duration-300 hover:translate-y-[-4px] ml-6"
       >
         Get in Touch
       </button>
@@ -87,21 +77,42 @@ const WhyChooseUs = () => {
             className="bg-[#0b1b33] text-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
             style={{
               boxShadow: "rgb(1, 19, 46) 0px 12px 17px",
-              borderTopLeftRadius: "17px",
-              borderTopRightRadius: "17px",
-              borderBottomRightRadius: "17px",
-              borderBottomLeftRadius: "17px",
-              borderTopWidth: "1px",
-              borderTopStyle: "solid",
-              borderTopColor: "transparent",
-              backgroundImage: "linear-gradient(rgb(17, 37, 66), rgb(17, 37, 66)), linear-gradient(rgba(255, 255, 255, 0.58) 0px, rgba(1, 19, 46, 0) 100%)",
+              borderRadius: "17px",
+              backgroundImage:
+                "linear-gradient(rgb(17, 37, 66), rgb(17, 37, 66)), linear-gradient(rgba(255, 255, 255, 0.58) 0px, rgba(1, 19, 46, 0) 100%)",
             }}
           >
             {reason.icon && <div className="mb-4">{reason.icon}</div>}
-            <h3 className="text-lg font-semibold">{reason.title}</h3>
+            <h3 className="text-lg font-semibold reason-title-font">{reason.title}</h3>
           </div>
         ))}
       </div>
+
+      <style jsx>{`
+        @media (max-width: 767px) {
+          .paragraph-font {
+            width: 100%;
+            line-height: 20px;
+            margin: 20px 0px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .paragraph-font {
+            font-size: 12px;
+          }
+
+          .title-font {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+          }
+
+          .reason-title-font {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+          }
+        }
+      `}</style>
     </div>
   );
 };

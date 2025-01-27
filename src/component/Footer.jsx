@@ -6,8 +6,8 @@ const Footer = () => {
             <div className="container" style={{ backgroundColor: "#0b1b33" }}>
                 <div className="row justify-content-between">
                     <div className="col-lg-3 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33" }}>
-                        <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
-                            Features
+                        <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem" }}>
+                            Features Manu
                         </h5>
                         <ul className="list-unstyled">
                             <li className="my-2">
@@ -17,7 +17,7 @@ const Footer = () => {
                             </li>
                             <li className="my-2">
                                 <a href="/services" style={{ color: "#fff", textDecoration: "none" }}>
-                                    Services
+                                    Services 
                                 </a>
                             </li>
                             <li className="my-2">
@@ -39,8 +39,8 @@ const Footer = () => {
                     </div>
 
                     <div className="col-lg-5 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33" }}>
-                        <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
-                            Services
+                        <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem" }}>
+                            Services Manu
                         </h5>
                         <div className="row">
                             <div className="col-6">
@@ -100,8 +100,8 @@ const Footer = () => {
                     </div>
 
                     <div className="col-lg-4 col-md-12" style={{ backgroundColor: "#0b1b33" }}>
-                        <h5 className="mb-4" style={{ borderBottom: "2px solid #fff", paddingBottom: "0.5rem" }}>
-                            Contact Us
+                        <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem" }}>
+                            Contact Manu
                         </h5>
                         <ul className="list-unstyled">
                             <li className="mb-3">

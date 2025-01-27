@@ -5,17 +5,15 @@ import IndustriesPage from './component/IndustriesPage';
 import Navbar from './component/Navbar';
 import ServicesAccordion from './component/ServicesAccordion';
 import SuccessStories from './component/SuccessStories';
-// import ServicesShowcase from './component/ServicesShowcase';
+import VideoPlayer from './component/VideoPlayer';
 import WhyChooseUs from './component/WhyChooseUs';
 function App() {
   return (
     <>
     <div className='bg-[#01132E]'>
     <Navbar></Navbar>
-      {/* <ServicesShowcase> */}
-
-      {/* </ServicesShowcase> */}
-      <IndustriesPage></IndustriesPage>
+    <VideoPlayer></VideoPlayer>
+     <IndustriesPage></IndustriesPage>
       <SuccessStories/>
       <ServicesAccordion></ServicesAccordion>
       <WhyChooseUs/>
