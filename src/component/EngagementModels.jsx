@@ -33,14 +33,14 @@ const EngagementModels = () => {
             key={index}
             className="relative bg-[#01132E] text-white shadow-md rounded-2xl border-4 border-white overflow-hidden group"
           >
-            {/* Gradient overlay with transition */}
-            <div className="absolute inset-0 bg-sky-500 opacity-0 group-hover:opacity-10 transition-all duration-500 ease-in-out"></div>
-            
+            {/* Gradient overlay with hover effect */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
+
             {/* Title with consistent sky-500 background */}
             <h3 className="text-xl font-semibold mb-2 p-2 bg-sky-500 text-white rounded-t-2xl relative z-10">
               {card.title}
             </h3>
-            
+
             {/* Content */}
             <p className="p-4 relative z-10 group-hover:text-white transition-colors duration-500">
               {card.description}
