@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/EngagementModels.css';  // Importing the custom styles
 
 const EngagementModels = () => {
   const cardData = [
@@ -20,12 +21,9 @@ const EngagementModels = () => {
   ];
 
   return (
-    <div className="p-8 bg-[#01132E] text-white">
-      <div className="text-left mb-8">
-        <h2 className="text-2xl font-bold mb-4">Our Flexible Engagement Models</h2>
-        <p className="text-gray-300">
-          Our team is your partner for the next big digital leap. Our customized and highly flexible engagement models are designed to meet business objectives. All of our service engagements are focused on customer satisfaction, and we ensure that clear communication is maintained throughout.
-        </p>
+    <div className="container">
+      <div className="section-title">
+        <h2>Our Flexible Engagement Models</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-6">
         {cardData.map((card, index) => (
