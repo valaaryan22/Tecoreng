@@ -65,10 +65,10 @@ const Navbar = () => {
                     </ul>
 
                     <div className="nav-buttons hidden md:flex gap-4">
-                        <button className="px-4 py-2 bg-transparent border-2 border-white text-white rounded-full hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-300 hover:border-transparent">
+                        <button className="px-4 py-2 bg-transparent border-2 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
                             Hire Developers
                         </button>
-                        <button className="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-300 text-white rounded-full hover:from-orange-700 hover:to-orange-500">
+                        <button className="px-4 py-2 bg-gradient-to-r from-[#FFA07A] to-[#FF6347] text-white rounded-full hover:from-[#E25F3C] hover:to-[#C84F33]">
                             Get a Quote
                         </button>
                     </div>
@@ -90,10 +90,10 @@ const Navbar = () => {
                         </li>
                     ))}
                     <div className="flex flex-col gap-4 w-full mt-4">
-                        <button className="w-full px-4 py-2 bg-transparent border-2 border-white text-white rounded-full hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-300 hover:border-transparent">
+                        <button className="w-full px-4 py-2 bg-transparent border-2 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
                             Hire Developers
                         </button>
-                        <button className="w-full px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-300 text-white rounded-full hover:from-orange-700 hover:to-orange-500">
+                        <button className="w-full px-4 py-2 bg-gradient-to-r from-[#FFA07A] to-[#FF6347] text-white rounded-full hover:from-[#E25F3C] hover:to-[#C84F33]">
                             Get a Quote
                         </button>
                     </div>
@@ -157,7 +157,7 @@ const Navbar = () => {
                     }
                 }
             `}</style>
-        </div>
+        </div>  
     );
 };
 
