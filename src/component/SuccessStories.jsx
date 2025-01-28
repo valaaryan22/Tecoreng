@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Player } from "video-react";
 import "video-react/dist/video-react.css";
 import ane from '../assets/ane.png';
@@ -69,9 +69,16 @@ const SuccessStories = () => {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="text-5xl font-bold text-left mb-8 text-white sm:text-3xl lg:text-4xl xl:text-5xl">
-        Our Success Stories
-      </h1>
+        <h1
+                    className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
+                    style={{
+                        textShadow:
+                            "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
+                    }}
+                >        Our Success Stories
+
+
+                </h1>
       
       <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {stories.map((story, index) => (

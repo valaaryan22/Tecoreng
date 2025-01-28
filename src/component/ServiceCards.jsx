@@ -1,10 +1,4 @@
-import {
-    Globe2,
-    Megaphone,
-    Palette,
-    Radio,
-    Smartphone
-} from 'lucide-react';
+import { Globe2, Megaphone, Palette, Radio, Smartphone } from 'lucide-react';
 import { useState } from 'react';
 
 const services = [
@@ -62,48 +56,46 @@ const ServiceCards = () => {
   const visibleCards = getVisibleCards();
 
   return (
-    <div className="flex flex-col items-center justify-start w-full py-16 px-4" style={{ backgroundColor: '#01132E' }}>
-      {/* Header Section */}
-      <div className="max-w-4xl w-full text-center mb-16">
-        <h1 className="text-3xl font-bold mb-6 text-white">Our Specialization</h1>
-        <p className="text-lg leading-relaxed mx-auto max-w-3xl text-gray-300">
-          We offer a full range of web app development services that make things better for enterprises and companies we work with.
-          Our team of dedicated mobile app developers fulfills your diverse business requirements through a number of services.
-          We specialize in the following services:
-        </p>
+    <>
+      <div className="flex flex-col items-start ml-5 justify-start w-full py-16 px-4" style={{ backgroundColor: '#01132E' }}>
+        {/* Header Section */}
+        <div className="max-w-4xl w-full mb-16">
+        <h1
+        className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
+        style={{
+          textShadow:
+            "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
+        }}
+      >     Our Specialization
+      </h1>
+          <p className="text-lg leading-relaxed text-left max-w-3xl text-gray-300">
+            We offer a full range of web app development services that make things better for enterprises and companies we work with.
+            Our team of dedicated mobile app developers fulfills your diverse business requirements through a number of services.
+            We specialize in the following services:
+          </p>
+        </div>
       </div>
 
       {/* Cards Section */}
-      <div className="relative w-full max-w-6xl h-[400px] flex items-center justify-center">
+      <div className="relative w-full max-w-8xl h-[320px] flex text-center items-center mb-5 justify-center">
         {visibleCards.map((service, index) => {
           const Icon = service.icon;
           return (
             <div
               key={service.id}
               onClick={() => setSelectedCard(service.id)}
-              className={`absolute w-[320px] p-6 rounded-xl shadow-xl cursor-pointer transition-all duration-500 hover:scale-105
-                ${
-                  index === 1
-                    ? 'bg-white scale-150 z-30' // Center card (selected) - larger scale
-                    : 'bg-white scale-90 z-20 opacity-60 hover:opacity-80' // Side cards - smaller scale
-                }`}
+              className={`service-card absolute p-6 rounded-xl shadow-xl cursor-pointer transition-all duration-500 hover:scale-105
+                ${index === 1 ? 'bg-white scale-150 z-30' : 'bg-white scale-90 z-20 opacity-60 hover:opacity-80'}`}
               style={{
-                transform: `translateX(${(index - 1) * 340}px) ${
-                  index === 1 ? 'scale(1.5)' : 'scale(0.9)'
-                }`,
+                transform: `translateX(${(index - 1) * 340}px) ${index === 1 ? 'scale(1.5)' : 'scale(0.9)'}`,
               }}
             >
               {/* Icon on top */}
               <div className="flex justify-center mb-4">
-                <Icon 
-                  size={40} 
-                  className={`${index === 1 ? 'text-blue-600' : 'text-gray-600'}`}
-                />
+                <Icon size={40} className={`${index === 1 ? 'text-blue-600' : 'text-gray-600'}`} />
               </div>
               {/* Title below icon (black color) */}
-              <h2 className="text-lg font-bold text-center mb-4 text-black">
-                {service.title}
-              </h2>
+              <h2 className="text-lg font-bold text-center mb-4 text-black">{service.title}</h2>
               {/* Description */}
               <p className={`text-xs leading-relaxed text-center ${index === 1 ? 'text-gray-700' : 'text-gray-600'}`}>
                 {service.description}
@@ -112,7 +104,51 @@ const ServiceCards = () => {
           );
         })}
       </div>
-    </div>
+
+      {/* Custom Breakpoints for Responsive Design */}
+      <style>{`
+        .service-card {
+          max-width: 320px;
+          min-width: 270px;
+        }
+
+        @media (max-width: 576px) {
+          .service-card {
+            width: 100%;
+          }
+
+          .service-card-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+          }
+        }
+        @media (min-width: 576px) and (max-width: 768px) {
+          .service-card {
+            width: 100%;
+          }
+
+          .service-card-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+          }
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+          .service-card {
+            width: 100%;
+          }
+        }
+        @media (min-width: 992px) {
+          .service-card-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 

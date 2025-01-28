@@ -20,13 +20,14 @@ function App() {
         <Navbar />
         <VideoPlayer />
         <HeroSection />
-        <ServiceCards />
-        <IndustriesPage />
-        <SuccessStories />
         <ServicesAccordion />
         <WhyChooseUs />
-        <Appreciation />
+
+        <ServiceCards />
         <EngagementModels />
+
+        <IndustriesPage />
+        <Appreciation />
         <Footer />
       </div>
     </>

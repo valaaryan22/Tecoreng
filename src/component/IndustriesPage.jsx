@@ -1,9 +1,14 @@
 const IndustriesPage = () => {
     return (
         <div className="bg-[#01132E] text-white p-8 sm:p-12 md:p-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">
-                Industries We are Experts In
-            </h1>
+        <h1
+        className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
+        style={{
+          textShadow:
+            "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
+        }}
+      >     Industries We are Experts In
+      </h1>
 
             {/* Full container width with responsive grid layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

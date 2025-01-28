@@ -32,8 +32,14 @@ const ServicesAccordion = () => {
 
   return (
     <div className="w-full max-w-[90%] mx-auto p-4">
-      <h2 className="text-5xl font-bold text-left text-white mb-3 
-        text-shadow-xl">Services We Offer</h2>
+      <h1
+        className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
+        style={{
+          textShadow:
+            "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
+        }}
+      >     Services We Offer
+      </h1>
 
       <div className="mb-20 text-white text-left text-sm">
         <p>

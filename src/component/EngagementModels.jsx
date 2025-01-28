@@ -23,9 +23,14 @@
       <div className="p-8 bg-[#01132E] text-white">
         <div className="text-left mb-8">
           {/* Title for "Our Flexible Engagement Models" */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Our Flexible Engagement Models
-          </h2>
+          <h1
+        className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
+        style={{
+          textShadow:
+            "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
+        }}
+      >      Our Flexible Engagement Models
+      </h1>
 
           {/* Description for "Our team is your partner..." */}
           <p className="text-sm sm:text-sm md:text-lg lg:text-xl text-gray-300">

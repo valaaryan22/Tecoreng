@@ -101,7 +101,7 @@ const Footer = () => {
 
                     <div className="col-lg-4 col-md-12" style={{ backgroundColor: "#0b1b33" }}>
                         <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem" }}>
-                            Contact Manu
+                            Contact Information
                         </h5>
                         <ul className="list-unstyled">
                             <li className="mb-3">
