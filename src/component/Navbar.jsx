@@ -22,7 +22,7 @@ const Navbar = () => {
         <>
             <div
                 className="App min-h-screen flex flex-col bg-[#01132E] text-white overflow-x-hidden"
-                
+
             >
                 <header className="fixed top-0 left-0 right-0 z-50 bg-[#01132E] shadow-md">
                     <nav className="navbar flex items-center gap-4 justify-between px-4 py-3">
@@ -172,7 +172,7 @@ const Navbar = () => {
                                 fontSize: '29px',
                                 lineHeight: '30px',
                                 textTransform: 'uppercase',
-                                
+
                             }}
                             onMouseEnter={(e) => e.target.style.transform = 'translateY(0)'} // Smooth on hover
                             onMouseLeave={(e) => e.target.style.transform = 'translateY(-4px)'} // Reset on leave
@@ -190,138 +190,158 @@ const Navbar = () => {
                 {/* Counter Section */}
 
                 <style>{`
-                    .hero h1 {
-                        text-align: left;
-                        color: white;
-                        margin-left: 10%;
-                        margin-top: 10%;
-                    }
-
-                    @media (max-width: 1024px) {
-                        .App {
-                            background-size: contain;
-                            background-position: center;
-                        }
-
                         .hero h1 {
-                            font-size: 4rem;
-                            margin-left: 5%;
-                            margin-top: 5%;
-                            line-height: 1.4;
-                        }
-                    }
-
-                    @media (max-width: 768px) {
-                        .App {
-                            background-size: 150% 150%;
-                            background-position: top center;
+                            text-align: left;
+                            color: white;
+                            margin-left: 10%;
+                            margin-top: 10%;
                         }
 
-                        .hero h1 {
-                            font-size: 3rem;
-                            margin-left: 5%;
-                            margin-top: 5%;
-                            line-height: 1.4;
-                        }
-                    }
+                        @media (max-width: 1024px) {
+                            .App {
+                                background-size: contain;
+                                background-position: center;
+                            }
 
-                    @media (max-width: 480px) {
-                        .App {
-                            background-size: 200% 200%;
-                            background-position: center;
+                            .hero h1 {
+                                font-size: 4rem;
+                                margin-left: 5%;
+                                margin-top: 5%;
+                                line-height: 1.4;
+                            }
                         }
 
-                        .hero h1 {
+                        @media (max-width: 768px) {
+                            .App {
+                                background-size: 150% 150%;
+                                background-position: top center;
+                            }
+
+                            .hero h1 {
+                                font-size: 3rem;
+                                margin-left: 5%;
+                                margin-top: 5%;
+                                line-height: 1.4;
+                            }
+                        }
+
+                        @media (max-width: 480px) {
+                            .App {
+                                background-size: 200% 200%;
+                                background-position: center;
+                            }
+
+                            .hero h1 {
+                                font-size: 2rem;
+                                margin-left: 2%;
+                                margin-top: 2%;
+                            }
+                        }
+
+                        .project-success {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 1rem;
+                        }
+
+                        .counter {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 10px;
+                            border: 2px solid rgb(0, 196, 213);
+                            border-radius: 15px;
+                            background-color: rgba(0, 0, 0, 0.6);
+                        }
+
+                        .title {
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            color: white;
+                        }
+
+                        .details {
                             font-size: 2rem;
-                            margin-left: 2%;
-                            margin-top: 2%;
+                            font-weight: 800;
+                            color: white;
                         }
-                    }
 
-                    .project-success {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 1rem;
-                    }
-
-                    .counter {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 10px;
-                        border: 2px solid rgb(0, 196, 213);
-                        border-radius: 15px;
-                        background-color: rgba(0, 0, 0, 0.6);
-                    }
-
-                    .title {
-                        font-size: 1.25rem;
-                        font-weight: 600;
-                        color: white;
-                    }
-
-                    .details {
-                        font-size: 2rem;
-                        font-weight: 800;
-                        color: white;
-                    }
-
-                    /* Responsive Styles */
-                    @media (max-width: 1024px) {
-                        .counter .title {
-                            font-size: 1.125rem;
+                        /* Responsive Styles */
+                        @media (max-width: 1024px) {
+                            .counter .title {
+                                font-size: 1.125rem;
+                            }
+                            .counter .details {
+                                font-size: 2.25rem;
+                            }
                         }
-                        .counter .details {
-                            font-size: 2.25rem;
-                        }
-                    }
 
-                    @media (max-width: 768px) {
-                        .counter .title {
-                            font-size: 1.125rem;
+                        @media (max-width: 768px) {
+                            .counter .title {
+                                font-size: 1.125rem;
+                            }
+                            .counter .details {
+                                font-size: 2rem;
+                            }
                         }
-                        .counter .details {
-                            font-size: 2rem;
-                        }
-                    }
 
-                    @media (max-width: 480px) {
-                        .counter .title {
-                            font-size: 1rem;
-                        }
-                        .counter .details {
-                            font-size: 1.75rem;
-                        }
+                        @media (max-width: 480px) {
+                            .counter .title {
+                                font-size: 1rem;
+                            }
+                            .counter .details {
+                                font-size: 1.75rem;
+                            }
+                                 @media (max-width: 1024px) {
+                    .App {
+                        background-size: contain;
+                        background-position: center;
                     }
-                `}</style>
+                }
+
+                @media (max-width: 768px) {
+                    .App {
+                        background-size: 150% 150%;
+                        background-position: top center;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .App {
+                        background-size: 200% 200%;
+                        background-position: center;
+                    }
+                        }
+                    `}</style>
             </div>
             <div className="relative z-10 mb-3 border-2 rounded-3xl border-cyan-400 max-w-6xl mx-auto mt-16 px-4">
-                <div className="backdrop-blur-sm rounded-3xl   p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="backdrop-blur-sm rounded-3xl p-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         {/* Successful Projects */}
                         <div className="text-center">
                             <div className="text-white text-xl">Successful Projects</div>
-                            <div className="text-cyan-400 text-6xl font-bold mb-2">100+</div>
+                            <div className="text-cyan-400 text-4xl sm:text-5xl md:text-6xl font-bold mb-2">100+</div>
                         </div>
 
                         {/* Repeated Client */}
                         <div className="text-center">
                             <div className="text-white text-xl">Repeated Client</div>
-                            <div className="text-cyan-400 text-6xl font-bold mb-2">80%</div>
+                            <div className="text-cyan-400 text-4xl sm:text-5xl md:text-6xl font-bold mb-2">80%</div>
                         </div>
 
                         {/* Years in Industry */}
                         <div className="text-center">
                             <div className="text-white text-xl">Years in Industry</div>
-                            <div className="text-cyan-400 text-6xl font-bold mb-2">9+</div>
+                            <div className="text-cyan-400 text-4xl sm:text-5xl md:text-6xl font-bold mb-2">9+</div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </>
     );
 };
 
-export default Navbar;
+export default Navbar;  

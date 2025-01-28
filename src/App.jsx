@@ -4,9 +4,8 @@ import Footer from './component/Footer';
 import HeroSection from './component/HeroSection';
 import IndustriesPage from './component/IndustriesPage';
 import Navbar from './component/Navbar';
-import ServiceCards from './component/ServiceCards';
 import ServicesAccordion from './component/ServicesAccordion';
-import SuccessStories from './component/SuccessStories';
+import Specialization from './component/Specialization';
 import VideoPlayer from './component/VideoPlayer';
 import WhyChooseUs from './component/WhyChooseUs';
 
@@ -23,7 +22,7 @@ function App() {
         <ServicesAccordion />
         <WhyChooseUs />
 
-        <ServiceCards />
+        <Specialization />
         <EngagementModels />
 
         <IndustriesPage />

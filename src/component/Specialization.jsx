@@ -39,7 +39,7 @@ const services = [
   },
 ];
 
-const ServiceCards = () => {
+const Specialization = () => {
   const [selectedCard, setSelectedCard] = useState(2);
 
   const getVisibleCards = () => {
@@ -152,4 +152,4 @@ const ServiceCards = () => {
   );
 };
 
-export default ServiceCards;
+export default Specialization;
