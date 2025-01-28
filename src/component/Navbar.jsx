@@ -22,12 +22,7 @@ const Navbar = () => {
         <>
             <div
                 className="App min-h-screen flex flex-col bg-[#01132E] text-white overflow-x-hidden"
-                style={{
-                    backgroundImage: `url(${laptop})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "left top",
-                    backgroundRepeat: "no-repeat",
-                }}
+                
             >
                 <header className="fixed top-0 left-0 right-0 z-50 bg-[#01132E] shadow-md">
                     <nav className="navbar flex items-center gap-4 justify-between px-4 py-3">
@@ -151,7 +146,12 @@ const Navbar = () => {
                         </div>
                     </ul>
                 </header>
-                <div className="container mx-auto px-4 min-h-screen flex items-center relative z-10">
+                <div className="container mx-auto px-4 min-h-screen flex items-center relative z-10" style={{
+                    backgroundImage: `url(${laptop})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "left top",
+                    backgroundRepeat: "no-repeat",
+                }}>
                     <div className="w-full md:w-1/2 pt-20">
                         <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-8">
                             Web & Mobile App
@@ -161,7 +161,7 @@ const Navbar = () => {
                             Company
                         </h1>
                         <button
-                            className="flex items-center justify-center px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300"
+                            className="flex items-center  justify-center px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300"
                             style={{
                                 willChange: 'transform',
                                 transition: 'transform 250ms',
@@ -171,7 +171,8 @@ const Navbar = () => {
                                 fontWeight: '700',
                                 fontSize: '29px',
                                 lineHeight: '30px',
-                                textTransform: 'uppercase'
+                                textTransform: 'uppercase',
+                                
                             }}
                             onMouseEnter={(e) => e.target.style.transform = 'translateY(0)'} // Smooth on hover
                             onMouseLeave={(e) => e.target.style.transform = 'translateY(-4px)'} // Reset on leave
