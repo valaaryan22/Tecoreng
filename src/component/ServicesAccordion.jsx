@@ -1,4 +1,8 @@
 import { useState } from "react";
+import Reactsvg from '../assets/react-jsTCE.dc2e1b7f.svg';
+import Laravel from '../assets/laravelTCE.46e12fe8.svg';
+import Node from '../assets/nodejsTCE.ed01dd43.svg';
+import Angular from '../assets/angularTCE.190d8320.svg';
 
 const ServicesAccordion = () => {
   const services = [
@@ -32,8 +36,9 @@ const ServicesAccordion = () => {
 
   return (
     <div className="w-full max-w-[90%] mx-auto p-4">
-      <h2 className="text-5xl font-bold text-left text-white mb-3 
-        text-shadow-xl">Services We Offer</h2>
+      <h2 className="text-5xl font-bold text-left text-white mb-3 text-shadow-xl">
+        Services We Offer
+      </h2>
 
       <div className="mb-20 text-white text-left text-sm">
         <p>
@@ -41,7 +46,7 @@ const ServicesAccordion = () => {
         </p>
       </div>
 
-      {/* Adding a gap between the paragraph and the accordion */}
+      {/* Accordion */}
       <div className="space-y-10 mt-6">
         {services.map((service, index) => (
           <div
@@ -60,11 +65,38 @@ const ServicesAccordion = () => {
 
             {/* Accordion Content */}
             <div
-              className={`px-4 text-white text-sm transition-all duration-300 ease-out
+              className={`px-4 text-white text-sm flex justify-between items-center transition-all duration-300 ease-out
                 ${activeIndex === index ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0'}`}
               style={{ overflow: 'hidden' }}
             >
-              {service.details}
+              {/* Description */}
+              <div className="flex-grow">
+                <p>{service.details}</p>
+              </div>
+
+              {/* Icons */}
+              <div className="flex space-x-4">
+                <img
+                  src={Reactsvg}
+                  alt="React Icon"
+                  className="w-10 h-10"
+                />
+                <img
+                  src={Laravel}
+                  alt="Laravel Icon"
+                  className="w-10 h-10"
+                />
+                <img
+                  src={Node}
+                  alt="Node Icon"
+                  className="w-10 h-10"
+                />
+                <img
+                  src={Angular}
+                  alt="Angular Icon"
+                  className="w-10 h-10"
+                />
+              </div>
             </div>
           </div>
         ))}

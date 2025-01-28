@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaSkype, FaPhone } from 'react-icons/fa'; // Import React Icons
+import Linkedin from '../assets/LinkedinFollow.213bb388.svg';
+import Twitter from '../assets/TwitterFollow.99d320e4.svg';
+import Facebook from '../assets/FbFollow.8f432841.svg';
+import Pinterest from '../assets/PinterestFollow.24dedd45.svg';
+import Behance from '../assets/behanceFollow.8020f39c.svg';
+import Medium from '../assets/mediumFollow.e83b68d2.svg';
+import Dribble from '../assets/dribbleFollow.57dc1fb5.svg';
+import Skype from '../assets/skype.fa9016d5.svg'
+import Phone from '../assets/phone.fd7b91e0.svg'
 
 const GetInTouch = () => {
     const [formData, setFormData] = useState({
@@ -44,37 +52,44 @@ const GetInTouch = () => {
                         Let’s Transform Your <br />Vision Into Value.
                     </p>
 
-
                     <p className="text-lg font-medium mb-4 ml-16">Contact us:</p>
                     <ul className="mb-12">
                         <li className="text-md mb-6 ml-10">
-                            <FaSkype className="inline mr-2 text-blue-500" />
+                            <img src={Skype} alt="LinkedIn" className="inline mr-2 w-4 h-4 text-blue-500" />
                             biz.tecoreng
                         </li>
                         <li className="text-md mb-6 ml-10">
-                            <FaPhone className="inline mr-2 text-blue-500" />
+                            <img src={Phone} alt="LinkedIn" className="inline mr-2 w-4 h-4 text-blue-500" />
                             +91 85117 46476
                         </li>
-
                     </ul>
 
                     <p className="text-3xl font-extrabold ml-16 mb-1">Our Socials:</p>
                     <p className="text-md font-semibold mt-4 ml-16">Don’t Miss To Follow Us On Our Social Networks Accounts.</p>
                     <div className="flex space-x-6 ml-16">
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                            <FaFacebookF className="text-2xl hover:text-blue-600 transition duration-300" />
+                            <img src={Twitter} alt="LinkedIn" className="w-8 h-8 hover:scale-105 transition-transform duration-300" />
                         </a>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                            <FaTwitter className="text-2xl hover:text-blue-400 transition duration-300" />
+                            <img src={Facebook} alt="LinkedIn" className="w-8 h-8 hover:scale-105 transition-transform duration-300" />
                         </a>
                         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedinIn className="text-2xl hover:text-blue-700 transition duration-300" />
+                            <img src={Linkedin} alt="LinkedIn" className="w-8 h-8 hover:scale-105 transition-transform duration-300" />
                         </a>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                            <FaInstagram className="text-2xl hover:text-pink-600 transition duration-300" />
+                            <img src={Pinterest} alt="LinkedIn" className="w-8 h-8 hover:scale-105 transition-transform duration-300" />
                         </a>
-                    </div>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                            <img src={Behance} alt="LinkedIn" className="w-8 h-8 hover:scale-105 transition-transform duration-300" />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                            <img src={Dribble} alt="LinkedIn" className="w-8 h-8 hover:scale-105 transition-transform duration-300" />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                            <img src={Medium} alt="LinkedIn" className="w-8 h-8 hover:scale-105 transition-transform duration-300" />
+                        </a>
 
+                    </div>
                 </div>
 
                 {/* Right Section - Form */}
