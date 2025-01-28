@@ -1,31 +1,78 @@
 import { useState } from "react";
+import angular from '../assets/angular.svg';
+import ionic from '../assets/ionic.svg';
+import laravel from '../assets/laravel.svg';
+import nodejs from '../assets/nodejs.svg';
+import react from '../assets/react.svg';
 
 const ServicesAccordion = () => {
   const services = [
-    {
+    { 
+      titleIcon: ionic,
       title: "Web Development",
       details: "Transform your business concepts with our web development services, crafting innovative and next-generation websites.",
+      technologies: [
+        { name: "React JS", icon: react, alt: "React Logo" },
+        { name: "Angular", icon: angular, alt: "Angular Logo" },
+        { name: "Laravel", icon: laravel, alt: "Laravel Logo" },
+        { name: "Node JS", icon: nodejs, alt: "NodeJS Logo" }
+      ]
     },
-    {
+    { 
+      titleIcon: ionic,
       title: "Mobile App Development",
       details: "Drive digital evolution by creating scalable, compelling, and feature-rich mobile applications.",
+      technologies: [
+        { name: "React JS", icon: react, alt: "React Logo" },
+        { name: "Angular", icon: angular, alt: "Angular Logo" },
+        { name: "Laravel", icon: laravel, alt: "Laravel Logo" },
+        { name: "Node JS", icon: nodejs, alt: "NodeJS Logo" }
+      ]
     },
-    {
+    { 
+      titleIcon: ionic,
       title: "Graphic Designing",
       details: "Through our creatively inspired and strategically guided solutions, we assist your brand in establishing emotional connections with consumers.",
+      technologies: [
+        { name: "React JS", icon: react, alt: "React Logo" },
+        { name: "Angular", icon: angular, alt: "Angular Logo" },
+        { name: "Laravel", icon: laravel, alt: "Laravel Logo" },
+        { name: "Node JS", icon: nodejs, alt: "NodeJS Logo" }
+      ]
     },
-    {
+    { 
+      titleIcon: ionic,
       title: "UI/UX Design",
       details: "We specialise in crafting professional and creative websites. Our designers create websites that are both search engine and user-friendly.",
+      technologies: [
+        { name: "React JS", icon: react, alt: "React Logo" },
+        { name: "Angular", icon: angular, alt: "Angular Logo" },
+        { name: "Laravel", icon: laravel, alt: "Laravel Logo" },
+        { name: "Node JS", icon: nodejs, alt: "NodeJS Logo" }
+      ]
     },
-    {
+    { 
+      titleIcon: ionic,
       title: "Quality Assurance",
       details: "Explore our user-friendly and seamless website and app development services, designed for easy management.",
+      technologies: [
+        { name: "React JS", icon: react, alt: "React Logo" },
+        { name: "Angular", icon: angular, alt: "Angular Logo" },
+        { name: "Laravel", icon: laravel, alt: "Laravel Logo" },
+        { name: "Node JS", icon: nodejs, alt: "NodeJS Logo" }
+      ]
     },
-    {
+    { 
+      titleIcon: ionic,
       title: "Digital Marketing",
       details: "Leverage our digital marketing services to achieve outstanding sales conversions and maximise ROI.",
-    },
+      technologies: [
+        { name: "React JS", icon: react, alt: "React Logo" },
+        { name: "Angular", icon: angular, alt: "Angular Logo" },
+        { name: "Laravel", icon: laravel, alt: "Laravel Logo" },
+        { name: "Node JS", icon: nodejs, alt: "NodeJS Logo" }
+      ]
+    }
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);
@@ -38,7 +85,8 @@ const ServicesAccordion = () => {
           textShadow:
             "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
         }}
-      >     Services We Offer
+      >
+        Services We Offer
       </h1>
 
       <div className="mb-20 text-white text-left text-sm">
@@ -55,13 +103,13 @@ const ServicesAccordion = () => {
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(null)}
             className={`w-full border rounded-3xl shadow-md overflow-hidden transition-all duration-300 ease-out transform
-              ${activeIndex === index ? 'bg-gradient-to-r from-[#6ec1e4] to-[#0b1b33] border-[#6ec1e4] translate-y-[-5px] scale-105' : 'bg-[#0b1b33] border-white hover:border-[#6ec1e4] scale-105'}
-            `}
+              ${activeIndex === index ? 'bg-gradient-to-r from-[#6ec1e4] to-[#0b1b33] border-[#6ec1e4] translate-y-[-5px] scale-105' : 'bg-[#0b1b33] border-white hover:border-[#6ec1e4] scale-105'}`}
             style={{ borderWidth: '0.5px' }}
           >
             {/* Accordion Header */}
-            <div className="p-4 text-lg font-semibold text-white">
-              {service.title}
+            <div className="flex items-center p-4 text-lg font-semibold text-white">
+              <img src={service.titleIcon} alt="Service Icon" className="w-8 h-8 mr-3" /> {/* Title Icon */}
+              <span>{service.title}</span> {/* Service Title */}
             </div>
 
             {/* Accordion Content */}
@@ -70,7 +118,22 @@ const ServicesAccordion = () => {
                 ${activeIndex === index ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0'}`}
               style={{ overflow: 'hidden' }}
             >
-              {service.details}
+              <div className="flex flex-col md:flex-row items-center space-x-8">
+                {/* Left side: Details */}
+                <div className="flex-1 text-left md:w-1/2">{service.details}</div>
+
+                {/* Right side: Icons */}
+                <div className="flex flex-wrap md:flex-row sm:flex-row justify-start space-x-6 sm:space-x-4 md:space-x-6">
+                  {service.technologies.map((tech, i) => (
+                    <img
+                      key={i} // Ensures a unique key for each icon
+                      src={tech.icon}
+                      alt={tech.alt}
+                      className="w-9 h-9 sm:w-14 sm:h-14 md:w-18 md:h-18 lg:w-22 lg:h-22 object-contain transition-transform transform hover:scale-110" // Responsive sizes
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         ))}
