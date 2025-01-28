@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Player } from "video-react";
-import "video-react/dist/video-react.css";
 import img from '../logo2.png';
 import video1 from '../assets/video1.mp4';
 import video2 from '../assets/video2.mp4';
@@ -30,32 +28,11 @@ const SuccessStories = () => {
     }
   ];
 
-  React.useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      .video-react .video-react-control-bar {
-        display: none;
-      }
-      .video-react .video-react-big-play-button {
-        display: none;
-      }
-      .video-react .video-react-loading-spinner {
-        display: none;
-      }
-      .video-react video {
-        object-fit: cover;
-      }
-    `;
-    document.head.appendChild(style);
-    return () => document.head.removeChild(style);
-  }, []);
-
   return (
     <div className="container mx-auto px-4 py-16 bg-slate-900">
       <h1 className="text-4xl font-bold text-center mb-12 text-white">
         Our Success Stories
       </h1>
-      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {stories.map((story, index) => (
           <div
@@ -64,17 +41,16 @@ const SuccessStories = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="relative" style={{ height: '300px' }}> {/* Fixed height for both image and video */}
+            <div className="relative" style={{ height: '300px' }}>
               {hoveredIndex === index ? (
-                <div className="absolute inset-0 z-0">
-                  <Player
-                    playsInline
-                    muted
-                    autoPlay
-                    src={story.video}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  src={story.video}
+                />
               ) : (
                 <img
                   src={story.image}
@@ -83,8 +59,8 @@ const SuccessStories = () => {
                 />
               )}
             </div>
-            <div className="p-4 z-10"> {/* Decreased padding to reduce space */}
-              <h3 className="text-2xl font-semibold mb-2 text-white"> {/* Reduced margin between heading and description */}
+            <div className="p-4 z-10">
+              <h3 className="text-2xl font-semibold mb-2 text-white">
                 {story.title}
               </h3>
               <p className="text-gray-300 text-base leading-relaxed">

@@ -12,6 +12,9 @@ import WhyChooseUs from './component/WhyChooseUs';
 import ClientAppreciation from './component/ClientAppreciation';
 import HeroSection from './component/HeroSection';
 import OurDevelopmentProcess from './component/OurDevelopmentProcess';
+import Tecoreng from './component/TeorengInsight';
+
+import GetInTouch from './component/GetInTouch';
 function App() {
   return (
     <>
@@ -27,7 +30,8 @@ function App() {
       <SuccessStories/>
       <IndustriesPage></IndustriesPage>
       <ClientAppreciation/>
-
+      <Tecoreng/>
+    <GetInTouch/>
       
       <Footer/>
     </div>

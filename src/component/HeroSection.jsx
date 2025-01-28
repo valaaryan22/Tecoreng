@@ -1,5 +1,6 @@
 import React from "react";
-import img from '../assets/img1.jpeg'; // Import the image
+import img from '../assets/infinite.c057ea68.webp'; // Import the infinite image
+import img2 from '../assets/ball.9fdf93ca.webp'; // Import the ball image
 
 const HeroSection = () => {
   return (
@@ -8,7 +9,7 @@ const HeroSection = () => {
       style={{
         backgroundImage:
           "linear-gradient(rgb(17, 37, 66), rgb(17, 37, 66)), linear-gradient(rgba(255, 255, 255, 0.58) 0px, rgba(1, 19, 46, 0) 100%)",
-        backgroundSize: "100% 100%", // Ensures the background covers the entire viewport
+        backgroundSize: "100% 100%",
       }}
     >
       <div
@@ -17,13 +18,13 @@ const HeroSection = () => {
           backgroundImage:
             "linear-gradient(rgb(17, 37, 66), rgb(17, 37, 66)), linear-gradient(rgba(255, 255, 255, 0.58) 0px, rgba(1, 19, 46, 0) 100%)",
           backgroundSize: "100% 100%",
-          borderRadius: "16px", // Optional, for rounded corners
+          borderRadius: "16px",
         }}
       >
         {/* Left Content */}
         <div className="md:w-1/2">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-            Transfer your enterprise with digital innovation
+            Transform your enterprise with digital innovation
           </h1>
           <p className="text-lg mb-8">
             Your success as a market innovator reflects our strides as a unified
@@ -41,12 +42,20 @@ const HeroSection = () => {
           </button>
         </div>
 
-        {/* Right Image with Background Color */}
-        <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center bg-[#01132E] p-6 rounded-lg">
+        {/* Right Image with Animated Ball */}
+        <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center p-6 rounded-lg relative">
           <img
-            src={img} // Using the imported image path
+            src={img}
             alt="Digital Innovation"
-            className="w-80 md:w-full object-contain"
+            className="w-96 md:w-full object-contain"
+          />
+          <svg width="0" height="0">
+            <path id="infinityPath" d="M 100,50 C 0,0 0,100 100,50 C 200,0 200,100 100,50" />
+          </svg>
+          <img
+            src={img2}
+            alt="Animated Ball"
+            className="absolute w-12 h-12 animate-infinity"
           />
         </div>
       </div>
