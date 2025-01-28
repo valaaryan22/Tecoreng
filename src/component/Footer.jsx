@@ -3,10 +3,10 @@ import logo from '../logo.svg';
 const Footer = () => {
     return (
         <footer style={{ backgroundColor: "#0b1b33", color: "#fff", marginTop: "2rem", padding: "2rem 0" }}>
-            <div className="container" style={{ backgroundColor: "#0b1b33" }}>
+            <div className="container" style={{ backgroundColor: "#0b1b33", fontSize: '1.1rem' }}>
                 <div className="row justify-content-between">
-                    <div className="col-lg-3 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33" }}>
-                        <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem" }}>
+                    <div className="col-lg-3 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33", fontSize: '1.1rem' }}>
+                        <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem", fontSize: '1.5rem' }}>
                             Features Manu
                         </h5>
                         <ul className="list-unstyled">
@@ -39,7 +39,7 @@ const Footer = () => {
                     </div>
 
                     <div className="col-lg-5 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33" }}>
-                        <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem" }}>
+                        <h5 className="mb-4" style={{ borderBottom: "1px dotted #fff", paddingBottom: "0.5rem", fontSize: '1.5rem' }}>
                             Services Manu
                         </h5>
                         <div className="row">
@@ -100,7 +100,7 @@ const Footer = () => {
                     </div>
 
                     <div className="col-lg-4 col-md-12" style={{ backgroundColor: "#0b1b33" }}>
-                        <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem" }}>
+                        <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem", fontSize: '1.5rem' }}>
                             Contact Information
                         </h5>
                         <ul className="list-unstyled">

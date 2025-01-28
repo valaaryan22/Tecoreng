@@ -103,7 +103,7 @@ const ServicesAccordion = () => {
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(null)}
             className={`w-full border rounded-3xl shadow-md overflow-hidden transition-all duration-300 ease-out transform
-              ${activeIndex === index ? 'bg-gradient-to-r from-[#6ec1e4] to-[#0b1b33] border-[#6ec1e4] translate-y-[-5px] scale-105' : 'bg-[#0b1b33] border-white hover:border-[#6ec1e4] scale-105'}`}
+              ${activeIndex === index ? 'bg-gradient-to-r from-[#2e415c] to-[#051c3f] border-[#6ec1e4] translate-y-[-5px] scale-105' : 'bg-gradient-to-r from-[#0b1b33] to-[#01132E] border-white hover:bg-gradient-to-r hover:from-[#0b1b33] hover:to-[#01132E] scale-105'}`}
             style={{ borderWidth: '0.5px' }}
           >
             {/* Accordion Header */}
@@ -125,12 +125,16 @@ const ServicesAccordion = () => {
                 {/* Right side: Icons */}
                 <div className="flex flex-wrap md:flex-row sm:flex-row justify-start space-x-6 sm:space-x-4 md:space-x-6">
                   {service.technologies.map((tech, i) => (
-                    <img
-                      key={i} // Ensures a unique key for each icon
-                      src={tech.icon}
-                      alt={tech.alt}
-                      className="w-9 h-9 sm:w-14 sm:h-14 md:w-18 md:h-18 lg:w-22 lg:h-22 object-contain transition-transform transform hover:scale-110" // Responsive sizes
-                    />
+                    <div key={i} className="flex flex-col items-center group">
+                      <img
+                        src={tech.icon}
+                        alt={tech.alt}
+                        className="w-9 h-9 sm:w-14 sm:h-14 md:w-18 md:h-18 lg:w-22 lg:h-22 object-contain transition-transform transform hover:scale-110" // Responsive sizes
+                      />
+                      <span className="text-xs mt-2 text-center text-white group-hover:text-[#17252b]">
+                        {tech.name}
+                      </span>
+                    </div>
                   ))}
                 </div>
               </div>

@@ -2,7 +2,7 @@ const { withTV } = require("tailwind-variants/transformer");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withTV({
-  darkMode: ["class"],
+  darkMode: ["class"], // Enable dark mode with the 'class' strategy
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
@@ -13,16 +13,16 @@ module.exports = withTV({
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "2rem", // Adds padding to the container by default
       screens: {
-        "2xl": "1400px",
+        "2xl": "1400px", // Maximum screen size for the container
       },
     },
     extend: {
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "var(--radius)", // Custom large radius
+        md: "calc(var(--radius) - 2px)", // Custom medium radius
+        sm: "calc(var(--radius) - 4px)", // Custom small radius
       },
       colors: {
         border: "hsl(var(--border))",
@@ -31,34 +31,35 @@ module.exports = withTV({
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "hsl(var(--primary))", // Primary color
+          foreground: "hsl(var(--primary-foreground))", // Primary foreground
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "hsl(var(--secondary))", // Secondary color
+          foreground: "hsl(var(--secondary-foreground))", // Secondary foreground
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "hsl(var(--destructive))", // Destructive color (e.g., error, delete)
+          foreground: "hsl(var(--destructive-foreground))", // Destructive foreground
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "hsl(var(--muted))", // Muted color (used for less emphasized elements)
+          foreground: "hsl(var(--muted-foreground))", // Muted foreground
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "hsl(var(--accent))", // Accent color (used for highlights, buttons)
+          foreground: "hsl(var(--accent-foreground))", // Accent foreground
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "hsl(var(--popover))", // Popover color (used for modal-like elements)
+          foreground: "hsl(var(--popover-foreground))", // Popover foreground
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "hsl(var(--card))", // Card background color
+          foreground: "hsl(var(--card-foreground))", // Card foreground color
         },
       },
     },
   },
+  plugins: [], // Add any plugins you may need here
 });

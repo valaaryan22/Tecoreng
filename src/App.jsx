@@ -1,4 +1,5 @@
 import Appreciation from './component/Appreciations';
+import DevelopmentProcess from './component/DevelopmentProcess';
 import EngagementModels from './component/EngagementModels';
 import Footer from './component/Footer';
 import HeroSection from './component/HeroSection';
@@ -24,7 +25,10 @@ function App() {
         <WhyChooseUs />
 
         <Specialization />
+        <DevelopmentProcess/>
+        
         <EngagementModels />
+
         <SuccessStories/>
         <IndustriesPage />
         <Appreciation />

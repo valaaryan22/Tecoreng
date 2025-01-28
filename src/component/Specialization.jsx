@@ -60,14 +60,15 @@ const Specialization = () => {
       <div className="flex flex-col items-start ml-5 justify-start w-full py-16 px-4" style={{ backgroundColor: '#01132E' }}>
         {/* Header Section */}
         <div className="max-w-4xl w-full mb-16">
-        <h1
-        className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
-        style={{
-          textShadow:
-            "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
-        }}
-      >     Our Specialization
-      </h1>
+          <h1
+            className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
+            style={{
+              textShadow:
+                "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
+            }}
+          >
+            Our Specialization
+          </h1>
           <p className="text-lg leading-relaxed text-left max-w-3xl text-gray-300">
             We offer a full range of web app development services that make things better for enterprises and companies we work with.
             Our team of dedicated mobile app developers fulfills your diverse business requirements through a number of services.
@@ -77,7 +78,7 @@ const Specialization = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="relative w-full max-w-8xl h-[320px] flex text-center items-center mb-5 justify-center">
+      <div className="relative w-full max-w-8xl h-[320px] flex text-center items-center mb-11 justify-center">
         {visibleCards.map((service, index) => {
           const Icon = service.icon;
           return (
@@ -85,16 +86,16 @@ const Specialization = () => {
               key={service.id}
               onClick={() => setSelectedCard(service.id)}
               className={`service-card absolute p-6 rounded-xl shadow-xl cursor-pointer transition-all duration-500 hover:scale-105
-                ${index === 1 ? 'bg-white scale-150 z-30' : 'bg-white scale-90 z-20 opacity-60 hover:opacity-80'}`}
+                ${index === 1 ? 'bg-white scale-150 z-30' : 'bg-white scale-90 z-20 opacity-70 hover:opacity-90'}`}
               style={{
-                transform: `translateX(${(index - 1) * 340}px) ${index === 1 ? 'scale(1.5)' : 'scale(0.9)'}`,
+                transform: `translateX(${(index - 1) * 280}px) translateY(-10%) ${index === 1 ? 'scale(1.6)' : 'scale(0.9)'}`,
               }}
             >
               {/* Icon on top */}
               <div className="flex justify-center mb-4">
                 <Icon size={40} className={`${index === 1 ? 'text-blue-600' : 'text-gray-600'}`} />
               </div>
-              {/* Title below icon (black color) */}
+              {/* Title below icon */}
               <h2 className="text-lg font-bold text-center mb-4 text-black">{service.title}</h2>
               {/* Description */}
               <p className={`text-xs leading-relaxed text-center ${index === 1 ? 'text-gray-700' : 'text-gray-600'}`}>
@@ -108,25 +109,39 @@ const Specialization = () => {
       {/* Custom Breakpoints for Responsive Design */}
       <style>{`
         .service-card {
-          max-width: 320px;
-          min-width: 270px;
+          max-width: 250px;
+          min-width: 230px;
         }
 
+        /* For smaller devices (like iPhone 12) with width: 390px */
+        @media (max-width: 390px) and (max-height: 844px) {
+          .service-card {
+            width: 56.7%;  /* Reduced width by additional 10% from 63% */
+            height: 240px; /* Height remains the same */
+            transform: scale(0.72);  /* Reduced scale to fit the reduced width */
+          }
+        }
+
+        /* Small screen styles */
         @media (max-width: 576px) {
           .service-card {
-            width: 100%;
+            width: 80%;
+            transform: scale(0.85);
           }
 
           .service-card-wrapper {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 100%;
+            width: 85%;
           }
         }
+
+        /* Tablet size */
         @media (min-width: 576px) and (max-width: 768px) {
           .service-card {
-            width: 100%;
+            width: 80%;
+            transform: scale(0.9);
           }
 
           .service-card-wrapper {
@@ -135,16 +150,21 @@ const Specialization = () => {
             width: 100%;
           }
         }
+
+        /* Larger tablets */
         @media (min-width: 768px) and (max-width: 992px) {
           .service-card {
-            width: 100%;
+            width: 80%;
+            transform: scale(1);
           }
         }
+
+        /* Desktops and larger */
         @media (min-width: 992px) {
           .service-card-wrapper {
             display: flex;
             justify-content: space-between;
-            width: 50%;
+            width: 45%;
           }
         }
       `}</style>
