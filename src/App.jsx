@@ -3,12 +3,13 @@ import EngagementModels from './component/EngagementModels';
 import Footer from './component/Footer';
 import HeroSection from './component/HeroSection';
 import IndustriesPage from './component/IndustriesPage';
+import Insights from './component/Insights';
 import Navbar from './component/Navbar';
 import ServicesAccordion from './component/ServicesAccordion';
 import Specialization from './component/Specialization';
+import SuccessStories from './component/SuccessStories';
 import VideoPlayer from './component/VideoPlayer';
 import WhyChooseUs from './component/WhyChooseUs';
-
 function App() {
   return (
     <>
@@ -24,9 +25,10 @@ function App() {
 
         <Specialization />
         <EngagementModels />
-
+        <SuccessStories/>
         <IndustriesPage />
         <Appreciation />
+        <Insights />
         <Footer />
       </div>
     </>

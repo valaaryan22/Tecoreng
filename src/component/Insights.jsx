@@ -1,0 +1,113 @@
+import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';  // Import Swiper's styles
+import image from '../assets/image.jpg';
+import image1 from '../assets/image1.jpg';
+import image2 from '../assets/image2.jpg';
+import image4 from '../assets/image4.png';
+import image6 from '../assets/image6.png';
+
+const natureImages = [
+    {
+        imageUrl: image1,
+        title: "Denis Cartin",
+        description:
+            'They have good timing and quality in task solving. Their project management was outstanding. Always delivered on time and quickly replied to our needs and demands. The Communication was effective and running smoothly, with constant updates on the project\'s progress. They also shared significant insights and suggestions for developing the project. Discover the peaceful embrace of nature\'s quiet corners, where every element works in harmony to inspire a sense of calm and balance.',
+    },
+    {
+        imageUrl: image2,
+        title: "Kean Graham",
+        description:
+            'What most impressed us about Technical Core Engineers was their wide range of knowledge and commitment to the completion of our project. They exceeded our expectations rather than meeting them. Their ability to quickly understand the difficulties of our business and personalize their solutions to our specific need was absolutely impressive.',
+    },
+    {
+        imageUrl: image,
+        title: "Chetan Patwardhan",
+        description:
+            'What most impressed us about Technical Core Engineers was their commitment to delivering a service that exceeded our expectations. Their commitment to the project, dedication to excellence, and willingness to go the extra mile truly distinguish them. They demonstrated a thorough understanding of the business and adjusted their solutions to meet our specific needs.',
+    },
+    {
+        imageUrl: image4,
+        title: "Chetan Patwardhan",
+        description:
+            "Witness the sky's dramatic transformation as the setting sun paints a masterpiece of color, reminding us of nature's fleeting moments of brilliance.",
+    },
+    {
+        imageUrl: image6,
+        title: "Chetan Patwardhan",
+        description:
+            "Experience the soothing stillness of a pristine lakeside, where reflections of the surrounding beauty invite moments of quiet reflection.",
+    },
+];
+
+const Insights = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const isLaptop = window.innerWidth >= 1024;
+
+    // Swiper configuration
+    const swiperConfig = {
+        loop: true,
+        slidesPerView: isLaptop ? 3 : 1,
+        spaceBetween: 30,
+        autoplay: {
+            delay: 5000, // Auto-slide every 5 seconds
+            disableOnInteraction: false, // Keep autoplay running when user interacts
+        },
+        pagination: {
+            clickable: true, // Make dots clickable
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2, // Show 2 slides for medium devices
+            },
+            1024: {
+                slidesPerView: 3, // Show 3 slides for large devices
+            },
+        },
+    };
+
+    return (
+        <div className="container mx-auto px-4 py-16">
+            <h1
+                className="text-4xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
+                style={{
+                    textShadow:
+                        "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
+                }}
+            >
+                Tecoreng insights
+            </h1>
+
+            {/* Swiper Slider */}
+            <Swiper {...swiperConfig}>
+                {natureImages.map((image, index) => (
+                    <SwiperSlide key={index} className="relative bg-[#0b1b33] text-white rounded-2xl shadow-lg overflow-hidden group">
+                        {/* Card Image */}
+                        <div className="relative h-80"> {/* Fixed height for all images */}
+                            <img
+                                src={image.imageUrl}
+                                alt={image.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <div className="text-center text-white px-4">
+                                    <h3 className="text-2xl font-bold">{image.title}</h3>
+                                    <p className="text-sm mt-2">{image.description}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Card Text Content */}
+                        <div className="p-6 space-y-4 h-40"> {/* Fixed height for the text section */}
+                            <h3 className="text-xl font-bold tracking-tight">{image.title}</h3>
+                            <p className="text-white text-sm">{image.description}</p>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    );
+};
+
+export default Insights;
