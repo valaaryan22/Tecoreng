@@ -115,15 +115,7 @@ const Specialization = () => {
       </div>
 
       {/* Arrow Navigation */}
-      <div className="flex justify-between absolute top-1/2 left-0 right-0 px-5">
-        <button onClick={() => handleCardClick('left')} className="bg-blue-500 text-white p-2 rounded-full">
-          ←
-        </button>
-        <button onClick={() => handleCardClick('right')} className="bg-blue-500 text-white p-2 rounded-full">
-          →
-        </button>
-      </div>
-
+        
       {/* Custom Breakpoints for Responsive Design */}
       <style>{`
         .service-card {
