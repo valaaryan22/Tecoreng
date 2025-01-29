@@ -1,4 +1,5 @@
 import Appreciation from './component/Appreciations';
+import ContactForm from './component/ContactForm';
 import DevelopmentProcess from './component/DevelopmentProcess';
 import EngagementModels from './component/EngagementModels';
 import Footer from './component/Footer';
@@ -33,6 +34,7 @@ function App() {
         <IndustriesPage />
         <Appreciation />
         <Insights />
+        <ContactForm></ContactForm>
         <Footer />
       </div>
     </>

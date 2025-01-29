@@ -1,10 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import laptop from "../laptop.svg";
 import logo from "../logo.svg";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [showNavbar, setShowNavbar] = useState(true);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -18,100 +20,89 @@ const Navbar = () => {
         { name: "Blog", link: "/blog" },
     ];
 
+    // Track scroll position
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down
+                setShowNavbar(false);
+            } else {
+                // Scrolling up
+                setShowNavbar(true);
+            }
+            setLastScrollY(window.scrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // Clean up the event listener
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [lastScrollY]);
+
     return (
         <>
             <div
                 className="App min-h-screen flex flex-col bg-[#01132E] text-white overflow-x-hidden"
 
             >
-                <header className="fixed top-0 left-0 right-0 z-50 bg-[#01132E] shadow-md">
-                    <nav className="navbar flex items-center gap-4 justify-between px-4 py-3">
-                        <div className="logo">
-                            <img src={logo} alt="Tecoreng Logo" className="h-10" />
-                        </div>
+                 <header
+                className={`top-0 left-0 right-0 z-50 bg-[#01132E] shadow-md transition-all duration-700 ease-in-out transform ${
+                    showNavbar
+                        ? "fixed top-0 opacity-100 translate-y-0"
+                        : "fixed top-[-100px] opacity-0 translate-y-[-100%]"
+                }`}
+                style={{
+                    transition: "top 0.5s ease, opacity 0.5s ease, transform 0.7s ease-in-out",
+                    transform: "translateZ(0)",
+                }}
+            >
+                <nav className="navbar flex items-center gap-4 justify-between px-4 py-3">
+                    <div className="logo">
+                        <img src={logo} alt="Tecoreng Logo" className="h-10" />
+                    </div>
 
-                        <button
-                            className="block md:hidden text-white focus:outline-none"
-                            onClick={toggleMenu}
-                        >
-                            {menuOpen ? (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                    className="w-6 h-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            ) : (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                    className="w-6 h-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M4 6h16M4 12h16m-7 6h7"
-                                    />
-                                </svg>
-                            )}
-                        </button>
-
-                        <ul className={`nav-links md:flex gap-8 hidden text-sm`}>
-                            {navItems.map((item) => (
-                                <li key={item.name} className="text-lg">
-                                    <a
-                                        href={item.link}
-                                        className="text-white hover:text-orange-500 no-underline flex items-center gap-1"
-                                    >
-                                        {item.name}
-                                        {item.hasArrow && (
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                strokeWidth={2}
-                                                stroke="currentColor"
-                                                className="w-4 h-4"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    d="M19 9l-7 7-7-7"
-                                                />
-                                            </svg>
-                                        )}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-
-                        <div className="nav-buttons hidden md:flex gap-4">
-                            <button className="px-4 py-2 bg-transparent border-1 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
-                                Hire Developers
-                            </button>
-                            <button className="px-4 py-2 bg-gradient-to-r from-[#FFA07A] to-[#FF6347] text-white rounded-full hover:from-[#E25F3C] hover:to-[#C84F33]">
-                                Get a Quote
-                            </button>
-                        </div>
-                    </nav>
-
-                    <ul
-                        className={`nav-links md:hidden flex flex-col items-center gap-3 px-6 py-4 bg-[#001f3d] shadow-lg ${menuOpen ? "block" : "hidden"
-                            }`}
+                    <button
+                        className="block md:hidden text-white focus:outline-none"
+                        onClick={toggleMenu}
                     >
+                        {menuOpen ? (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2}
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        ) : (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2}
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M4 6h16M4 12h16m-7 6h7"
+                                />
+                            </svg>
+                        )}
+                    </button>
+
+                    <ul className={`nav-links md:flex gap-8 hidden text-sm`}>
                         {navItems.map((item) => (
-                            <li key={item.name}>
+                            <li key={item.name} className="text-lg">
                                 <a
                                     href={item.link}
                                     className="text-white hover:text-orange-500 no-underline flex items-center gap-1"
@@ -136,16 +127,58 @@ const Navbar = () => {
                                 </a>
                             </li>
                         ))}
-                        <div className="flex flex-col gap-4 w-full mt-4">
-                            <button className="w-full px-4 py-2 bg-transparent border-2 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
-                                Hire Developers
-                            </button>
-                            <button className="w-full px-4 py-2 bg-gradient-to-r from-[#FFA07A] to-[#FF6347] text-white rounded-full hover:from-[#E25F3C] hover:to-[#C84F33]">
-                                Get a Quote
-                            </button>
-                        </div>
                     </ul>
-                </header>
+
+                    <div className="nav-buttons hidden md:flex gap-4">
+                        <button className="px-4 py-2 bg-transparent border-1 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
+                            Hire Developers
+                        </button>
+                        <button className="px-4 py-2 bg-gradient-to-r from-[#FFA07A] to-[#FF6347] text-white rounded-full hover:from-[#E25F3C] hover:to-[#C84F33]">
+                            Get a Quote
+                        </button>
+                    </div>
+                </nav>
+                {/* Mobile version of the navbar */}
+                <ul
+                    className={`nav-links md:hidden flex flex-col items-center gap-3 px-6 py-4 bg-[#001f3d] shadow-lg ${menuOpen ? "block" : "hidden"
+                        }`}
+                >
+                    {navItems.map((item) => (
+                        <li key={item.name}>
+                            <a
+                                href={item.link}
+                                className="text-white hover:text-orange-500 no-underline flex items-center gap-1"
+                            >
+                                {item.name}
+                                {item.hasArrow && (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={2}
+                                        stroke="currentColor"
+                                        className="w-4 h-4"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                )}
+                            </a>
+                        </li>
+                    ))}
+                    <div className="flex flex-col gap-4 w-full mt-4">
+                        <button className="w-full px-4 py-2 bg-transparent border-2 border-[#f5f5f5] text-white rounded-full hover:bg-gradient-to-r hover:from-[#FFA07A] hover:to-[#FF6347] hover:border-transparent">
+                            Hire Developers
+                        </button>
+                        <button className="w-full px-4 py-2 bg-gradient-to-r from-[#FFA07A] to-[#FF6347] text-white rounded-full hover:from-[#E25F3C] hover:to-[#C84F33]">
+                            Get a Quote
+                        </button>
+                    </div>
+                </ul>
+            </header>
                 <div className="container mx-auto px-4 min-h-screen flex items-center relative z-10" style={{
                     backgroundImage: `url(${laptop})`,
                     backgroundSize: "cover",

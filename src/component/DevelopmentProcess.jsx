@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import Ball from '../assets/Ball.svg';
 import ballentry from '../assets/ballentry.svg';
 import ballexit from '../assets/ballexit.webp';
@@ -11,62 +11,93 @@ import devimg6 from '../assets/devimg6.webp';
 import devimg7 from '../assets/devimg7.webp';
 
 const DevelopmentProcess = () => {
+    const [ballStyle, setBallStyle] = useState({
+        transform: 'translate3d(27.622px, 0.98716px, 0px) rotate(2.37289deg)',
+        animation: 'fall 2s ease-out 1, roll 10s linear infinite', // Adding falling and rolling animations
+    });
+    const containerRef = useRef(null);
+
+    const handleScroll = () => {
+        if (!containerRef.current) return;
+
+        const container = containerRef.current;
+        const containerRect = container.getBoundingClientRect();
+        const containerTop = containerRect.top;
+        const containerHeight = containerRect.height;
+        const viewportHeight = window.innerHeight;
+
+        // Calculate progress (0 to 1) based on container's position in viewport
+        let progress = (viewportHeight - containerTop) / (containerHeight + viewportHeight);
+        progress = Math.max(0, Math.min(1, progress));
+
+        // Define control points for the path
+        const path = [
+            { x: 150, y: -250 },           // Start at ballentry (ball image position)
+            { x: 850, y: 450 },            // Research point
+            { x: -100, y: 800 },           // Design point
+            { x: 850, y: 1250 },            // Development point
+            { x: -125, y: 1400 },           // Testing point
+            { x: 850, y: 2100 },           // Deployment point
+            { x: -125, y: 2350 },          // Evaluation point
+            { x: 850, y: 2675 },           // Maintenance point
+            { x: 1050, y: 2700 }            // End at ballexit (exit point)
+        ];
+
+        // Find current segment
+        const totalSegments = path.length - 1;
+        const currentSegment = Math.min(Math.floor(progress * totalSegments), totalSegments - 1);
+        const segmentProgress = (progress * totalSegments) % 1;
+
+        // Calculate current position
+        const start = path[currentSegment];
+        const end = path[currentSegment + 1];
+        
+        // Interpolate position
+        const x = start.x + (end.x - start.x) * segmentProgress;
+        const y = start.y + (end.y - start.y) * segmentProgress;
+
+        // Calculate rotation based on movement direction
+        const angle = Math.atan2(end.y - start.y, end.x - start.x) * (180 / Math.PI);
+        const rotation = 2.37289 + (Math.sin(progress * Math.PI * 2) * 5);
+
+        // Update ball position and rotation
+        setBallStyle({
+            transform: `translate3d(${x}px, ${y}px, 0px) rotate(${rotation}deg)`,
+            transition: 'transform 0.1s ease-out',
+            animation: 'fall 2s ease-out 1, roll 10s linear infinite', // Adding rolling animation here as well
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        // Initial position calculation
+        handleScroll();
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const stages = [
-        {
-            title: "Research and Analysis",
-            description: "Idea, Consultation, Research, Goal Definition, & Requirements Gathering",
-            imgSrc: devimg1,
-            alt: "kickOff",
-        },
-        {
-            title: "Design",
-            description: "System Architecture Design, Wireframing, UI/UX Designing, & Prototyping",
-            imgSrc: devimg2,
-            alt: "Design",
-        },
-        {
-            title: "Development",
-            description: "Functional Implementation, Software Coding & Optimization",
-            imgSrc: devimg3,
-            alt: "Development",
-        },
-        {
-            title: "Testing",
-            description: "Quality Assurance, Troubleshooting, & Testing",
-            imgSrc: devimg4,
-            alt: "Testing",
-        },
-        {
-            title: "Deployment",
-            description: "Launch, Beta Live, & Live",
-            imgSrc: devimg5,
-            alt: "Deployment",
-        },
-        {
-            title: "Evaluation",
-            description: "Performance Evaluation, & Analytics Implementation",
-            imgSrc: devimg6,
-            alt: "Evaluation",
-        },
-        {
-            title: "Maintenance",
-            description: "Monitoring, Feedback, Analysis, & Complete Support",
-            imgSrc: devimg7,
-            alt: "Maintenance",
-        },
+        { title: "Research and Analysis", description: "Idea, Consultation, Research, Goal Definition, & Requirements Gathering", imgSrc: devimg1, alt: "kickOff" },
+        { title: "Design", description: "System Architecture Design, Wireframing, UI/UX Designing, & Prototyping", imgSrc: devimg2, alt: "Design" },
+        { title: "Development", description: "Functional Implementation, Software Coding & Optimization", imgSrc: devimg3, alt: "Development" },
+        { title: "Testing", description: "Quality Assurance, Troubleshooting, & Testing", imgSrc: devimg4, alt: "Testing" },
+        { title: "Deployment", description: "Launch, Beta Live, & Live", imgSrc: devimg5, alt: "Deployment" },
+        { title: "Evaluation", description: "Performance Evaluation, & Analytics Implementation", imgSrc: devimg6, alt: "Evaluation" },
+        { title: "Maintenance", description: "Monitoring, Feedback, Analysis, & Complete Support", imgSrc: devimg7, alt: "Maintenance" },
     ];
 
     return (
-        <div className="mt-8 pt-4">
-            <section className="hcygZN">
+        <div className="mt-8 pt-4" ref={containerRef}>
+            <section className="hcygZN" style={{ background: "rgb(17, 37, 66)" }}>
                 <div className="container">
                     <div className="Bejbq">
                         <div className="ctezdg">
                             <h1
                                 className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
                                 style={{
-                                    textShadow:
-                                        "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px",
+                                    textShadow: "rgb(239, 237, 227) -1px -1px 1px, rgb(1, 19, 46) 0px 1px 0px, rgb(1, 19, 46) 0px 2px 0px, rgb(1, 19, 46) 0px 3px 0px, rgb(1, 19, 46) 0px 4px 0px, rgb(1, 19, 46) 0px 5px 0px, rgb(77, 89, 108) 0px 6px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 0px 0px, rgba(0, 0, 0, 0.9) 0px 0px 0px"
                                 }}
                             >
                                 Our Development Process
@@ -85,9 +116,9 @@ const DevelopmentProcess = () => {
                                 />
                             </div>
 
-                            {/* Ball 3D */}
-                            <div className="ball3d position-absolute d-none d-lg-block" style={{ top: "6px", left: "0%" }}>
-                                <div className="ball">
+                            {/* Animated Ball */}
+                            <div className="ball3d position-absolute d-none d-lg-block" style={{ left: "0%" }}>
+                                <div className="ball" style={ballStyle}>
                                     <img
                                         alt="Ball"
                                         loading="lazy"
@@ -108,22 +139,18 @@ const DevelopmentProcess = () => {
                                         style={index % 2 === 1 ? { transform: "scale(-1, 1)" } : {}}
                                     >
                                         <div className="NfKcz">
-                                            {/* Left Side (Image) */}
-                                            <div
-                                                className="leftSide"
-                                                style={{
-                                                    width: "100%",
-                                                    maxWidth: "600px",
-                                                    height: "285px",
-                                                    display: "flex",
-                                                    clipPath: "polygon(0px 0px, 0px 100%, 100% 100%, 100% 50%, 0% -1%)",
-                                                    background: "linear-gradient(93.98deg, rgb(38, 66, 107) 3.93%, rgba(0, 23, 56, 0.42) 97.99%)",
-                                                    boxShadow: "rgba(0, 0, 0, 0.25) 0px 8px 10px",
-                                                    borderRadius: "20px",
-                                                    marginRight: "20px",
-                                                    transform: "translateY(40%)", // Shift image down by 50%
-                                                }}
-                                            >
+                                            <div className="leftSide" style={{
+                                                width: "100%",
+                                                maxWidth: "600px",
+                                                height: "285px",
+                                                display: "flex",
+                                                clipPath: "polygon(0px 0px, 0px 100%, 100% 100%, 100% 50%, 0% -1%)",
+                                                background: "linear-gradient(93.98deg, rgb(38, 66, 107) 3.93%, rgba(0, 23, 56, 0.42) 97.99%)",
+                                                boxShadow: "rgba(0, 0, 0, 0.25) 0px 8px 10px",
+                                                borderRadius: "20px",
+                                                marginRight: "20px",
+                                                transform: "translateY(40%)"
+                                            }}>
                                                 <div className="pt-5 pl-3">
                                                     <img
                                                         alt={stage.alt}
@@ -138,26 +165,19 @@ const DevelopmentProcess = () => {
                                                 </div>
                                             </div>
 
-                                            {/* Right Side (Title & Description) */}
-                                            <div
-                                                className="rightSide pb-2"
-                                                style={{
-                                                    color: "rgb(255, 255, 255)",
-                                                    fontFamily: "Poppins, sans-serif",
-                                                    fontStyle: "normal",
-                                                    padding: "20px",
-                                                    display: "flex",
-                                                    flexDirection: "column",
-                                                    justifyContent: "center",
-                                                    maxWidth: "500px",
-                                                    transform:
-                                                        stage.title === "Design" ||
-                                                            stage.title === "Testing" ||
-                                                            stage.title === "Evaluation"
-                                                            ? "scaleX(-1)" // Swap direction for Design, Testing, and Evaluation
-                                                            : "translateY(-35%) translateX(20%)", // Default transform for other stages
-                                                }}
-                                            >
+                                            <div className="rightSide pb-2" style={{
+                                                color: "rgb(255, 255, 255)",
+                                                fontFamily: "Poppins, sans-serif",
+                                                fontStyle: "normal",
+                                                padding: "20px",
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                justifyContent: "center",
+                                                maxWidth: "500px",
+                                                transform: index % 2 === 1
+                                                    ? "scaleX(-1)"
+                                                    : "translateY(-35%) translateX(20%)"
+                                            }}>
                                                 <h3>{stage.title}</h3>
                                                 <p className="desc">{stage.description}</p>
                                             </div>
@@ -183,201 +203,6 @@ const DevelopmentProcess = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Media Queries for Responsiveness */}
-            <style>{`
-                @media (max-width: 1200px) {
-                    .container {
-                        padding-left: 20px;
-                        padding-right: 20px;
-                    }
-                    .stagesBoxes {
-                        flex-direction: column;
-                        align-items: center;
-                    }
-                    .leftSide {
-                        width: 80%;
-                        max-width: 600px;
-                        height: 285px;
-                        margin-bottom: 20px;
-                    }
-                    .rightSide {
-                        max-width: 100%;
-                        text-align: center;
-                    }
-                    .entryBall, .exitBall, .mainBall {
-                        display: none;  /* Hide balls on medium and smaller screens */
-                    }
-                    h1 {
-                        font-size: 2.5rem; /* Reduce font size */
-                    }
-                    .leftSide img {
-                        width: 80px; /* Adjust image size */
-                        height: 80px;
-                    }
-                    .rightSide h3 {
-                        font-size: 1.5rem; /* Adjust title font size */
-                    }
-                    .rightSide p {
-                        font-size: 1rem; /* Adjust description font size */
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .text-5xl {
-                        font-size: 2rem; /* Smaller text */
-                    }
-                    .leftSide {
-                        width: 75%;
-                        max-width: 500px;
-                        height: 250px;
-                        margin-bottom: 20px;
-                    }
-                    .rightSide {
-                        padding: 10px;
-                    }
-                    .leftSide {
-                        margin: 0;
-                        width: 100%;
-                        height: auto;
-                    }
-                    h1 {
-                        font-size: 2rem; /* Smaller header */
-                        text-align: center;
-                    }
-                    .ballEntry {
-                        position: absolute;
-                        top: 5%;
-                        left: 5%;
-                        width: 50px;
-                        height: 80px;
-                    }
-                    .ballExit {
-                        position: absolute;
-                        bottom: 10%;
-                        right: 10%;
-                        width: 100px;
-                        height: 50px;
-                    }
-                    .mainBall {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 60px;
-                        height: 60px;
-                        transform: translate(-50%, -50%);
-                    }
-                    .leftSide img {
-                        width: 70px; /* Adjust image size */
-                        height: 70px;
-                    }
-                    .rightSide h3 {
-                        font-size: 1.3rem; /* Smaller title */
-                    }
-                    .rightSide p {
-                        font-size: 0.9rem; /* Smaller description */
-                    }
-                }
-
-                @media (max-width: 576px) {
-                    .rightSide {
-                        padding: 10px;
-                    }
-                    .leftSide {
-                        width: 75%;
-                        max-width: 450px;
-                        height: 225px;
-                        margin-bottom: 20px;
-                    }
-                  
-                    h1 {
-                        font-size: 1.8rem; /* Further reduce header size */
-                    }
-                    .ballEntry {
-                        position: absolute;
-                        top: 5%;
-                        left: 5%;
-                        width: 40px;
-                        height: 70px;
-                    }
-                    .ballExit {
-                        position: absolute;
-                        bottom: 5%;
-                        right: 5%;
-                        width: 80px;
-                        height: 40px;
-                    }
-                    .mainBall {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 50px;
-                        height: 50px;
-                        transform: translate(-50%, -50%);
-                    }
-                    .leftSide img {
-                        width: 60px; /* Adjust image size */
-                        height: 60px;
-                    }
-                    .rightSide h3 {
-                        font-size: 1.1rem; /* Further reduce title font size */
-                    }
-                    .rightSide p {
-                        font-size: 0.8rem; /* Further reduce description font size */
-                    }
-                }
-
-                @media (max-width: 320px) {
-                    .rightSide {
-                        padding: 8px;
-                    }
-                   .leftSide {
-                        width: 75%;
-                        max-width: 300px;
-                        height: 200px;
-                        margin-bottom: 20px;
-                    }
-                         .rightSide {
-                        max-width: 50%;
-                        text-align: center;
-                    }
-                    h1 {
-                        font-size: 1.5rem; /* Even smaller header for 320px */
-                    }
-                    .ballEntry {
-                        position: absolute;
-                        top: 5%;
-                        left: 25%;
-                        width: 35px;
-                        height: 100px;
-                    }
-                    .ballExit {
-                        position: absolute;
-                        bottom: 5%;
-                        right: 5%;
-                        width: 70px;
-                        height: 35px;
-                    }
-                    .mainBall {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 45px;
-                        height: 45px;
-                        transform: translate(-50%, -50%);
-                    }
-                    .leftSide img {
-                        width: 50px; /* Further reduce image size */
-                        height: 50px;
-                    }
-                    .rightSide h3 {
-                        font-size: 1rem; /* Small title for 320px screen */
-                    }
-                    .rightSide p {
-                        font-size: 0.7rem; /* Small description for 320px screen */
-                    }
-                }
-            `}</style>
         </div>
     );
 };

@@ -40,7 +40,7 @@ const services = [
 ];
 
 const Specialization = () => {
-  const [selectedCard, setSelectedCard] = useState(2);
+  const [selectedCard, setSelectedCard] = useState(2); // Initially selected card (centered)
 
   const getVisibleCards = () => {
     const currentIndex = services.findIndex((service) => service.id === selectedCard);
@@ -54,6 +54,14 @@ const Specialization = () => {
   };
 
   const visibleCards = getVisibleCards();
+
+  const handleCardClick = (direction) => {
+    if (direction === 'left') {
+      setSelectedCard((prev) => (prev - 1 + services.length) % services.length); // Move to the previous card
+    } else if (direction === 'right') {
+      setSelectedCard((prev) => (prev + 1) % services.length); // Move to the next card
+    }
+  };
 
   return (
     <>
@@ -84,11 +92,11 @@ const Specialization = () => {
           return (
             <div
               key={service.id}
-              onClick={() => setSelectedCard(service.id)}
+              onClick={() => setSelectedCard(service.id)} // You can still click to change the card
               className={`service-card absolute p-6 rounded-xl shadow-xl cursor-pointer transition-all duration-500 hover:scale-105
                 ${index === 1 ? 'bg-white scale-150 z-30' : 'bg-white scale-90 z-20 opacity-70 hover:opacity-90'}`}
               style={{
-                transform: `translateX(${(index - 1) * 280}px) translateY(-10%) ${index === 1 ? 'scale(1.6)' : 'scale(0.9)'}`,
+                transform: `translateX(${(index - 1) * 220}px) translateY(-10%) ${index === 1 ? 'scale(1.6)' : 'scale(0.9)'}`,
               }}
             >
               {/* Icon on top */}
@@ -106,61 +114,108 @@ const Specialization = () => {
         })}
       </div>
 
+      {/* Arrow Navigation */}
+      <div className="flex justify-between absolute top-1/2 left-0 right-0 px-5">
+        <button onClick={() => handleCardClick('left')} className="bg-blue-500 text-white p-2 rounded-full">
+          ←
+        </button>
+        <button onClick={() => handleCardClick('right')} className="bg-blue-500 text-white p-2 rounded-full">
+          →
+        </button>
+      </div>
+
       {/* Custom Breakpoints for Responsive Design */}
       <style>{`
         .service-card {
-          max-width: 250px;
+          max-width: 280px;
           min-width: 230px;
+          overflow: hidden; /* Prevent overflow */
+           /* Add ellipsis for overflow text */
+           /* Prevent text wrapping */
         }
 
-        /* For smaller devices (like iPhone 12) with width: 390px */
-        @media (max-width: 390px) and (max-height: 844px) {
+        /* For smaller devices (like iPhone 12 with width: 390px) */
+        @media (max-width: 391px) {
           .service-card {
-            width: 56.7%;  /* Reduced width by additional 10% from 63% */
-            height: 240px; /* Height remains the same */
-            transform: scale(0.72);  /* Reduced scale to fit the reduced width */
+            height: auto; /* Allow height to adjust dynamically */
+            transform: scale(0.8); /* Scale cards down slightly */
+            max-width: 160px;
+            min-width: 150px;
+            white-space: nowrap;
+          }
+
+          /* Adjust title font size */
+          .service-card h2 {
+            font-size: 0.6rem; /* Smaller font size */
+            word-wrap: break-word; /* Allow word wrapping for the title */
+          }
+
+          /* Adjust description font size */
+          .service-card p {
+            font-size: 0.5rem; /* Smaller font size */
+            word-wrap: break-word; /* Allow word wrapping for the description */
+            display: block; /* Ensure description wraps properly */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Add ellipsis for overflowed text */
           }
         }
 
         /* Small screen styles */
         @media (max-width: 576px) {
           .service-card {
-            width: 80%;
+            max-width: 180px;
+            min-width: 150px;
+            width: 90%;  /* Increased width to 90% */
+            height: auto; /* Allow height to adjust dynamically */
             transform: scale(0.85);
+            margin-left: 0px; /* Adjusted margin */
+            margin-right: 0px; /* Adjusted margin */
+            white-space: nowrap;
           }
 
-          .service-card-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 85%;
+          .service-card h2 {
+            font-size: 1rem; /* Reduced font size */
+          }
+
+          .service-card p {
+            font-size: 0.75rem; /* Reduced font size */
           }
         }
 
         /* Tablet size */
         @media (min-width: 576px) and (max-width: 768px) {
           .service-card {
-            width: 80%;
+            width: 90%;
+            height: auto;
             transform: scale(0.9);
+            white-space: nowrap;
           }
 
-          .service-card-wrapper {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
+          .service-card h2 {
+            font-size: 1.2rem;
+          }
+
+          .service-card p {
+            font-size: 0.9rem;
           }
         }
 
         /* Larger tablets */
         @media (min-width: 768px) and (max-width: 992px) {
           .service-card {
-            width: 80%;
+            width: 90%;
+            height: auto;
             transform: scale(1);
           }
         }
 
         /* Desktops and larger */
         @media (min-width: 992px) {
+          .service-card {
+            width: 280px; /* Ensure full width of the card is visible */
+            transform: scale(1); /* Ensure no scaling */
+          }
+
           .service-card-wrapper {
             display: flex;
             justify-content: space-between;
