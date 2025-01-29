@@ -13,7 +13,7 @@ import devimg7 from '../assets/devimg7.webp';
 const DevelopmentProcess = () => {
     const [ballStyle, setBallStyle] = useState({
         transform: 'translate3d(27.622px, 0.98716px, 0px) rotate(2.37289deg)',
-        animation: 'fall 2s ease-out 1, roll 10s linear infinite', // Adding falling and rolling animations
+        animation: 'fall 4s ease-out 1, roll 10s linear infinite, bounce 2s ease-in-out infinite', // Slower fall and bounce animation
     });
     const containerRef = useRef(null);
 
@@ -33,14 +33,14 @@ const DevelopmentProcess = () => {
         // Define control points for the path
         const path = [
             { x: 150, y: -250 },           // Start at ballentry (ball image position)
-            { x: 850, y: 450 },            // Research point
-            { x: -100, y: 800 },           // Design point
-            { x: 850, y: 1250 },            // Development point
-            { x: -125, y: 1400 },           // Testing point
-            { x: 850, y: 2100 },           // Deployment point
-            { x: -125, y: 2350 },          // Evaluation point
-            { x: 850, y: 2675 },           // Maintenance point
-            { x: 1050, y: 2700 }            // End at ballexit (exit point)
+            { x: 1050, y: 500 },            // Research point
+            { x: -100, y: 850 },           // Design point
+            { x: 1050, y: 1300 },            // Development point
+            { x: -125, y: 1450 },           // Testing point
+            { x: 1050, y: 2150 },           // Deployment point
+            { x: -125, y: 2400 },          // Evaluation point
+            { x: 1050, y: 2690 },           // Maintenance point
+            { x: 1100, y: 2700 }            // End at ballexit (exit point)
         ];
 
         // Find current segment
@@ -60,11 +60,11 @@ const DevelopmentProcess = () => {
         const angle = Math.atan2(end.y - start.y, end.x - start.x) * (180 / Math.PI);
         const rotation = 2.37289 + (Math.sin(progress * Math.PI * 2) * 5);
 
-        // Update ball position and rotation
+        // Update ball position and rotation with slower fall and added animations
         setBallStyle({
             transform: `translate3d(${x}px, ${y}px, 0px) rotate(${rotation}deg)`,
-            transition: 'transform 0.1s ease-out',
-            animation: 'fall 2s ease-out 1, roll 10s linear infinite', // Adding rolling animation here as well
+            transition: 'transform 0.3s ease-out', // Smoother transition for position change
+            animation: 'fall 4s ease-out 1, roll 10s linear infinite, bounce 2s ease-in-out infinite', // Slower fall and added bounce animation
         });
     };
 
