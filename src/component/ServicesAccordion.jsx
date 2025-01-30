@@ -4,7 +4,7 @@ import Laravel from '../assets/laravelTCE.46e12fe8.svg';
 import Node from '../assets/nodejsTCE.ed01dd43.svg';
 import Angular from '../assets/angularTCE.190d8320.svg';
 import { ChevronRight } from 'lucide-react'; // Importing a chevron arrow icon from lucide-react
-import Laptop from '../assets/webService.682bf358.webp' 
+// import Laptop from '../assets/webService.682bf358.webp' 
 const ServicesAccordion = () => {
   const services = [
     {
