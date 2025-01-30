@@ -34,13 +34,13 @@ const DevelopmentProcess = () => {
         const path = [
             { x: 150, y: -250 },           // Start at ballentry (ball image position)
             { x: 1050, y: 500 },            // Research point
-            { x: -100, y: 850 },           // Design point
+            { x: -50, y: 850 },           // Design point
             { x: 1050, y: 1300 },            // Development point
-            { x: -125, y: 1450 },           // Testing point
+            { x: -50, y: 1450 },           // Testing point
             { x: 1050, y: 2150 },           // Deployment point
             { x: -125, y: 2400 },          // Evaluation point
             { x: 1050, y: 2690 },           // Maintenance point
-            { x: 1100, y: 2700 }            // End at ballexit (exit point)
+            { x: 1050, y: 2700 }            // End at ballexit (exit point)
         ];
 
         // Find current segment
@@ -63,7 +63,7 @@ const DevelopmentProcess = () => {
         // Update ball position and rotation with slower fall and added animations
         setBallStyle({
             transform: `translate3d(${x}px, ${y}px, 0px) rotate(${rotation}deg)`,
-            transition: 'transform 0.3s ease-out', // Smoother transition for position change
+            transition: 'transform 0.5s ease-out', // Smoother transition for position change
             animation: 'fall 4s ease-out 1, roll 10s linear infinite, bounce 2s ease-in-out infinite', // Slower fall and added bounce animation
         });
     };
@@ -122,8 +122,8 @@ const DevelopmentProcess = () => {
                                     <img
                                         alt="Ball"
                                         loading="lazy"
-                                        width="88"
-                                        height="88"
+                                        width="80"
+                                        height="80"
                                         src={Ball}
                                         className="mainBall"
                                     />
