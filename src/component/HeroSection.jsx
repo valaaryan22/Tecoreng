@@ -1,4 +1,3 @@
-import React from 'react';
 import imageforhero from '../assets/image8.webp';
 
 const HeroSection = () => {

@@ -40,7 +40,7 @@ const DevelopmentProcess = () => {
             { x: 1050, y: 2150 },           // Deployment point
             { x: -125, y: 2400 },          // Evaluation point
             { x: 1050, y: 2690 },           // Maintenance point
-            { x: 1050, y: 2700 }            // End at ballexit (exit point)
+            { x: 1000, y: 2700 }            // End at ballexit (exit point)
         ];
 
         // Find current segment
