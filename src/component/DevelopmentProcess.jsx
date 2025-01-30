@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import Ball from '../assets/Ball.svg';
 import ballentry from '../assets/ballentry.svg';
 import ballexit from '../assets/ballexit.webp';
@@ -57,6 +57,7 @@ const DevelopmentProcess = () => {
         const y = start.y + (end.y - start.y) * segmentProgress;
 
         // Calculate rotation based on movement direction
+        
         const rotation = 2.37289 + (Math.sin(progress * Math.PI * 2) * 5);
 
         // Update ball position and rotation with slower fall and added animations
@@ -87,8 +88,8 @@ const DevelopmentProcess = () => {
         { title: "Maintenance", description: "Monitoring, Feedback, Analysis, & Complete Support", imgSrc: devimg7, alt: "Maintenance" },
     ];
 
-    return (<div className='mb-5'>
-        <div className="mt-8 pb-6 pt-4" ref={containerRef}>
+    return (
+        <div className="mt-8 pt-4" ref={containerRef}>
             <section className="hcygZN" style={{ background: "rgb(17, 37, 66)" }}>
                 <div className="container">
                     <div className="Bejbq">
@@ -202,7 +203,6 @@ const DevelopmentProcess = () => {
                     </div>
                 </div>
             </section>
-        </div>
         </div>
     );
 };

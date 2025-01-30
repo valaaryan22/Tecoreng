@@ -254,8 +254,8 @@ const Navbar = () => {
                 >
                     {/* Text content inside a wrapper */}
                     <div className="absolute top-[120px] sm:top-[120px] md:top-[120px] w-full px-4 z-20">
-                        <div className="w-full md:text-center pl-2 text-center ml-8 mb-8 md:w-1/2 pt-20">
-                            <h1 className="Web text-5xl title md:text-6xl font-bold leading-tight mb-8 text-white sm:text-left sm:ml-4 md:text-left md:ml-8">
+                        <div className="Web w-full md:text-center pl-2 text-center ml-8 mb-8 md:w-1/2 pt-20">
+                            <h1 className="Web text-5xl title md:text-6xl font-bold leading-tight mb-8 text-white sm:text-left sm:text-sm sm:ml-4 md:text-left md:ml-8">
                                 Web & Mobile App
                                 <br className=" md:hidden" />
                                 Development
