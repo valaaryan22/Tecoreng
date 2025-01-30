@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Ball from '../assets/Ball.svg';
 import ballentry from '../assets/ballentry.svg';
 import ballexit from '../assets/ballexit.webp';

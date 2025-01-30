@@ -1,7 +1,7 @@
-import { Phone, Upload } from 'lucide-react';
-import { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
-import Select from 'react-select'; // Import react-select
+import { Phone, Upload } from 'lucide-react'; // Import icons
+import { useState } from 'react'; // Import React hooks
+import ReCAPTCHA from 'react-google-recaptcha'; // Import Google reCAPTCHA
+import Select from 'react-select'; // Import react-select for custom dropdown
 import India from '../assets/India.svg'; // Import the India flag image
 import b from '../assets2/b.svg';
 import dribble from '../assets2/dribble.svg';
@@ -11,14 +11,14 @@ import medium from '../assets2/medium.svg';
 import p from '../assets2/p.svg';
 import twiter from '../assets2/twiter.svg';
 
-// Country data for the select dropdown
+// Country options for the select dropdown
 const countryOptions = [
-  { value: 'IN', label: '🇮🇳 +91', flag: India },
-  { value: 'US', label: '🇺🇸 +1', flag: '' },
-  // You can add more countries here
+  { value: 'IN', label: '🇮🇳 +91', flag: India }, // India
+  { value: 'US', label: '🇺🇸 +1', flag: '' }, // USA (no flag image)
+  // More countries can be added here
 ];
 
-// Custom styling for react-select
+// Custom styling for the react-select dropdown
 const customStyles = {
   control: (provided) => ({
     ...provided,
@@ -27,7 +27,7 @@ const customStyles = {
     borderRadius: '8px',
     padding: '5px',
     fontSize: '16px',
-    color: 'black', // Added color for text
+    color: 'black', // Ensure text is black
   }),
   menu: (provided) => ({
     ...provided,
@@ -36,46 +36,54 @@ const customStyles = {
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: 'black', // Ensure selected value is black
+    color: 'black', // Selected value text color
   }),
 };
 
 const ContactForm = () => {
+  // Form state to store user input data
   const [formData, setFormData] = useState({
     name: '',
-    email: '', // Added email to state
+    email: '', // Added email to form state
     contactNumber: '',
     idea: '',
     file: null,
     captcha: '',
   });
 
+  // State for CAPTCHA validation status
   const [captchaValid, setCaptchaValid] = useState(false);
+
+  // State to store selected country phone code
   const [selectedPhoneCode, setSelectedPhoneCode] = useState('IN');
 
+  // Handle form input changes (e.g., name, email, file upload, etc.)
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData({
       ...formData,
-      [name]: files ? files[0] : value,
+      [name]: files ? files[0] : value, // Handle file input as well
     });
   };
 
+  // Handle CAPTCHA value change (validates CAPTCHA completion)
   const handleCaptchaChange = (value) => {
     setCaptchaValid(value ? true : false);
   };
 
+  // Form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!captchaValid) {
       alert('Please complete the CAPTCHA.');
-      return;
+      return; // Stop form submission if CAPTCHA is not completed
     }
-    // Handle form submission logic here
+    // Form submission logic goes here (e.g., sending data to the server)
   };
 
+  // Handle phone code selection from the dropdown
   const handlePhoneCodeSelect = (selectedOption) => {
-    setSelectedPhoneCode(selectedOption.value);
+    setSelectedPhoneCode(selectedOption.value); // Update selected phone code
   };
 
   return (
@@ -88,6 +96,7 @@ const ContactForm = () => {
             Let’s Transform Your <br /> Vision Into Value.
           </p>
 
+          {/* Contact Info */}
           <p className="text-lg font-medium mb-4">Contact us:</p>
           <ul className="mb-12">
             <li className="text-md mb-6 flex items-center space-x-4">
@@ -100,6 +109,7 @@ const ContactForm = () => {
             </li>
           </ul>
 
+          {/* Social Media Links */}
           <p className="text-3xl font-extrabold mb-4">Our Socials:</p>
           <p className="text-md font-semibold mt-4 mb-8">
             Don’t Miss To Follow Us On Our Social Networks Accounts.
@@ -137,7 +147,10 @@ const ContactForm = () => {
           <p className="text-lg mb-6 text-black">
             We are always ready to help. There are many ways to contact us. You may drop us a line, give us a call, or send an email.
           </p>
+          
+          {/* Contact Form */}
           <form onSubmit={handleSubmit}>
+            {/* Full Name Input */}
             <div className="mb-6">
               <input
                 type="text"
@@ -150,7 +163,7 @@ const ContactForm = () => {
               />
             </div>
 
-            {/* Added email input field */}
+            {/* Email Input */}
             <div className="mb-6">
               <input
                 type="email"
@@ -163,17 +176,18 @@ const ContactForm = () => {
               />
             </div>
 
+            {/* Phone Number with Country Code */}
             <div className="mb-6 flex space-x-2">
               <Select
                 options={countryOptions}
-                onChange={handlePhoneCodeSelect}
+                onChange={handlePhoneCodeSelect}  // Updates selected phone code
                 getOptionLabel={(e) => (
                   <div className="flex items-center space-x-2">
                     <img src={e.flag} alt={`${e.label} Flag`} className="w-6 h-4" />
                   </div>
                 )}
-                styles={customStyles}
-                value={countryOptions.find((option) => option.value === selectedPhoneCode)}
+                styles={customStyles} // Custom styling
+                value={countryOptions.find((option) => option.value === selectedPhoneCode)} // Highlight selected option
               />
               <input
                 type="tel"
@@ -186,6 +200,7 @@ const ContactForm = () => {
               />
             </div>
 
+            {/* Idea/Message Textarea */}
             <div className="mb-6">
               <textarea
                 name="idea"
@@ -197,6 +212,7 @@ const ContactForm = () => {
               />
             </div>
 
+            {/* File Upload Input */}
             <div className="mb-6 relative">
               <label
                 htmlFor="file-upload"
@@ -208,20 +224,22 @@ const ContactForm = () => {
                   id="file-upload"
                   type="file"
                   name="file"
-                  onChange={handleChange}
+                  onChange={handleChange} // Handle file selection
                   className="absolute inset-0 opacity-0 cursor-pointer"
                 />
               </label>
             </div>
 
+            {/* CAPTCHA */}
             <div className="mb-6">
               <ReCAPTCHA
-                sitekey="YOUR_GOOGLE_RECAPTCHA_SITE_KEY" // Replace with your Site Key
+                sitekey="YOUR_GOOGLE_RECAPTCHA_SITE_KEY" // Replace with actual site key
                 onChange={handleCaptchaChange}
                 className="mt-4" // Optional margin
               />
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
               className="w-full py-3 mt-4 bg-gradient-to-r from-orange-500 to-orange-700 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300"

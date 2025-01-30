@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import video from '../assets/video.mp4'; // Update the path to match your video location
 
 const VideoPlayer = () => {

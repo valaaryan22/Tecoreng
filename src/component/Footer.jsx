@@ -8,12 +8,13 @@ const Footer = () => {
         <footer style={{ backgroundColor: "#0b1b33", color: "#fff", marginTop: "2rem", padding: "2rem 0" }}>
             <div className="container" style={{ backgroundColor: "#0b1b33", fontSize: '1.1rem' }}>
                 <div className="row justify-content-between">
-                    {/* Features Manu Section */}
+                    {/* Features Menu Section */}
                     <div className="col-lg-3 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33", fontSize: '1.1rem' }}>
                         <h5 className="mb-4" style={{ borderBottom: "2px dotted #fff", paddingBottom: "0.5rem", fontSize: '1.5rem' }}>
-                            Features Manu
+                            Features Menu
                         </h5>
                         <ul className="list-unstyled">
+                            {/* List of navigation links under Features Menu */}
                             <li className="my-2">
                                 <a href="/blog" target="_blank" rel="noreferrer" style={{ color: "#fff", textDecoration: "none" }}>
                                     Blog
@@ -42,12 +43,13 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Services Manu Section */}
+                    {/* Services Menu Section */}
                     <div className="col-lg-5 col-md-6 mb-4" style={{ backgroundColor: "#0b1b33" }}>
                         <h5 className="mb-4" style={{ borderBottom: "1px dotted #fff", paddingBottom: "0.5rem", fontSize: '1.5rem' }}>
-                            Services Manu
+                            Services Menu
                         </h5>
                         <div className="row">
+                            {/* List of service links split into two columns */}
                             <div className="col-6">
                                 <ul className="list-unstyled">
                                     <li className="my-2">
@@ -141,7 +143,7 @@ const Footer = () => {
                                 </p>
                             </li>
 
-                            {/* Phone */}
+                            {/* Phone Numbers */}
                             <li className="d-flex align-items-start">
                                 <img src={callus} alt="Phone" style={{ width: '30px', marginRight: '10px' }} />
                                 <p style={{ margin: 0 }}>
@@ -162,17 +164,21 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Footer Bottom */}
+                {/* Footer Bottom Section */}
                 <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mt-5" style={{ borderTop: "1px solid #fff", paddingTop: "1rem", backgroundColor: "#0b1b33" }}>
+                    {/* Logo Section */}
                     <div className="d-flex align-items-center mb-3 mb-md-0">
                         <a href="/" aria-label="home">
                             <img src={logo} alt="Tecoreng" style={{ width: "100px" }} />
                         </a>
                     </div>
+                    {/* Copyright Text */}
                     <p className="mb-3 mb-md-0 text-center text-md-right" style={{ fontSize: "0.9rem", flex: 1 }}>
                         © 2025 Tecoreng. All rights reserved.
                     </p>
+                    {/* Social Media and Contact Icons */}
                     <div className="d-flex flex-wrap justify-content-center">
+                        {/* Email Icon */}
                         <a href="mailto:support@tecoreng.com" style={{ margin: "0 10px" }}>
                             <img
                                 src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/envelope.svg"
@@ -180,6 +186,7 @@ const Footer = () => {
                                 style={{ width: "24px", filter: "invert(1)" }}
                             />
                         </a>
+                        {/* Location Icon */}
                         <a href="https://goo.gl/maps/xyz" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
                             <img
                                 src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/geo-alt.svg"
@@ -187,6 +194,7 @@ const Footer = () => {
                                 style={{ width: "24px", filter: "invert(1)" }}
                             />
                         </a>
+                        {/* Twitter Icon */}
                         <a href="https://twitter.com/tecoreng" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
                             <img
                                 src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/twitter.svg"
@@ -194,6 +202,7 @@ const Footer = () => {
                                 style={{ width: "24px", filter: "invert(1)" }}
                             />
                         </a>
+                        {/* LinkedIn Icon */}
                         <a href="https://linkedin.com/company/tecoreng" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
                             <img
                                 src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/linkedin.svg"
@@ -201,6 +210,7 @@ const Footer = () => {
                                 style={{ width: "24px", filter: "invert(1)" }}
                             />
                         </a>
+                        {/* Facebook Icon */}
                         <a href="https://facebook.com/Tecoreng" target="_blank" rel="noreferrer" style={{ margin: "0 10px" }}>
                             <img
                                 src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/facebook.svg"

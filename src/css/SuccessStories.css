@@ -1,0 +1,31 @@
+.video-react .video-react-control-bar {
+    display: none;
+  }
+  
+  .video-react .video-react-big-play-button {
+    display: none;
+  }
+  
+  .video-react .video-react-loading-spinner {
+    display: none;
+  }
+  
+  .video-react video {
+    object-fit: cover;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  

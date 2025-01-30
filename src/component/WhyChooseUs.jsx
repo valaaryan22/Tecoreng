@@ -1,58 +1,60 @@
-import { FaRegThumbsUp, FaTachometerAlt, FaTools, FaUsers } from "react-icons/fa"; // Importing icons
+import { FaRegThumbsUp, FaTachometerAlt, FaTools, FaUsers } from "react-icons/fa"; // Importing icons from react-icons library
 
 const WhyChooseUs = () => {
+  // Define an array of reasons with optional icons and titles
   const reasons = [
     {
-      icon: <FaRegThumbsUp className="text-3xl text-blue-500" />,
+      icon: <FaRegThumbsUp className="text-3xl text-blue-500" />, // Icon for Reporting & Analysis
       title: "Reporting & Analysis",
     },
     {
-      icon: <FaTachometerAlt className="text-3xl text-blue-500" />,
+      icon: <FaTachometerAlt className="text-3xl text-blue-500" />, // Icon for On-Time Delivery
       title: "On-Time Delivery",
     },
     {
-      icon: <FaUsers className="text-3xl text-blue-500" />,
+      icon: <FaUsers className="text-3xl text-blue-500" />, // Icon for Seamless Communication
       title: "Seamless Communication",
     },
     {
-      icon: <FaTools className="text-3xl text-blue-500" />,
+      icon: <FaTools className="text-3xl text-blue-500" />, // Icon for Post Launch Support
       title: "Post Launch Support",
     },
     {
-      icon: null,
+      icon: null, // No icon for this reason
       title: "Agile Methodology",
     },
     {
-      icon: null,
+      icon: null, // No icon for this reason
       title: "Certified Experts",
     },
     {
-      icon: null,
+      icon: null, // No icon for this reason
       title: "Budget Friendly",
     },
     {
-      icon: null,
+      icon: null, // No icon for this reason
       title: "100% Client Expectation",
     },
   ];
 
   return (
     <div
-      className="w-full min-h-screen p-4 bg-gradient-to-b from-[#112542] to-[#112542]"
+      className="w-full min-h-screen p-4 bg-gradient-to-b from-[#112542] to-[#112542]" // Full width and height, gradient background
     >
-      {/* Heading */}
+      {/* Heading Section */}
       <h2
         className="mb-6 pl-6 text-5xl font-bold tracking-widest uppercase text-transparent stroke-white title-font"
         style={{
-          WebkitTextStroke: "1px white",
+          WebkitTextStroke: "1px white", // Adding a white stroke effect to the title
         }}
       >
         Why Tecoreng for Your Next Project
       </h2>
 
-      {/* Description */}
+      {/* Description Paragraph */}
       <div className="text-left pl-6 pr-20">
         <p className="text-white text-lg leading-8 mt-9 mb-6 w-4/5 paragraph-font">
+          {/* Brief description of Tecoreng's values and mission */}
           Introducing Technical Core Engineers (TCE), the intersection of technology and innovation. At TCE, we excel
           in delivering exceptional IT services customized to fulfill your development requirements. Harnessing our
           expertise and enthusiasm, we breathe life into your ideas. Backed by a team of seasoned developers with
@@ -62,54 +64,60 @@ const WhyChooseUs = () => {
         </p>
       </div>
 
-      {/* Button */}
+      {/* Contact Button */}
       <button
         className="flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-r from-orange-400 to-red-600 text-white font-bold text-lg uppercase transform transition-transform duration-300 hover:translate-y-[-4px] ml-6"
       >
         Get in Touch
       </button>
 
-      {/* Reason Cards */}
+      {/* Reason Cards Section */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 pl-6">
+        {/* Loop through the `reasons` array to render each reason card */}
         {reasons.map((reason, index) => (
           <div
             key={index}
             className="bg-[#0b1b33] text-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
             style={{
-              boxShadow: "rgb(1, 19, 46) 0px 12px 17px",
-              borderRadius: "17px",
+              boxShadow: "rgb(1, 19, 46) 0px 12px 17px", // Shadow effect for card
+              borderRadius: "17px", // Rounded corners for cards
               backgroundImage:
-                "linear-gradient(rgb(17, 37, 66), rgb(17, 37, 66)), linear-gradient(rgba(255, 255, 255, 0.58) 0px, rgba(1, 19, 46, 0) 100%)",
+                "linear-gradient(rgb(17, 37, 66), rgb(17, 37, 66)), linear-gradient(rgba(255, 255, 255, 0.58) 0px, rgba(1, 19, 46, 0) 100%)", // Custom gradient background
             }}
           >
+            {/* Render the icon if it exists */}
             {reason.icon && <div className="mb-4">{reason.icon}</div>}
+            {/* Title of the reason */}
             <h3 className="text-lg font-semibold reason-title-font">{reason.title}</h3>
           </div>
         ))}
       </div>
 
-      <style >{`
+      {/* Custom CSS Styles for responsiveness */}
+      <style>{`
+        /* Styles for mobile view */
         @media (max-width: 767px) {
           .paragraph-font {
-            width: 100%;
-            line-height: 20px;
-            margin: 20px 0px;
+            width: 100%; // Make the paragraph width full on small screens
+            line-height: 20px; // Adjust line-height for readability
+            margin: 20px 0px; // Adjust margins for mobile view
           }
         }
 
+        /* Styles for tablets or small screens */
         @media (max-width: 768px) {
           .paragraph-font {
-            font-size: 12px;
+            font-size: 10px; // Smaller font size for mobile
           }
 
           .title-font {
-            font-family: Arial, sans-serif;
-            font-size: 24px;
+            font-family: Arial, sans-serif; // Custom font for title on mobile
+            font-size: 24px; // Adjust font size for mobile
           }
 
           .reason-title-font {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
+            font-family: Arial, sans-serif; // Custom font for reason titles
+            font-size: 14px; // Adjust font size for reason titles on mobile
           }
         }
       `}</style>
