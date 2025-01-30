@@ -36,7 +36,7 @@ const DevelopmentProcess = () => {
             { x: 1050, y: 500 },            // Research point
             { x: -50, y: 850 },           // Design point
             { x: 1050, y: 1300 },            // Development point
-            { x: -50, y: 1450 },           // Testing point
+            { x: -50, y: 1490 },           // Testing point
             { x: 1050, y: 2150 },           // Deployment point
             { x: -125, y: 2400 },          // Evaluation point
             { x: 1050, y: 2690 },           // Maintenance point
