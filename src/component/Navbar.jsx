@@ -227,7 +227,7 @@ const Navbar = () => {
             </header>
 
             <div
-                className="container mt-5 mx-auto px-4 min-h-screen flex items-center relative z-10"
+                className="container  mt-5 mx-auto px-4 min-h-screen flex items-center relative z-10"
                 style={{
                     backgroundImage: `url(${laptop})`,
                     backgroundSize: "contain",
@@ -240,7 +240,7 @@ const Navbar = () => {
                 {/* Added a wrapper to position the content correctly */}
                 <div className="absolute  top-[120px] sm:top-[120px] md:top-[120px]  w-full px-4 z-20">
                     <div className="w-full md:text-center pl-2 text-center ml-8 mb-8 md:w-1/2 pt-20">
-                        <h1 className="text-5xl title md:text-6xl font-bold leading-tight mb-8 text-white sm:text-left sm:ml-4 md:text-left md:ml-8">
+                        <h1 className="Web text-5xl title md:text-6xl font-bold leading-tight mb-8 text-white sm:text-left sm:ml-4 md:text-left md:ml-8">
                             Web & Mobile App
                             <br className=" md:hidden" />
                             Development

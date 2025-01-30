@@ -27,6 +27,7 @@ const customStyles = {
     borderRadius: '8px',
     padding: '5px',
     fontSize: '16px',
+    color: 'black', // Added color for text
   }),
   menu: (provided) => ({
     ...provided,
@@ -35,7 +36,7 @@ const customStyles = {
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: '#333',
+    color: 'black', // Ensure selected value is black
   }),
 };
 
@@ -143,7 +144,7 @@ const ContactForm = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full py-2 border-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-500"
+                className="w-full py-2 border-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-orange-500 text-black bg-white placeholder-gray-500"
                 placeholder="Full Name"
                 required
               />
@@ -156,7 +157,7 @@ const ContactForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full py-2 border-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-500"
+                className="w-full py-2 border-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-orange-500 text-black bg-white placeholder-gray-500"
                 placeholder="Email Address"
                 required
               />
@@ -179,7 +180,7 @@ const ContactForm = () => {
                 name="contactNumber"
                 value={formData.contactNumber}
                 onChange={handleChange}
-                className="w-2/3 py-2 border-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-500"
+                className="w-2/3 py-2 border-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-orange-500 text-black bg-white placeholder-gray-500"
                 placeholder="Contact number"
                 required
               />
@@ -190,7 +191,7 @@ const ContactForm = () => {
                 name="idea"
                 value={formData.idea}
                 onChange={handleChange}
-                className="w-full py-2 border-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-500"
+                className="w-full py-2 border-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-orange-500 text-black bg-white placeholder-gray-500"
                 placeholder="Let's Talk About Your Idea"
                 required
               />
@@ -212,10 +213,12 @@ const ContactForm = () => {
                 />
               </label>
             </div>
+
             <div className="mb-6">
               <ReCAPTCHA
                 sitekey="YOUR_GOOGLE_RECAPTCHA_SITE_KEY" // Replace with your Site Key
                 onChange={handleCaptchaChange}
+                className="mt-4" // Optional margin
               />
             </div>
 

@@ -1,4 +1,4 @@
-import  { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Ball from '../assets/Ball.svg';
 import ballentry from '../assets/ballentry.svg';
 import ballexit from '../assets/ballexit.webp';
@@ -57,7 +57,6 @@ const DevelopmentProcess = () => {
         const y = start.y + (end.y - start.y) * segmentProgress;
 
         // Calculate rotation based on movement direction
-        
         const rotation = 2.37289 + (Math.sin(progress * Math.PI * 2) * 5);
 
         // Update ball position and rotation with slower fall and added animations
