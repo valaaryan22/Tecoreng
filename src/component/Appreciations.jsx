@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';  // Import Swiper styles
+import 'swiper/swiper-bundle.css'; // Import Swiper styles
 
 const Appreciations = () => {
   // State to track the currently active slide index

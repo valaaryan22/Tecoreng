@@ -65,7 +65,7 @@ const Specialization = () => {
   const visibleCards = getVisibleCards();
 
   return (
-    <>
+    <div>
       <div className="flex flex-col items-start ml-5 justify-start w-full py-16 px-4" style={{ backgroundColor: '#01132E' }}>
         {/* Header Section */}
         <div className="max-w-4xl w-full mb-16">
@@ -122,10 +122,8 @@ const Specialization = () => {
       {/* Arrow Navigation (Future feature or to be added later) */}
 
       {/* Custom Breakpoints for Responsive Design */}
-      <style>{`
-        /* Responsive styling could go here for smaller screens */
-      `}</style>
-    </>
+      
+    </div>
   );
 };
 

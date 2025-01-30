@@ -87,8 +87,8 @@ const DevelopmentProcess = () => {
         { title: "Maintenance", description: "Monitoring, Feedback, Analysis, & Complete Support", imgSrc: devimg7, alt: "Maintenance" },
     ];
 
-    return (
-        <div className="mt-8 pt-4" ref={containerRef}>
+    return (<div className='mb-5'>
+        <div className="mt-8 pb-6 pt-4" ref={containerRef}>
             <section className="hcygZN" style={{ background: "rgb(17, 37, 66)" }}>
                 <div className="container">
                     <div className="Bejbq">
@@ -202,6 +202,7 @@ const DevelopmentProcess = () => {
                     </div>
                 </div>
             </section>
+        </div>
         </div>
     );
 };

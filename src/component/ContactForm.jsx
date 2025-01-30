@@ -86,7 +86,7 @@ const ContactForm = () => {
     setSelectedPhoneCode(selectedOption.value); // Update selected phone code
   };
 
-  return (
+  return (<div>
     <section className="bg-[#01132E] min-h-screen py-16 text-white">
       <div className="container mx-auto flex flex-col lg:flex-row p-4 items-start gap-12">
         {/* Left Section */}
@@ -250,6 +250,7 @@ const ContactForm = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

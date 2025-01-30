@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS for styling
 import { useEffect, useState } from "react"; // Import hooks from React
-import '../css/Navbar.css'; // Custom styling for the Navbar
 import laptop from "../assets/laptop.svg"; // Import laptop image for the background
 import logo from "../assets/logo.svg"; // Import company logo
+import '../css/Navbar.css'; // Custom styling for the Navbar
 
 const Navbar = () => {
     // State hooks for managing Navbar behavior
@@ -51,7 +51,7 @@ const Navbar = () => {
     }, [lastScrollY]); // Re-run effect on scroll position change
 
     return (
-        <>
+        <div>
             <div
                 className="App min-h-screen flex flex-col bg-[#01132E] text-white overflow-x-hidden"
             >
@@ -286,7 +286,9 @@ const Navbar = () => {
                 </div>
 
                 {/* Counter Section */}
-                <div className="relative z-10 mb-3 border-2 rounded-3xl md:mt-0 md:pt-0 border-cyan-400 max-w-6xl mx-auto mt-16 sm:mt-8 xs:mt-4 px-4">
+               
+            </div>
+            <div className="relative z-10 mb-3 border-2 rounded-3xl md:mt-0 md:pt-0 border-cyan-400 max-w-6xl mx-auto mt-16 sm:mt-8 xs:mt-4 px-4">
                     <div className="backdrop-blur-sm rounded-3xl p-8">
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                             {/* Successful Projects */}
@@ -309,8 +311,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
+        </div>
     );
 };
 
