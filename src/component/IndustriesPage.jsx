@@ -1,4 +1,3 @@
-import React from 'react';
 import Banking from '../assets/Banking.webp';
 import Ecommerce from '../assets/Ecommerce.webp';
 import Education from '../assets/Education.webp';

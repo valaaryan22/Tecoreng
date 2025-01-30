@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import Ball from '../assets/Ball.svg';
 import ballentry from '../assets/ballentry.svg';
 import ballexit from '../assets/ballexit.webp';
@@ -57,13 +57,13 @@ const DevelopmentProcess = () => {
         const y = start.y + (end.y - start.y) * segmentProgress;
 
         // Calculate rotation based on movement direction
-        const angle = Math.atan2(end.y - start.y, end.x - start.x) * (180 / Math.PI);
+        
         const rotation = 2.37289 + (Math.sin(progress * Math.PI * 2) * 5);
 
         // Update ball position and rotation with slower fall and added animations
         setBallStyle({
             transform: `translate3d(${x}px, ${y}px, 0px) rotate(${rotation}deg)`,
-            transition: 'transform 0.5s ease-out', // Smoother transition for position change
+            transition: 'transform 0.4s ease-out', // Smoother transition for position change
             animation: 'fall 4s ease-out 1, roll 10s linear infinite, bounce 2s ease-in-out infinite', // Slower fall and added bounce animation
         });
     };
@@ -122,8 +122,8 @@ const DevelopmentProcess = () => {
                                     <img
                                         alt="Ball"
                                         loading="lazy"
-                                        width="80"
-                                        height="80"
+                                        width="70"
+                                        height="70"
                                         src={Ball}
                                         className="mainBall"
                                     />

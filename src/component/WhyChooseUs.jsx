@@ -88,7 +88,7 @@ const WhyChooseUs = () => {
         ))}
       </div>
 
-      <style jsx>{`
+      <style >{`
         @media (max-width: 767px) {
           .paragraph-font {
             width: 100%;

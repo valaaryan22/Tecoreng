@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';  // Import Swiper's styles
+import 'swiper/swiper-bundle.css'; // Import Swiper's styles
 import image from '../assets/image.jpg';
 import image1 from '../assets/image1.jpg';
 import image2 from '../assets/image2.jpg';
@@ -41,7 +40,7 @@ const natureImages = [
 ];
 
 const Insights = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    
 
     const isLaptop = window.innerWidth >= 1024;
 
@@ -79,33 +78,33 @@ const Insights = () => {
                 Tecoreng insights
             </h1>
 
-            {/* Swiper Slider */}
-            <Swiper {...swiperConfig}>
-                {natureImages.map((image, index) => (
-                    <SwiperSlide key={index} className="relative bg-[#0b1b33] text-white rounded-2xl shadow-lg overflow-hidden group">
-                        {/* Card Image */}
-                        <div className="relative h-80"> {/* Fixed height for all images */}
-                            <img
-                                src={image.imageUrl}
-                                alt={image.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                <div className="text-center text-white px-4">
-                                    <h3 className="text-2xl font-bold">{image.title}</h3>
-                                    <p className="text-sm mt-2">{image.description}</p>
-                                </div>
-                            </div>
+             {/* Swiper Slider */}
+    <Swiper {...swiperConfig}>
+        {natureImages.map((image, index) => (
+            <SwiperSlide key={index} className="relative bg-[#0b1b33] text-white rounded-2xl shadow-lg overflow-hidden group">
+                {/* Card Image */}
+                <div className="relative h-80"> {/* Fixed height for all images */}
+                    <img
+                        src={image.imageUrl}
+                        alt={image.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <div className="text-center text-white px-4">
+                            <h3 className="text-2xl font-bold">{image.title}</h3>
+                            <p className="text-sm mt-2">{image.description}</p>
                         </div>
+                    </div>
+                </div>
 
-                        {/* Card Text Content */}
-                        <div className="p-6 space-y-4 h-40"> {/* Fixed height for the text section */}
-                            <h3 className="text-xl font-bold tracking-tight">{image.title}</h3>
-                            <p className="text-white text-sm">{image.description}</p>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                {/* Card Text Content */}
+                <div className="p-6 space-y-4 h-40"> {/* Fixed height for the text section */}
+                    <h3 className="text-xl font-bold tracking-tight">{image.title}</h3>
+                    <p className="text-white text-sm line-clamp-3">{image.description}</p> {/* Ellipsis style */}
+                </div>
+            </SwiperSlide>
+        ))}
+    </Swiper>
         </div>
     );
 };

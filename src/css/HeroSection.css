@@ -1,0 +1,10 @@
+@media (max-width: 720px) {
+   
+}
+@media (max-width: 390px) {
+    .Transfer{
+        font-size: 1.65rem ; 
+        text-align: left;
+        /* for making responsive font of the title */
+     } 
+}

@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
-import laptop from "../laptop.svg";
-import logo from "../logo.svg";
+import '../css/Navbar.css';
+import laptop from "../assets/laptop.svg";
+import logo from "../assets/logo.svg";
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -237,9 +238,9 @@ const Navbar = () => {
                 }}
             >
                 {/* Added a wrapper to position the content correctly */}
-                <div className="absolute  top-[120px] sm:top-[120px] md:top-[120px] left-10 w-full px-4 z-20">
-                    <div className="w-full pl-2 text-center ml-8 mb-8 md:w-1/2 pt-20">
-                        <h1 className="text-5xl  md:text-6xl font-bold leading-tight mb-8 text-white sm:text-left sm:ml-4 md:text-left md:ml-8">
+                <div className="absolute  top-[120px] sm:top-[120px] md:top-[120px]  w-full px-4 z-20">
+                    <div className="w-full md:text-center pl-2 text-center ml-8 mb-8 md:w-1/2 pt-20">
+                        <h1 className="text-5xl title md:text-6xl font-bold leading-tight mb-8 text-white sm:text-left sm:ml-4 md:text-left md:ml-8">
                             Web & Mobile App
                             <br className=" md:hidden" />
                             Development
@@ -247,7 +248,7 @@ const Navbar = () => {
                             Company
                         </h1>
                         <button
-                            className="flex items-center justify-center px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300 sm:ml-4 md:ml-8"
+                            className="flex getstart items-center justify-center px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300 sm:ml-4 md:ml-8"
                             style={{
                                 willChange: "transform",
                                 transition: "transform 250ms",
@@ -272,136 +273,6 @@ const Navbar = () => {
 
             {/* Counter Section */}
 
-            <style>{`
-                        .hero h1 {
-                            text-align: left;
-                            color: white;
-                            margin-left: 10%;
-                            margin-top: 10%;
-                        }
-
-                        @media (max-width: 1024px) {
-                            .App {
-                                background-size: contain;
-                                background-position: center;
-                            }
-
-                            .hero h1 {
-                                font-size: 4rem;
-                                margin-left: 5%;
-                                margin-top: 5%;
-                                line-height: 1.4;
-                            }
-                                .hero .button-container {
-                                margin-left: 5%;
-                                margin-top: 10px;
-                                }
-                        }
-
-                        @media (max-width: 768px) {
-                            .App {
-                                background-size: 150% 150%;
-                                background-position: top center;
-                            }
-
-                            .hero h1 {
-                                font-size: 3rem;
-                                margin-left: 5%;
-                                margin-top: 5%;
-                                line-height: 1.4;
-                            }
-                        }
-
-                        @media (max-width: 480px) {
-                            .App {
-                                background-size: 200% 200%;
-                                background-position: center;
-                            }
-
-                            .hero h1 {
-                                font-size: 2rem;
-                                margin-left: 2%;
-                                margin-top: 2%;
-                            }
-                        }
-
-                        .project-success {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            gap: 1rem;
-                        }
-
-                        .counter {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            padding: 10px;
-                            border: 2px solid rgb(0, 196, 213);
-                            border-radius: 15px;
-                            background-color: rgba(0, 0, 0, 0.6);
-                        }
-
-                        .title {
-                            font-size: 1.25rem;
-                            font-weight: 600;
-                            color: white;
-                        }
-
-                        .details {
-                            font-size: 2rem;
-                            font-weight: 800;
-                            color: white;
-                        }
-
-                        /* Responsive Styles */
-                        @media (max-width: 1024px) {
-                            .counter .title {
-                                font-size: 1.125rem;
-                            }
-                            .counter .details {
-                                font-size: 2.25rem;
-                            }
-                        }
-
-                        @media (max-width: 768px) {
-                            .counter .title {
-                                font-size: 1.125rem;
-                            }
-                            .counter .details {
-                                font-size: 2rem;
-                            }
-                        }
-
-                        @media (max-width: 480px) {
-                            .counter .title {
-                                font-size: 1rem;
-                            }
-                            .counter .details {
-                                font-size: 1.75rem;
-                            }
-                                 @media (max-width: 1024px) {
-                    .App {
-                        background-size: contain;
-                        background-position: center;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .App {
-                        background-size: 150% 150%;
-                        background-position: top center;
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    .App {
-                        background-size: 200% 200%;
-                        background-position: center;
-                    }
-                        }
-                    `}</style>
 
         </div>
             <div className="relative z-10 mb-3 border-2 rounded-3xl md:mt-0 md:pt-0 border-cyan-400 max-w-6xl mx-auto mt-16 sm:mt-8 xs:mt-4 px-4">

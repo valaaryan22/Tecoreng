@@ -1,12 +1,12 @@
 import imageforhero from '../assets/image8.webp';
-
+import '../css/HeroSection.css';
 const HeroSection = () => {
   return (
     <div className="bg-[#0B1B33] text-white min-h-screen p-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Content */}
         <div className="lg:w-1/2 space-y-6 pl-8"> {/* Added padding-left for gap */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          <h1 className="Transfer text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             Transfer your enterprise with digital innovation
           </h1>
           
