@@ -4,13 +4,18 @@
         font-size: 1.3rem;
         margin-left: 0;
         margin-right: 30px;
-        text-align: center;
+        text-align: left;
     }
     .title{
         font-size: 3rem;
     }
     button {
         font-size: 1rem;
+    }
+    .project{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+
     }
 }
 
@@ -21,13 +26,66 @@
         margin-left: 0;
         margin-right: 110px;
       padding-right: 10px;
-        text-align: center;
+        text-align: left;
     }
     .title{
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     button {
         font-size: 1rem;
+    }
+    .project{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+
+    }
+    
+}
+@media (max-width: 390px) {
+    h1 {
+        font-size: 1.1rem;
+        margin-left: 0;
+        margin-right: 110px;
+      padding-right: 10px;
+        text-align: left;
+    }
+    .title{
+        font-size: 2.8rem;
+    }
+    button {
+        font-size: 1rem;
+    }
+    .project{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+
+    }
+    
+}
+@media (max-width: 375px) {
+   
+    .title{
+        font-size: 2.5rem;
+        margin-top: 0px;
+    }
+
+    .dataWeb{
+        margin-top: 0px;
+    }
+    .dataButton{
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    button {
+        font-size: 1rem;
+    }
+    .project{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+
+    }
+    .top-\[120px\] {
+        top: 80px;
     }
     
 }

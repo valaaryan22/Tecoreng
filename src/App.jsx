@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <div
-        className="bg-[#01132E] w-screen min-h-screen overflow-x-hidden"
+        className="bg-[#01132E] w-screen  overflow-x-hidden"
         style={{ margin: 0, padding: 0 }}
       >
         <Navbar />
@@ -26,11 +26,11 @@ function App() {
         <WhyChooseUs />
 
         <Specialization />
-        <DevelopmentProcess/>
-        
+        <DevelopmentProcess />
+
         <EngagementModels />
 
-        <SuccessStories/>
+        <SuccessStories />
         <IndustriesPage />
         <Appreciation />
         <Insights />
@@ -42,4 +42,3 @@ function App() {
 }
 
 export default App;
-  

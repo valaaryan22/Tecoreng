@@ -6,6 +6,7 @@ import image2 from '../assets/image2.jpg';
 import image4 from '../assets/image4.png';
 import image6 from '../assets/image6.png';
 
+// Data array containing the image URLs, titles, and descriptions for each slide
 const natureImages = [
     {
         imageUrl: image1,
@@ -40,34 +41,34 @@ const natureImages = [
 ];
 
 const Insights = () => {
-    
-
+    // Detect if the user is on a laptop (based on window width)
     const isLaptop = window.innerWidth >= 1024;
 
-    // Swiper configuration
+    // Swiper configuration: setting up the slider options
     const swiperConfig = {
-        loop: true,
-        slidesPerView: isLaptop ? 3 : 1,
-        spaceBetween: 30,
+        loop: true, // Enable infinite loop
+        slidesPerView: isLaptop ? 3 : 1, // Display 3 slides for laptops and 1 slide for mobile/tablet
+        spaceBetween: 30, // Space between slides
         autoplay: {
             delay: 5000, // Auto-slide every 5 seconds
-            disableOnInteraction: false, // Keep autoplay running when user interacts
+            disableOnInteraction: false, // Keep autoplay running even when user interacts
         },
         pagination: {
-            clickable: true, // Make dots clickable
+            clickable: true, // Make pagination dots clickable
         },
         breakpoints: {
             768: {
-                slidesPerView: 2, // Show 2 slides for medium devices
+                slidesPerView: 2, // Show 2 slides for medium devices (like tablets)
             },
             1024: {
-                slidesPerView: 3, // Show 3 slides for large devices
+                slidesPerView: 3, // Show 3 slides for larger screens (laptops)
             },
         },
     };
 
     return (
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-3 sm:py-16">
+            {/* Main heading for the section */}
             <h1
                 className="text-4xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
                 style={{
@@ -78,33 +79,34 @@ const Insights = () => {
                 Tecoreng insights
             </h1>
 
-             {/* Swiper Slider */}
-    <Swiper {...swiperConfig}>
-        {natureImages.map((image, index) => (
-            <SwiperSlide key={index} className="relative bg-[#0b1b33] text-white rounded-2xl shadow-lg overflow-hidden group">
-                {/* Card Image */}
-                <div className="relative h-80"> {/* Fixed height for all images */}
-                    <img
-                        src={image.imageUrl}
-                        alt={image.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                        <div className="text-center text-white px-4">
-                            <h3 className="text-2xl font-bold">{image.title}</h3>
-                            <p className="text-sm mt-2">{image.description}</p>
+            {/* Swiper Slider */}
+            <Swiper {...swiperConfig}>
+                {natureImages.map((image, index) => (
+                    <SwiperSlide key={index} className="relative bg-[#0b1b33] text-white rounded-2xl shadow-lg overflow-hidden group">
+                        {/* Card Image */}
+                        <div className="relative h-80"> {/* Fixed height for the image section */}
+                            <img
+                                src={image.imageUrl}
+                                alt={image.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            {/* Dark overlay that appears on hover */}
+                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <div className="text-center text-white px-4">
+                                    <h3 className="text-2xl font-bold">{image.title}</h3>
+                                    <p className="text-sm mt-2">{image.description}</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                {/* Card Text Content */}
-                <div className="p-6 space-y-4 h-40"> {/* Fixed height for the text section */}
-                    <h3 className="text-xl font-bold tracking-tight">{image.title}</h3>
-                    <p className="text-white text-sm line-clamp-3">{image.description}</p> {/* Ellipsis style */}
-                </div>
-            </SwiperSlide>
-        ))}
-    </Swiper>
+                        {/* Card Text Content */}
+                        <div className="p-6 space-y-4 h-40"> {/* Fixed height for the text section */}
+                            <h3 className="text-xl font-bold tracking-tight">{image.title}</h3>
+                            <p className="text-white text-sm line-clamp-3">{image.description}</p> {/* Limiting the text to 3 lines */}
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </div>
     );
 };

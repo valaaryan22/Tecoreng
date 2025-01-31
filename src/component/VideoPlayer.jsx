@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import video from '../assets/video.mp4'; // Update the path to match your video location
 
 const VideoPlayer = () => {
@@ -13,7 +13,7 @@ const VideoPlayer = () => {
     };
 
     return (
-        <div className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[600px] bg-gradient-to-b from-[#23385E] to-[#01132E] p-[10%]">
+        <div className="relative w-full h-full min-h-[200px] sm:min-h-[280px] md:min-h-[400px] lg:min-h-[600px] bg-gradient-to-b from-[#23385E] to-[#01132E] p-[10%]">
             {/* Video Container */}
             <div className="relative w-full h-full overflow-hidden rounded-3xl">
                 <video

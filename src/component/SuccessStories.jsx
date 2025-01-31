@@ -68,7 +68,7 @@ const SuccessStories = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-10">
+    <div className="container   mx-auto px-4 md:px-4 py-3 sm:py-10">
         <h1
                     className="text-5xl font-extrabold text-left mb-8 text-gray-100 tracking-wide"
                     style={{
@@ -80,7 +80,8 @@ const SuccessStories = () => {
 
                 </h1>
       
-      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid pr-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
         {stories.map((story, index) => (
           <div
             key={index}
@@ -101,7 +102,7 @@ const SuccessStories = () => {
                   />
                 </div>
               ) : (
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full ">
                   {index === 2 ? (
                     <div className="relative w-full h-full">
                       <img

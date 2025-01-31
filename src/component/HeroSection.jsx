@@ -1,11 +1,13 @@
 import imageforhero from '../assets/image8.webp';
 import '../css/HeroSection.css';
+import Ball from '../assets/Ball.svg';
+
 const HeroSection = () => {
   return (
-    <div className="bg-[#0B1B33] text-white min-h-screen p-8">
+    <div className="bg-[#0B1B33] min-h-screen text-white p-3 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Content */}
-        <div className="lg:w-1/2 space-y-6 pl-8"> {/* Added padding-left for gap */}
+        <div className="lg:w-1/2 heroData space-y-6 pl-4">
           <h1 className="Transfer text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             Transfer your enterprise with digital innovation
           </h1>
@@ -31,7 +33,7 @@ const HeroSection = () => {
               fontWeight: '700',
               fontSize: '29px',
               lineHeight: '30px',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
             }}
             onMouseEnter={(e) => e.target.style.transform = 'translateY(0)'} // Smooth on hover
             onMouseLeave={(e) => e.target.style.transform = 'translateY(-4px)'} // Reset on leave
@@ -48,7 +50,11 @@ const HeroSection = () => {
               alt="Digital Innovation"
               className="w-full h-full object-contain"
             />
-            {/* Decorative Elements */}
+            <img
+              src={Ball}
+              alt="Floating Ball"
+              className="absolute w-16 h-16 floating-ball"
+            />
           </div>
         </div>
       </div>
