@@ -1,10 +1,10 @@
+import Ball from '../assets/Ball.svg';
 import imageforhero from '../assets/image8.webp';
 import '../css/HeroSection.css';
-import Ball from '../assets/Ball.svg';
 
 const HeroSection = () => {
   return (
-    <div className="bg-[#0B1B33] min-h-screen text-white p-3 sm:p-6 md:p-8">
+    <div className="bg-[#0B1B33]  text-white p-3 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Content */}
         <div className="lg:w-1/2 heroData space-y-6 pl-4">
