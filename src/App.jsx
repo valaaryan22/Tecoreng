@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import Appreciation from './component/Appreciations';
 import ContactForm from './component/ContactForm';
 import DevelopmentProcess from './component/DevelopmentProcess';
@@ -10,8 +11,11 @@ import Navbar from './component/Navbar';
 import ServicesAccordion from './component/ServicesAccordion';
 import Specialization from './component/Specialization';
 import SuccessStories from './component/SuccessStories';
-import VideoPlayer from './component/VideoPlayer';
 import WhyChooseUs from './component/WhyChooseUs';
+
+// Lazily load VideoPlayer component
+const VideoPlayer = React.lazy(() => import('./component/VideoPlayer'));
+
 function App() {
   return (
     <>
@@ -20,21 +24,23 @@ function App() {
         style={{ margin: 0, padding: 0 }}
       >
         <Navbar />
-        <VideoPlayer />
+
+        {/* Add Suspense with a fallback UI */}
+        <Suspense fallback={<div>Loading Video...</div>}>
+          <VideoPlayer />
+        </Suspense>
+
         <HeroSection />
         <ServicesAccordion />
         <WhyChooseUs />
-
         <Specialization />
         <DevelopmentProcess />
-
         <EngagementModels />
-
         <SuccessStories />
         <IndustriesPage />
         <Appreciation />
         <Insights />
-        <ContactForm></ContactForm>
+        <ContactForm />
         <Footer />
       </div>
     </>
