@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Player } from "video-react";
 import "video-react/dist/video-react.css";
-import ane from '../assets/ane.png';
-import betting from '../assets/betting.png';
-import helthe from '../assets/helthe.png';
-import video1 from '../assets/video1.mp4';
-import video2 from '../assets/video2.mp4';
-import video3 from '../assets/video3.mp4';
+import ane from '../assets/SucessStoriesItems/ane.png';
+import betting from '../assets/SucessStoriesItems/betting.png';
+import helthe from '../assets/SucessStoriesItems/helthe.png';
+import video1 from '../assets/SucessStoriesItems/video1.mp4';
+import video2 from '../assets/SucessStoriesItems/video2.mp4';
+import video3 from '../assets/SucessStoriesItems/video3.mp4';
 
 const SuccessStories = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);

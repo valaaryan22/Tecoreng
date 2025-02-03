@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import Ball from '../assets/Ball.svg';
-import BallEntry from '../assets/ballentry.svg';
-import ballexit from '../assets/ballexit.webp';
-import devimg1 from '../assets/devimg1.webp';
-import devimg2 from '../assets/devimg2.webp';
-import devimg3 from '../assets/devimg3.webp';
-import devimg4 from '../assets/devimg4.webp';
-import devimg5 from '../assets/devimg5.webp';
-import devimg6 from '../assets/devimg6.webp';
-import devimg7 from '../assets/devimg7.webp';
+import BallEntry from '../assets/DevlopmentItems/ballentry.svg';
+import ballexit from '../assets/DevlopmentItems/ballexit.webp';
+import devimg1 from '../assets/DevlopmentItems/devimg1.webp';
+import devimg2 from '../assets/DevlopmentItems/devimg2.webp';
+import devimg3 from '../assets/DevlopmentItems/devimg3.webp';
+import devimg4 from '../assets/DevlopmentItems/devimg4.webp';
+import devimg5 from '../assets/DevlopmentItems/devimg5.webp';
+import devimg6 from '../assets/DevlopmentItems/devimg6.webp';
+import devimg7 from '../assets/DevlopmentItems/devimg7.webp';
 import '../css/DevelopmentProcess.css';
 
 const DevelopmentProcess = () => {
@@ -70,7 +70,7 @@ const DevelopmentProcess = () => {
     // Calculate rotation based on movement direction
     const rotation = 2.37289 + (Math.sin(progress * Math.PI * 2) * 5);
 
-    // Update ball position and rotation with slower fall and added animations
+    // Update ball position and rotation with slower   and added animations
     setBallStyle({
       transform: `translate3d(${x}px, ${y}px, 0px) rotate(${rotation}deg)`,
       opacity: 1,  // Make the ball visible when in motion

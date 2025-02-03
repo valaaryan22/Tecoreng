@@ -1,9 +1,9 @@
 import { useState } from "react"; // Importing the useState hook from React to manage the state
-import angular from '../assets/angular.svg'; // Importing icons for different technologies
-import ionic from '../assets/ionic.svg';
-import laravel from '../assets/laravel.svg';
-import nodejs from '../assets/nodejs.svg';
-import react from '../assets/react.svg';
+import angular from '../assets/ServicesAccordionItemms/angular.svg'; // Importing icons for different technologies
+import ionic from '../assets/ServicesAccordionItemms/ionic.svg';
+import laravel from '../assets/ServicesAccordionItemms/laravel.svg';
+import nodejs from '../assets/ServicesAccordionItemms/nodejs.svg';
+import react from '../assets/ServicesAccordionItemms/react.svg';
 
 const ServicesAccordion = () => {
   // Array of service objects that will populate the accordion

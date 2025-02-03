@@ -1,5 +1,5 @@
 import Ball from '../assets/Ball.svg';
-import imageforhero from '../assets/image8.webp';
+import imageforhero from '../assets/HeoItems/image8.webp';
 import '../css/HeroSection.css';
 
 const HeroSection = () => {
@@ -53,7 +53,7 @@ const HeroSection = () => {
             <img
               src={Ball}
               alt="Floating Ball"
-              className="absolute w-16 h-16 floating-ball"
+              className="absolute w-8 h-8 sm:w-16 sm:h-16 floating-ball"
             />
           </div>
         </div>

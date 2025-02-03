@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css'; // Import Swiper's styles
-import image from '../assets/image.jpg';
-import image1 from '../assets/image1.jpg';
-import image2 from '../assets/image2.jpg';
-import image4 from '../assets/image4.png';
-import image6 from '../assets/image6.png';
+import image from '../assets/InsightsItems/image.jpg';
+import image1 from '../assets/InsightsItems/image1.jpg';
+import image2 from '../assets/InsightsItems/image2.jpg';
+import image4 from '../assets/InsightsItems/image4.png';
+import image6 from '../assets/InsightsItems/image6.png';
 
 // Data array containing the image URLs, titles, and descriptions for each slide
 const natureImages = [

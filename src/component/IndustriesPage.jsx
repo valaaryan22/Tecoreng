@@ -1,9 +1,9 @@
-import Banking from '../assets/Banking.webp';
-import Ecommerce from '../assets/Ecommerce.webp';
-import Education from '../assets/Education.webp';
-import Healthcare from '../assets/Healthcare.webp';
-import SupplyChainLogistics from '../assets/SupplyChainLogistics.webp';
-import Travel from '../assets/Travel.webp';
+import Banking from '../assets/IndustriesPageIItems/Banking.webp';
+import Ecommerce from '../assets/IndustriesPageIItems/Ecommerce.webp';
+import Education from '../assets/IndustriesPageIItems/Education.webp';
+import Healthcare from '../assets/IndustriesPageIItems/Healthcare.webp';
+import SupplyChainLogistics from '../assets/IndustriesPageIItems/SupplyChainLogistics.webp';
+import Travel from '../assets/IndustriesPageIItems/Travel.webp';
 
 const IndustriesPage = () => {
     return (

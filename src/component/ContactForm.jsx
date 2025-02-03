@@ -2,14 +2,14 @@ import { Phone, Upload } from 'lucide-react'; // Import icons
 import { useState } from 'react'; // Import React hooks
 import ReCAPTCHA from 'react-google-recaptcha'; // Import Google reCAPTCHA
 import Select from 'react-select'; // Import react-select for custom dropdown
+import b from '../assets/ContactForm/b.svg';
+import dribble from '../assets/ContactForm/dribble.svg';
+import fecbook from '../assets/ContactForm/fecbook.svg';
+import linkdin from '../assets/ContactForm/linkdin.svg';
+import medium from '../assets/ContactForm/medium.svg';
+import p from '../assets/ContactForm/p.svg';
+import twiter from '../assets/ContactForm/twiter.svg';
 import India from '../assets/India.svg'; // Import the India flag image
-import b from '../assets2/b.svg';
-import dribble from '../assets2/dribble.svg';
-import fecbook from '../assets2/fecbook.svg';
-import linkdin from '../assets2/linkdin.svg';
-import medium from '../assets2/medium.svg';
-import p from '../assets2/p.svg';
-import twiter from '../assets2/twiter.svg';
 
 // Country options for the select dropdown
 const countryOptions = [

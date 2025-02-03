@@ -1,7 +1,7 @@
 import logo from '../assets/logo.svg';
-import callus from '../assets2/callus.webp'; // For Phone icon
-import location from '../assets2/location.svg'; // For Location icon
-import mail from '../assets2/mail.svg'; // For Email icon
+import callus from '../assets/ContactForm/callus.webp'; // For Phone icon
+import location from '../assets/ContactForm/location.svg'; // For Location icon
+import mail from '../assets/ContactForm/mail.svg'; // For Email icon
 
 const Footer = () => {
     return (

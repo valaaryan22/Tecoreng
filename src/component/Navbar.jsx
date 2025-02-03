@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS for styling
 import { useEffect, useState } from "react"; // Import hooks from React
-import laptop from "../assets/laptop.svg"; // Import laptop image for the background
+import laptop from "../assets/NavItems/laptop.svg"; // Import laptop image for the background
 import logo from "../assets/logo.svg"; // Import company logo
 import '../css/Navbar.css'; // Custom styling for the Navbar
 
@@ -54,7 +54,7 @@ const Navbar = () => {
         <div >
             <div
                 className="App flex flex-col bg-[#01132E] text-white overflow-x-hidden"
-            style={{ minHeight: '100vh' }}
+            style={{ minHeight: '100dvh' }}
             >
                 {/* Navbar Header with scroll animation */}
                 <header
@@ -140,13 +140,13 @@ const Navbar = () => {
                                             {/* Show dropdown menu on hover */}
                                             {showDropdown && (
                                                 <div className="absolute top-full left-0 mt-2 no-underline w-48 bg-[#011e3d] rounded-lg shadow-lg py-2 z-50">
-                                                    {item.dropdownItems.map((dropItem) => (
+                                                    {item.dropdownItems?.map((dropItem) => (
                                                         <a
-                                                            key={dropItem.name}
-                                                            href={dropItem.link}
+                                                            key={dropItem?.name}
+                                                            href={dropItem?.link}
                                                             className="block px-4 py-2 no-underline text-white hover:bg-[#022b54] hover:text-orange-500 text-sm"
                                                         >
-                                                            {dropItem.name}
+                                                            {dropItem?.name}
                                                         </a>
                                                     ))}
                                                 </div>
