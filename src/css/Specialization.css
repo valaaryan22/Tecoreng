@@ -1,0 +1,96 @@
+.service-card {
+    max-width: 280px;
+    min-width: 230px;
+    overflow: hidden; /* Prevent overflow */
+     /* Add ellipsis for overflow text */
+     /* Prevent text wrapping */
+  }
+
+  /* For smaller devices (like iPhone 12 with width: 390px) */
+  @media (max-width: 391px) {
+    .service-card {
+      height: auto; /* Allow height to adjust dynamically */
+      transform: scale(0.8); /* Scale cards down slightly */
+      max-width: 160px;
+      min-width: 150px;
+      white-space: nowrap;
+    }
+
+    /* Adjust title font size */
+    .service-card h2 {
+      font-size: 0.6rem; /* Smaller font size */
+      word-wrap: break-word; /* Allow word wrapping for the title */
+    }
+
+    /* Adjust description font size */
+    .service-card p {
+      font-size: 0.5rem; /* Smaller font size */
+      word-wrap: break-word; /* Allow word wrapping for the description */
+      display: block; /* Ensure description wraps properly */
+      overflow: hidden;
+      text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    }
+  }
+
+  /* Small screen styles */
+  @media (max-width: 576px) {
+    .service-card {
+      max-width: 180px;
+      min-width: 150px;
+      width: 90%;  /* Increased width to 90% */
+      height: auto; /* Allow height to adjust dynamically */
+      transform: scale(0.85);
+      margin-left: 0px; /* Adjusted margin */
+      margin-right: 0px; /* Adjusted margin */
+      white-space: nowrap;
+    }
+
+    .service-card h2 {
+      font-size: 1rem; /* Reduced font size */
+    }
+
+    .service-card p {
+      font-size: 0.75rem; /* Reduced font size */
+    }
+  }
+
+  /* Tablet size */
+  @media (min-width: 576px) and (max-width: 768px) {
+    .service-card {
+      width: 90%;
+      height: auto;
+      transform: scale(0.9);
+      white-space: nowrap;
+    }
+
+    .service-card h2 {
+      font-size: 1.2rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Larger tablets */
+  @media (min-width: 768px) and (max-width: 992px) {
+    .service-card {
+      width: 90%;
+      height: auto;
+      transform: scale(1);
+    }
+  }
+
+  /* Desktops and larger */
+  @media (min-width: 992px) {
+    .service-card {
+      width: 280px; /* Ensure full width of the card is visible */
+      transform: scale(1); /* Ensure no scaling */
+    }
+
+    .service-card-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 45%;
+    }
+  }
