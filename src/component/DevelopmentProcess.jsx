@@ -62,7 +62,7 @@ const DevelopmentProcess = () => {
     // Calculate current position
     const start = path[currentSegment];
     const end = path[currentSegment + 1];
-    
+
     // Interpolate position
     const x = start.x + (end.x - start.x) * segmentProgress;
     const y = start.y + (end.y - start.y) * segmentProgress;
@@ -82,7 +82,7 @@ const DevelopmentProcess = () => {
     window.addEventListener('scroll', handleScroll);
     // Initial position calculation
     handleScroll();
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -104,7 +104,7 @@ const DevelopmentProcess = () => {
         <img
           src={Ball}
           alt="Ball"
-          
+
           className="ball"
           style={ballStyle}
         />
@@ -139,9 +139,10 @@ const DevelopmentProcess = () => {
       ))}
 
       {/* Ball Exit Section */}
-      <div className="diTaJz d-none d-lg-block">
-        <div className="ballExit" style={{ position: "absolute", bottom: "20px", right:'140px'
-         }}>
+      <div className="d-none d-lg-block">
+        <div className="ballExit" style={{
+          position: "absolute", bottom: "20px", right: '140px'
+        }}>
           <img
             alt="ball exit"
             loading="lazy"

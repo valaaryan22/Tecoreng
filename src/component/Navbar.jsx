@@ -291,7 +291,7 @@ const Navbar = () => {
             </div>
             <div className="relative project z-10 mb-3 border-2 rounded-3xl md:mt-0 md:pt-0 border-cyan-400 max-w-6xl mx-auto mt-16   px-4">
                     <div className="backdrop-blur-sm rounded-3xl p-8">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8">
                             {/* Successful Projects */}
                             <div className="text-center">
                                 <div className="text-white text-xl">Successful Projects</div>

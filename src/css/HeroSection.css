@@ -2,9 +2,10 @@
     .Transfer {
         font-size: 1.65rem; 
         text-align: left;
+        
         /* Adjusting font size and alignment for smaller screens */
     }
-
+    
     .heroData {
         padding-left: 0rem !important;
         /* Removing left padding for smaller screens */
@@ -85,4 +86,11 @@
     .floating-ball {
         animation-duration: 40s; /* Slow down the animation for reduced motion preference */
     }
+}
+@media (max-width:480px) {
+  .floating-ball {
+    width: 23px;
+    height: 23px;
+
+  }
 }
